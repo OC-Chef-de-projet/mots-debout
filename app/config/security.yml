@@ -6,7 +6,8 @@ security:
     providers:
         in_memory:
             memory: ~
-
+        user_provider:
+                entity: { class: AppBundle:User, property: email }
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
@@ -15,6 +16,14 @@ security:
 
         main:
             anonymous: ~
+            provider: user_provider
+            guard:
+                authenticators:
+                    - AppBundle\Security\FormAuthenticator
+            logout:
+                path: /logout
+                target: /
+
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
