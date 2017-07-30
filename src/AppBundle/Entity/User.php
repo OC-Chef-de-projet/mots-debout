@@ -51,6 +51,10 @@ class User implements UserInterface
      */
     private $role;
 
+    /**
+     * @var string
+     */
+    private $plainPassword;
 
     /**
      * Get id
@@ -176,6 +180,24 @@ class User implements UserInterface
     public function getRoles()
     {
         return [$this->getRole()];
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param string $plainPassword
+     * @return User
+     */
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
+        return $this;
     }
 }
 

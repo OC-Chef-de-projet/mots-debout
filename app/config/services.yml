@@ -35,4 +35,4 @@ services:
     #         $someArgument: 'some_value'
     form_authenticator:
         class: AppBundle\Security\FormAuthenticator
-        arguments: ['@router']
+        arguments: ['@router', '@form.factory', '@security.user_password_encoder.generic']
