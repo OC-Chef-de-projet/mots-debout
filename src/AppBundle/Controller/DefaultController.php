@@ -14,7 +14,8 @@ class DefaultController extends Controller
 {
 
     /**
-     * @Route("/", name="homepage")
+     * @param Request $request
+     * @return Response
      */
     public function indexAction(Request $request)
     {
@@ -25,7 +26,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/register", name="user_register")
+     *
      */
     public function registerAction(Request $request)
     {
@@ -36,7 +37,7 @@ class DefaultController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             // Encode the new users password
             $encoder = $this->get('security.password_encoder');
-            $password = $encoder->encodePassword($user, $request->get('user_password'));
+            $password = $encoder->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($password);
 
             // Set their role
@@ -57,7 +58,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/admin")
+     *
      */
     public function adminAction()
     {

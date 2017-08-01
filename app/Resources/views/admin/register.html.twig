@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block body %}
     <div class="container">
         <div class="row">
@@ -22,7 +24,13 @@
 
                         <div class="form_group">
                             <div class="col-md-8 col-md-offset-2">
-                                {{ form_row(form.password, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_row(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form_group">
+                            <div class="col-md-8 col-md-offset-2">
+                                {{ form_row(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
                             </div>
                         </div>
 
@@ -40,4 +48,3 @@
         </div>
     </div>
 {% endblock %}
-

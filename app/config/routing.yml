@@ -1,6 +1,32 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+#app:
+    #resource: '@AppBundle/Controller/'
+    #type: annotation
+
+homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+    methods: [get]
+
+user_register:
+    path:     /register
+    defaults: { _controller: AppBundle:Default:register }
+    methods: [get,post]
+
+admin:
+    path:     /admin
+    defaults: { _controller: AppBundle:Default:admin }
+    methods: [get]
+
+security_login:
+    path:     /login
+    defaults: { _controller: AppBundle:Security:login }
+    methods: [get]
+
+security_login_check:
+    path:     /login
+    defaults: { _controller: AppBundle:Security:loginCheck }
+    methods: [get]
+
 
 logout:
     path: /logout

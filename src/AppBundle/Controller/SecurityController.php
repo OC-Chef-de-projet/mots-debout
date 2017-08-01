@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class SecurityController extends Controller
 {
     /**
-     * @Route("/login", name="security_login")
+     *
      */
     public function loginAction()
     {
@@ -24,7 +24,7 @@ class SecurityController extends Controller
     }
 
     /**
-     * @Route("/login_check", name="security_login_check")
+     * 
      */
     public function loginCheckAction()
     {
