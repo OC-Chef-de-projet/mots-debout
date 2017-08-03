@@ -1,0 +1,4 @@
+services:
+#    ldm_admin.example:
+#        class: Ldm\AdminBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

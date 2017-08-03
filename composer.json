@@ -5,7 +5,8 @@
     "description": "Site de l'Ecole Théâtre Mots Debout",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle"
+            "AppBundle\\": "src/AppBundle",
+             "Ldm\\": "src/Ldm/"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },

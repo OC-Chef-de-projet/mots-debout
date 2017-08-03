@@ -1,7 +1,3 @@
-#app:
-    #resource: '@AppBundle/Controller/'
-    #type: annotation
-
 homepage:
     path:     /
     defaults: { _controller: AppBundle:Default:index }
@@ -12,10 +8,9 @@ user_register:
     defaults: { _controller: AppBundle:Default:register }
     methods: [get,post]
 
-admin:
-    path:     /admin
-    defaults: { _controller: AppBundle:Default:admin }
-    methods: [get]
+ldm_admin:
+    resource: "@LdmAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
 
 security_login:
     path:     /login
