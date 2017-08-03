@@ -2,5 +2,5 @@ ldm_admin_homepage:
     path:     /
     defaults: { _controller: LdmAdminBundle:Default:index }
 ldm_admin_user:
-    path:     /user
-    defaults: { _controller: LdmAdminBundle:User:index }
+    resource: "@LdmAdminBundle/Resources/config/routing/user.yml"
+    prefix:   /user

@@ -9,12 +9,12 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Ecole Théâtre Mots Debout</a>
+            <a class="navbar-brand" href="{{ url('homepage') }}">Ecole Théâtre Mots Debout</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Accueil</a></li>
-              <li><a href="#">Utilisateurs</a></li>
+              <li class="active"><a href="{{ url('ldm_admin_homepage') }}">Accueil</a></li>
+              <li><a href="{{ url('user_index') }}">Utilisateurs</a></li>
               <li><a href="#">Articles</a></li>
               <li><a href="#">Pages</a></li>
             </ul>
@@ -23,7 +23,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compte <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Informations</a></li>
-                  <li><a href="#">Déconnexion</a></li>
+                  <li><a href="{{ url('logout') }}">Déconnexion</a></li>
                 </ul>
               </li>
             </ul>
