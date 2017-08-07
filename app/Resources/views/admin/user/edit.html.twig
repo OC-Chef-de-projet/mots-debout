@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+            <div class="alert alert-danger">
+                {% for error in errors %}
+                    {{ error.message }}<br/>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}
+
+{% block body %}
+    {% include "@Admin/admin.html.twig" %}
+    <div class="container">
+        <div class="jumbotron">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ url('homepage') }}">Modification d'un compte utilisateur</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="{{ path('admin_user_index') }}">
+                                Retour à la liste
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </nav>
+            {{ form_errors(edit_form) }}
+            {{ form_start(edit_form,{'attr': {'class': 'form-horizontal'} }) }}
+
+            {# Nom #}
+            {{ form_errors(edit_form.name ) }}
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="name">{{ form_label(edit_form.name) }}</label>
+                <div class="col-sm-10">
+                    {{ form_widget(edit_form.name) }}
+                </div>
+            </div>
+
+            {# Email #}
+            {{ form_errors(edit_form.email) }}
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">{{ form_label(edit_form.email) }}</label>
+                <div class="col-sm-10">
+                    {{ form_widget(edit_form.email) }}
+                </div>
+            </div>
+
+            {# Roles #}
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="roles">{{ form_label(edit_form.roles) }}</label>
+                <div class="col-sm-10">
+                    {{ form_widget(edit_form.roles) }}
+                </div>
+            </div>
+
+            {# Validation #}
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-default">Modifier</button>
+                </div>
+                {{ form_end(edit_form) }}
+                <div class="col-sm-6">
+                    {{ form_start(delete_form) }}
+                        <input type="submit" class="btn btn-default pull-right" value="Supprimer">
+                    {{ form_end(delete_form) }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+{% form_theme form _self %}
+
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+            <div class="alert alert-danger">
+                {% for error in errors %}
+                    {{ error.message }}<br/>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}
+
+
+{% block body %}
+    {% include "@Admin/admin.html.twig" %}
+
+    <div class="container">
+        <div class="jumbotron">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ url('homepage') }}">Création de compte utilisateur</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="{{ path('admin_user_index') }}">
+                                    Retour à la liste
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+            </nav>
+            {{ form_errors(form) }}
+            {{ form_start(form,{'attr': {'class': 'form-horizontal'} }) }}
+
+                {# Nom #}
+                {{ form_errors(form.name ) }}
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">{{ form_label(form.name) }}</label>
+                    <div class="col-sm-10">
+                        {{ form_widget(form.name) }}
+                    </div>
+                </div>
+
+                {# Email #}
+                {{ form_errors(form.email) }}
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">{{ form_label(form.email) }}</label>
+                    <div class="col-sm-10">
+                        {{ form_widget(form.email) }}
+                    </div>
+                </div>
+
+                {# Roles #}
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="roles">{{ form_label(form.roles) }}</label>
+                    <div class="col-sm-10">
+                        {{ form_widget(form.roles) }}
+                    </div>
+                </div>
+
+                {# Mot de passe #}
+                {{ form_errors(form.plainPassword.first) }}
+                {% for passwordField in form.plainPassword %}
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="password">{{ form_label(passwordField) }}</label>
+                    <div class="col-sm-10">
+                        {{ form_widget(passwordField) }}
+                    </div>
+                </div>
+                {% endfor %}
+
+                {# Validation #}
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Créer</button>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

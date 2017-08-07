@@ -1,8 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-   {{ tinymce_init() }}
-    <textarea class="tinymce"></textarea>
 
+    <div class="container-fluid">
+        <h1>Page principale du site</h1>
+        <a href="{{ url('admin_homepage') }}">Admin</a>
+    </div>
 {% endblock %}
 
