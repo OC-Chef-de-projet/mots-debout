@@ -17,8 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
-            new Ldm\AdminBundle\LdmAdminBundle(),
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle()
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -46,17 +46,17 @@ class User implements UserInterface
      */
     private $password;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="role", type="string")
-     */
-    private $role;
 
     /**
      * @var string
      */
     private $plainPassword;
+
+    /**
+     * @ORM\Column(name="roles", type="json_array")
+     */
+    private $roles = [];
+
 
     /**
      * Get id
@@ -140,29 +140,6 @@ class User implements UserInterface
         return $this->password;
     }
 
-    /**
-     * Set role
-     *
-     * @param string $role
-     *
-     * @return User
-     */
-    public function setRole($role)
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
-    /**
-     * Get role
-     *
-     * @return string
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
 
     public function getSalt()
     {
@@ -181,7 +158,26 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return [$this->getRole()];
+        $roles = $this->roles;
+        if (!in_array('ROLE_USER', $roles)) {
+            $roles[] = 'ROLE_USER';
+        }
+        return $roles;
+    }
+
+    public function addRole($role)
+    {
+        if (!in_array($role,$this->roles)) {
+            $this->roles[] = $role;
+        }
+        return $this;
+    }
+
+    public function removeRole($role)
+    {
+        if($key = array_search($role,$this->roles)){
+            array_splice($this->roles,$key,1);
+        }
     }
 
     /**
