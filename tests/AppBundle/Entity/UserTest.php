@@ -24,8 +24,10 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $user->setPassword('password');
         $this->assertEquals('password',$user->getPassword());
 
-        $user->setRole('password');
-        $this->assertEquals('password',$user->getRole());
+        $user->addRole('ROLE_ADMIN');
+        $roles = $user->getRoles();
+        $this->assertTrue(in_array('ROLE_ADMIN',$roles));
+
 
         $this->assertNull($user->getSalt());
 
