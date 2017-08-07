@@ -21,7 +21,7 @@ class LoadUserData implements FixtureInterface
         $userAdmin->setName('Administrateur');
         $userAdmin->setEmail('admin@test.com');
         $userAdmin->setPassword('test');
-        $userAdmin->setRoles(['ROLE_ADMIN']);
+        $userAdmin->addRole('ROLE_ADMIN');
 
         $manager->persist($userAdmin);
         $manager->flush();
