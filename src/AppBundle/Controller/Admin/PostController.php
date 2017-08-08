@@ -31,6 +31,8 @@ class PostController extends Controller
     {
         $post = new Post();
         $form = $this->createForm(PostType::class, $post);
+        // Draft by default
+        $form->get('status')->setData(Post::DRAFT);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

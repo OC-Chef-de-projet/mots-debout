@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Post
@@ -12,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
+
+    const PUBLISHED = 0;
+    const DRAFT = 1;
+    const TOBEVALIDATED = 2;
+
+
     /**
      * @var int
      *
@@ -53,6 +60,7 @@ class Post
      * @var int
      *
      * @ORM\Column(name="status", type="integer")
+     * @Assert\Choice(choices = {Post::PUBLISHED, Post::DRAFT, Post::TOBEVALIDATED},strict = true)
      */
     private $status;
 
@@ -248,5 +256,23 @@ class Post
     public function getCategory()
     {
         return $this->category;
+    }
+
+    public function getStringStatus($status){
+        switch($status){
+            case Post::PUBLISHED:
+                $state = "Publié";
+                break;
+            case Post::DRAFT:
+                $state = "Brouillon";
+                break;
+            case Post::TOBEVALIDATED:
+                $state = "A valider";
+                break;
+            default:
+                $state = "N/A";
+                break;
+        }
+        return $state;
     }
 }

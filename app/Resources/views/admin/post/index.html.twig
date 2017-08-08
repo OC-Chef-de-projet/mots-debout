@@ -44,7 +44,7 @@
                         <td><a href="{{ path('admin_post_edit', { 'id': post.id }) }}">{{ post.title }}</a></td>
                         <td>{{  post.author.name  }}</td>
                         <td>{{  post.category.name  }}</td>
-                        <td>{{  post.status  }}</td>
+                        <td>{{  post.getStringStatus(post.status)  }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

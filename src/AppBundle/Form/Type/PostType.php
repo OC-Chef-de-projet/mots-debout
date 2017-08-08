@@ -9,7 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-
+use AppBundle\Entity\Post;
 
 class PostType extends AbstractType
 {
@@ -41,17 +41,17 @@ class PostType extends AbstractType
                     ],
                     'choices' =>
                     [
-                        'Publié' => 0,
-                        'Brouillon' => 1,
-                        'A valider' => 2
+                        'Publié' => Post::PUBLISHED,
+                        'Brouillon' => Post::DRAFT,
+                        'A valider' => Post::TOBEVALIDATED
                     ],
-                    'data' => 1
+                    'multiple' => false
+
 
                 ]
             )
             ->add('category',EntityType::class,
                 [
-                    'placeholder' => 'Catégorie',
                     'attr' => [
                         'class' => 'form-control'
                     ],
