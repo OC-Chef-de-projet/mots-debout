@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include "@Admin/admin.html.twig" %}
+
+    <div class="container">
+        <div class="jumbotron">
+            <nav class="navbar navbar-default">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{{ url('admin_post_index') }}">Articles</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="{{ path('admin_post_new') }}">
+                                    Ajouter
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+            </nav>
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Titre</th>
+                        <th>Auteur</th>
+                        <th>Categorie</th>
+                        <th>Etat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts %}
+                    <tr>
+                        <td>{{  post.createdAt|date('d/m/Y') }}</td>
+                        <td><a href="{{ path('admin_post_edit', { 'id': post.id }) }}">{{ post.title }}</a></td>
+                        <td>{{  post.author.name  }}</td>
+                        <td>{{  post.category.name  }}</td>
+                        <td>{{  post.status  }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

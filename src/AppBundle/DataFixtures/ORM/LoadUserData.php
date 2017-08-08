@@ -10,20 +10,33 @@ namespace AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use AppBundle\Entity\User;
 
 
-class LoadUserData implements FixtureInterface
+class LoadUserData implements FixtureInterface, ContainerAwareInterface
 {
+
+    private $container;
+    public function setContainer(ContainerInterface $container = null)
+    {
+        $this->container = $container;
+    }
+
     public function load(ObjectManager $manager)
     {
-        $userAdmin = new User();
-        $userAdmin->setName('Administrateur');
-        $userAdmin->setEmail('admin@test.com');
-        $userAdmin->setPassword('test');
-        $userAdmin->addRole('ROLE_ADMIN');
+        $user = new User();
+        $user->setName('Administrateur');
+        $user->setEmail('admin@test.com');
 
-        $manager->persist($userAdmin);
+        $encoder = $this->container->get('security.encoder_factory')->getEncoder($user);
+        $user->setPassword($encoder->encodePassword('test', $user->getSalt()));
+
+
+        $user->addRole('ROLE_ADMIN');
+
+        $manager->persist($user);
         $manager->flush();
     }
 }

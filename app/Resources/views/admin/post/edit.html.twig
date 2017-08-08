@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+{% form_theme form _self %}
+
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+            <div class="alert alert-danger">
+                {% for error in errors %}
+                    {{ error.message }}<br/>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}
+
+
+{% block body %}
+    {% include "@Admin/admin.html.twig" %}
+
+    <div class="container">
+        <div class="jumbotron">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ url('homepage') }}">Nouvel article </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="{{ path('admin_post_index') }}">Retour à la liste</a>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </nav>
+            {{ form_errors(form) }}
+            {{ form_start(form,{'attr': {'class': 'form-horizontal'} }) }}
+
+            <div class="form-group">
+                <div class="col-sm-2">
+                    {{ form_widget(form.category) }}
+                </div>
+
+                <div class="col-sm-8">
+
+                </div>
+                <div class="col-sm-2">
+                    {{ form_widget(form.status) }}
+                </div>
+            </div>
+
+            {# Nom #}
+            {{ form_errors(form.title ) }}
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="title">{{ form_label(form.title) }}</label>
+                    {{ form_widget(form.title) }}
+                </div>
+            </div>
+
+            {# Email #}
+            {{ form_errors(form.content) }}
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="content">{{ form_label(form.content) }}</label>
+                    {{ form_widget(form.content) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-default">Enregistrer</button>
+                </div>
+                {{ form_end(form) }}
+                <div class="col-sm-6">
+                    {{ form_start(delete_form) }}
+                    <input type="submit" class="btn btn-default pull-right" value="Supprimer">
+                    {{ form_end(delete_form) }}
+                </div>
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ tinymce_init() }}
+{% endblock %}
