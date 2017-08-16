@@ -29,27 +29,9 @@ security_login_check:
 logout:
     path: /logout
 
-
-admin_user_index:
-    path:     /admin/user
-    defaults: { _controller: AppBundle:Admin\User:index }
-    methods:  GET
-
-admin_user_new:
-    path:     /admin/users/new
-    defaults: { _controller: AppBundle:Admin\User:new }
-    methods:  [GET, POST]
-
-admin_user_edit:
-    path:     /admin/users/{id}/edit
-    defaults: { _controller: AppBundle:Admin\User:edit }
-    methods:  [GET, POST,DELETE]
-
-admin_user_delete:
-    path:     /admin/users/{id}/delete
-    defaults: { _controller: AppBundle:Admin\User:delete }
-    methods:  DELETE
-
+admin_import:
+    resource: "@AppBundle/Resources/config/routing/admin.yml"
+    prefix: /admin
 
 admin_post_index:
     path:     /admin/post

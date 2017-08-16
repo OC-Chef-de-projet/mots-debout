@@ -41,11 +41,7 @@
                         <td><a href="{{ path('admin_user_edit', { 'id': user.id }) }}">{{ user.name }}</a></td>
                         <td>{{ user.email }}</td>
                         <td>
-                            <ul class="list-inline">
-                            {% for role in user.roles %}
-                                <li>{{ role }}</li>
-                            {% endfor %}
-                            </ul>
+                            {{ user.rolesString }}
                         </td>
                     </tr>
                     {% endfor %}

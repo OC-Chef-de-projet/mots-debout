@@ -1,0 +1,3 @@
+admin_user_import:
+    resource: "admin/user.yml"
+    prefix: /user
