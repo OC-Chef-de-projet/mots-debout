@@ -27,6 +27,7 @@
                     </div><!--/.nav-collapse -->
             </nav>
 
+            Tous | En attende de validation | Refusés |  Publiés
             <table class="table table-condensed">
                 <thead>
                     <tr>
@@ -44,7 +45,7 @@
                         <td><a href="{{ path('admin_post_edit', { 'id': post.id }) }}">{{ post.title }}</a></td>
                         <td>{{  post.author.name  }}</td>
                         <td>{{  post.category.name  }}</td>
-                        <td>{{  post.status  }}</td>
+                        <td>{{  post.statusString  }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

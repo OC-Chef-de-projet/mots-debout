@@ -16,7 +16,18 @@ class PostController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $posts = $em->getRepository('AppBundle:Post')->findAll();
+        $posts = $em->getRepository('AppBundle:Post')->findBy(
+            [
+                'status' => [
+                    Post::PUBLISHED,
+                    Post::TO_BE_VALIDATED,
+                    Post::REFUSED
+                ]
+            ] ,
+            [
+                'id' => 'DESC'
+            ]
+        );
 
         return $this->render('@AdminPost/index.html.twig', array(
             'posts' => $posts,
@@ -30,7 +41,7 @@ class PostController extends Controller
     public function newAction(Request $request)
     {
         $post = new Post();
-        $form = $this->createForm(PostType::class, $post);
+        $form = $this->createForm(PostType::class, $post, ['user' => $this->getUser()]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

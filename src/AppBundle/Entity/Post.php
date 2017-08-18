@@ -4,6 +4,8 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
+
 /**
  * Post
  *
@@ -12,6 +14,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
+
+    const DRAFT = 1;
+    const TO_BE_VALIDATED = 2;
+    const PUBLISHED = 3;
+    const REFUSED = 4;
+
     /**
      * @var int
      *
@@ -248,5 +256,29 @@ class Post
     public function getCategory()
     {
         return $this->category;
+    }
+
+
+    public function getStatusString(){
+        return self::statusToString($this->status);
+    }
+
+    public static function statusToString($status){
+        switch ($status){
+            case self::DRAFT:
+                return 'Brouillon';
+
+            case self::TO_BE_VALIDATED:
+                return 'A valider';
+
+            case self::PUBLISHED:
+                return 'Publié';
+
+            case self::REFUSED:
+                return 'Refusé';
+
+            default:
+                return 'Erreur';
+        }
     }
 }

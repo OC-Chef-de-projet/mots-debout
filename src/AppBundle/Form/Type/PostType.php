@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use AppBundle\Entity\Post;
 
 
 class PostType extends AbstractType
@@ -18,6 +19,19 @@ class PostType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
+        $user = $options['user'];
+
+        $status[ Post::statusToString(Post::DRAFT) ] = Post::DRAFT;
+
+
+        if(in_array('ROLE_CONTRIBUTOR', $user->getRoles())) {
+            $status[ Post::statusToString(Post::TO_BE_VALIDATED) ] = Post::TO_BE_VALIDATED;
+        }
+        if(in_array('ROLE_EDITOR', $user->getRoles())) {
+            $status[ Post::statusToString(Post::PUBLISHED) ] = Post::PUBLISHED;
+        }
+
         $builder
             ->add('title', TextType::class,[
                 'label' => 'Titre',
@@ -39,12 +53,7 @@ class PostType extends AbstractType
                     'attr' => [
                         'class' => 'form-control'
                     ],
-                    'choices' =>
-                    [
-                        'Publié' => 0,
-                        'Brouillon' => 1,
-                        'A valider' => 2
-                    ],
+                    'choices' => $status,
                     'data' => 1
 
                 ]
@@ -69,8 +78,11 @@ class PostType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
+
+
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Post'
+            'data_class' => 'AppBundle\Entity\Post',
+            'user' => null
         ));
     }
 
