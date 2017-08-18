@@ -1,3 +1,7 @@
 admin_user_import:
     resource: "admin/user.yml"
     prefix: /user
+
+admin_post_import:
+    resource: "admin/post.yml"
+    prefix: /post
