@@ -186,10 +186,15 @@ class User implements UserInterface
         switch ($role){
             case 'ROLE_ADMIN':
                 return 'Administrateur';
+            case 'ROLE_EDITOR':
+                return 'Editeur';
+            case 'ROLE_CONTRIBUTOR':
+                return 'Contributeur';
             default:
                 return 'Utilisateur';
         }
     }
+
     public function removeRole($role)
     {
         if($key = array_search($role,$this->roles)){
