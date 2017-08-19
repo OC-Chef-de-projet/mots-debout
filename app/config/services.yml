@@ -36,3 +36,11 @@ services:
     form_authenticator:
         class: AppBundle\Security\FormAuthenticator
         arguments: ['@router', '@form.factory', '@security.user_password_encoder.generic']
+
+    AppBundle\Service\PostService:
+        public: true
+        arguments: [ "@doctrine.orm.entity_manager" ]
+
+    AppBundle\Service\UserService:
+        public: true
+        arguments: [ "@doctrine.orm.entity_manager" ]

@@ -20,18 +20,6 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
-        $user = $options['user'];
-
-        $status[ Post::statusToString(Post::DRAFT) ] = Post::DRAFT;
-
-
-        if(in_array('ROLE_CONTRIBUTOR', $user->getRoles())) {
-            $status[ Post::statusToString(Post::TO_BE_VALIDATED) ] = Post::TO_BE_VALIDATED;
-        }
-        if(in_array('ROLE_EDITOR', $user->getRoles())) {
-            $status[ Post::statusToString(Post::PUBLISHED) ] = Post::PUBLISHED;
-        }
-
         $builder
             ->add('title', TextType::class,[
                 'label' => 'Titre',
@@ -53,8 +41,8 @@ class PostType extends AbstractType
                     'attr' => [
                         'class' => 'form-control'
                     ],
-                    'choices' => $status,
-                    'data' => 1
+                    'choices' => $options['status']
+
 
                 ]
             )
@@ -82,7 +70,7 @@ class PostType extends AbstractType
 
         $resolver->setDefaults(array(
             'data_class' => 'AppBundle\Entity\Post',
-            'user' => null
+            'status' => null
         ));
     }
 
