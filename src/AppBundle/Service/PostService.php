@@ -50,13 +50,28 @@ class PostService
      */
     public function getPostsByRoleAndStatus(User $user, $status)
     {
+        if($status){
+            return $this->selectWithStatus($user, $status);
+        }
+        return $this->selectAllStatus($user);
+    }
 
+    /**
+     * Select posts
+     *  - contributor only contributor's posts
+     *  - editor exclude contributor's draft
+     * @param $user
+     * @return array
+     */
+    private function selectAllStatus($user)
+    {
         $queryBuilder = $this->repository->createQueryBuilder('p');
         $queryBuilder->select('p');
 
         // if contributor only contributor's posts
         if(in_array('ROLE_CONTRIBUTOR', $user->getRoles())) {
             $queryBuilder->where($queryBuilder->expr()->eq('p.author',':user'))->setParameter('user', $user);
+
         }
 
         // if editor don't show contributor's draft
@@ -69,15 +84,58 @@ class PostService
                         $queryBuilder->expr()->neq('p.status', ':status')
                     )
                 )
+
                 ->setParameter('user', $user)
                 ->setParameter('user2', $user)
                 ->setParameter('status', Post::DRAFT);
+
         }
+
         $queryBuilder->orderBy('p.id', 'DESC');
         $query = $queryBuilder->getQuery();
 
         return $query->getResult();
     }
+
+    /**
+     * Select posts
+     *  - contributor only contributor's posts with requested status
+     *  - editor all post with requested status and exclude contributor's draft
+     * @param $user
+     * @param $status
+     * @return array
+     */
+    private function selectWithStatus($user,$status)
+    {
+        $queryBuilder = $this->repository->createQueryBuilder('p');
+        $queryBuilder->select('p');
+
+        // contributor only contributor's posts with requested status
+        if(in_array('ROLE_CONTRIBUTOR', $user->getRoles())) {
+            $queryBuilder->where($queryBuilder->expr()->eq('p.author',':user'))->setParameter('user', $user);
+
+        }
+
+        // editor all post with requested status if not Draft
+        if(in_array('ROLE_EDITOR', $user->getRoles()) && $status != Post::DRAFT) {
+            $queryBuilder->where($queryBuilder->expr()->eq('p.status',':status'))
+                ->setParameter('status', $status);
+        }
+
+        // editor all post with requested status and exclude contributor's draft
+        if(in_array('ROLE_EDITOR', $user->getRoles()) && $status == Post::DRAFT) {
+            $queryBuilder->where($queryBuilder->expr()->eq('p.author',':user'))->setParameter('user', $user);
+            $queryBuilder->andwhere($queryBuilder->expr()->eq('p.status',':status'))->setParameter('status', $status);
+        }
+
+        $queryBuilder->orderBy('p.id', 'DESC');
+        $query = $queryBuilder->getQuery();
+        $sql = $query->getSQL();
+        //dump($sql);exit;
+        return $query->getResult();
+
+    }
+
 
     /**
      * Liste des status en fonction du type d'utilisateur et statuis du l'article
