@@ -49,7 +49,7 @@
                     </ul>
                 </div><!--/.nav-collapse -->
             </nav>
-            {{ post.content | raw }}
+            {{ post.content | escape }}
         </div>
     </div>
 {% endblock %}

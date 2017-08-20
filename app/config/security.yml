@@ -25,7 +25,7 @@ security:
             provider: user_provider
             guard:
                 authenticators:
-                    - AppBundle\Security\FormAuthenticator
+                    - form_authenticator
             logout:
                 path: /logout
                 target: /

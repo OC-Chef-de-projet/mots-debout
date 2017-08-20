@@ -3,7 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints\DateTime;
 
 
 /**
@@ -79,6 +79,12 @@ class Post
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
+
 
     /**
      * Get id

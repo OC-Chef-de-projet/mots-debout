@@ -1,69 +1,133 @@
-.navbar-default {
-    background-color: #b71c1c;
-    border-color: #b97828;
-}
-.navbar-default .navbar-brand {
-    color: #ffffff;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    color: #5e1616;
-}
-.navbar-default .navbar-text {
-    color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a {
-    color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: #5e1616;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #5e1616;
-    background-color: #b97828;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-    color: #5e1616;
-    background-color: #b97828;
-}
-.navbar-default .navbar-toggle {
-    border-color: #b97828;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color: #b97828;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #ffffff;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-    border-color: #ffffff;
-}
-.navbar-default .navbar-link {
-    color: #ffffff;
-}
-.navbar-default .navbar-link:hover {
-    color: #5e1616;
+
+
+.text-black {
+    color: #33373B;
 }
 
-@media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: #ffffff;
-    }
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #5e1616;
-    }
-    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-        color: #5e1616;
-        background-color: #b97828;
-    }
+.text-yellow {
+    color: #FFD46C  !important;
 }
+
+.text-dark-yellow {
+    color: #B97828 !important;
+}
+
+.text-red {
+    color: #5E1616;
+}
+
+.text-brown {
+    color: #9E805A;
+}
+
+/* */
+.bck-black {
+    background-color: #33373B;
+}
+
+.bck-yellow {
+    background-color: #FFD46C;
+}
+
+.bck-dark-yellow {
+    background-color: #B97828;
+}
+
+.bck-red {
+    background-color: #5E1616;
+}
+
+.bck-brown {
+    background-color: #9E805A;
+}
+
+.post-title {
+    border-bottom: 2px solid #fff;
+}
+.stage-image {
+    background-repeat:no-repeat;
+    background: url('../../images/scene.jpg');
+    background-attachment:fixed;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Libre Baskerville', serif;
+}
+
+/*scroll effect*/
+.navbar-trans {
+    background-color: transparent;
+    border: none;
+    transition: top 1s ease;
+}
+
+/*double row*/
+.navbar-doublerow > .navbar{
+    display: block;
+    padding: 0px auto;
+    margin: 0px auto;
+    min-height: 25px;
+}
+.navbar-doublerow .nav{
+    padding: 0px auto;
+}
+.navbar-doublerow .dividline{
+    margin: 5px 100px;
+    padding-top: 1px;
+    background-color: inherit;
+}
+/*top nav*/
+.navbar-doublerow .navbar-top ul>li>a {
+    padding: 10px auto;
+    font-size: 12px;
+}
+/*down nav*/
+.navbar-doublerow .navbar-down .navbar-brand {
+    padding: 0px auto;
+    float: left;
+    color: #fff;
+    font-size: 32px;
+}
+.navbar-doublerow .navbar-down ul>li>a{
+    font-size: 16px;
+    color: #fff;
+    transition: border-bottom .2s ease-in , transform .2s ease-in-out;
+}
+.navbar-doublerow .navbar-down ul>li>a:hover{
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+.navbar-doublerow .navbar-down .dropdown{
+    padding: 5px;
+    color: #000;
+}
+.navbar-doublerow .navbar-down .dropdown ul>li>a,
+.navbar-doublerow .navbar-down .dropdown ul>li>a:hover{
+    color: #000;
+    border-bottom: none;
+}
+.navbar-doublerow.navbar-trans.afterscroll {
+}
+.navbar-doublerow.navbar-trans.afterscroll {
+    top:-50px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+.flex-item {
+}
+/*text*/
+.text-white,.text-white-hover:hover{color:#fff!important}
+/*fontcolor*/
+.light-grey {color:#000!important;background-color:#E6E9ED!important}

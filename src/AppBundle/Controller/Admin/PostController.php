@@ -4,8 +4,7 @@ use AppBundle\Entity\Post;
 use AppBundle\Form\Type\PostType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use AppBundle\Service\PostService;
-use AppBundle\Service\UserService;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class PostController extends Controller
 {
@@ -16,10 +15,9 @@ class PostController extends Controller
      */
     public function indexAction(Request $request)
     {
-
         $status = $request->get('id');
-        $PostService = $this->get(PostService::class);
-        $UserService = $this->get(UserService::class);
+        $PostService = $this->get('service_post');
+        $UserService = $this->get('service_user');
         $user = $this->getUser();
         $posts = $PostService->getPostsByRoleAndStatus($user,$status);
 
@@ -34,11 +32,11 @@ class PostController extends Controller
      * Creates a new post entity.
      *
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, UserInterface $user)
     {
-        $PostService = $this->get(PostService::class);
+        $PostService = $this->get('service_post');
         $post = new Post();
-        $user = $this->getUser();
+
         $form = $this->createForm(PostType::class, $post, ['status' => $PostService->getStatusOptions($user,$post)]);
         $form->handleRequest($request);
 
@@ -53,7 +51,6 @@ class PostController extends Controller
         }
 
         return $this->render('@AdminPost/new.html.twig', array(
-            'created' => date('d/m/Y H:i:s'),
             'form' => $form->createView(),
         ));
     }
@@ -62,10 +59,9 @@ class PostController extends Controller
      * Displays a form to edit an existing post entity.
      *
      */
-    public function editAction(Request $request, Post $post)
+    public function editAction(Request $request, Post $post, UserInterface $user)
     {
-        $PostService = $this->get(PostService::class);
-        $user = $this->getUser();
+        $PostService = $this->get('service_post');
         $deleteForm = $this->createDeleteForm($post);
         $editForm = $this->createForm(PostType::class, $post,['status' => $PostService->getStatusOptions($user,$post)]);
         $editForm->handleRequest($request);

@@ -50,30 +50,33 @@ class PostService
      */
     public function getPostsByRoleAndStatus(User $user, $status)
     {
-        $conditions = [];
 
-        if($status == 0){
-            $status = [
-                Post::DRAFT,
-                Post::PUBLISHED,
-                Post::TO_BE_VALIDATED,
-                Post::REFUSED
-            ];
-        }
+        $queryBuilder = $this->repository->createQueryBuilder('p');
+        $queryBuilder->select('p');
 
-        $conditions['status'] = $status;
-
+        // if contributor only contributor's posts
         if(in_array('ROLE_CONTRIBUTOR', $user->getRoles())) {
-            $conditions['author'] = $user;
+            $queryBuilder->where($queryBuilder->expr()->eq('p.author',':user'))->setParameter('user', $user);
         }
 
-        $posts = $this->repository->findBy(
-            $conditions,
-            [
-                'id' => 'DESC'
-            ]
-        );
-        return $posts;
+        // if editor don't show contributor's draft
+        if(in_array('ROLE_EDITOR', $user->getRoles())) {
+            // where author_id = 14 or (author_id != 14 and status != 1)
+            $queryBuilder->where($queryBuilder->expr()->eq('p.author',':user'))
+                ->orWhere(
+                    $queryBuilder->expr()->andX(
+                        $queryBuilder->expr()->neq('p.author', ':user2'),
+                        $queryBuilder->expr()->neq('p.status', ':status')
+                    )
+                )
+                ->setParameter('user', $user)
+                ->setParameter('user2', $user)
+                ->setParameter('status', Post::DRAFT);
+        }
+        $queryBuilder->orderBy('p.id', 'DESC');
+        $query = $queryBuilder->getQuery();
+
+        return $query->getResult();
     }
 
     /**
