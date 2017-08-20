@@ -63,7 +63,7 @@ class PostService
      * @param $user
      * @return array
      */
-    private function selectAllStatus($user)
+    private function selectAllStatus(User $user)
     {
         $queryBuilder = $this->repository->createQueryBuilder('p');
         $queryBuilder->select('p');
@@ -105,7 +105,7 @@ class PostService
      * @param $status
      * @return array
      */
-    private function selectWithStatus($user,$status)
+    private function selectWithStatus(User $user,$status)
     {
         $queryBuilder = $this->repository->createQueryBuilder('p');
         $queryBuilder->select('p');
@@ -130,8 +130,6 @@ class PostService
 
         $queryBuilder->orderBy('p.id', 'DESC');
         $query = $queryBuilder->getQuery();
-        $sql = $query->getSQL();
-        //dump($sql);exit;
         return $query->getResult();
 
     }
