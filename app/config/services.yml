@@ -15,3 +15,11 @@ services:
     service_user:
         class: AppBundle\Service\UserService
         arguments: [ "@doctrine.orm.entity_manager" ]
+
+    AppBundle\EventListener\PostPublishDate:
+            tags:
+                - { name: doctrine.event_listener, event: preUpdate }
+
+    AppBundle\EventListener\PostCreateDate:
+            tags:
+                - { name: doctrine.event_listener, event: preUpdate }
