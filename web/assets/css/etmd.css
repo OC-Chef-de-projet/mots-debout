@@ -44,13 +44,6 @@
 .post-title {
     border-bottom: 2px solid #FFD46C;
 }
-.stage-image {
-    background-repeat:no-repeat;
-    background: url('../../images/scene.jpg');
-    background-attachment:fixed;
-    background-size: cover;
-    opacity: 0.5;
-}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -137,5 +130,25 @@ h4 {
 .light-grey {color:#000!important;background-color:#E6E9ED!important}
 
 .article {
-    font-size: 2.5rem;
+    font-size: 0.5rem;
+}
+
+.course-content {
+    /*
+    font-weight:100;
+    padding: 2rem;
+    width: 33%;
+    margin:2rem;
+    margin-top: 15rem;
+    float: left;
+    */
+}
+
+
+courses-background {
+    margin:0;
+    padding:0;
+    background: url(../../images/courses.jpg) no-repeat center fixed;
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover; /* version standardisée */
 }

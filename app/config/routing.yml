@@ -4,6 +4,11 @@ homepage:
     defaults: { _controller: AppBundle:Default:index }
     methods: [get]
 
+courses:
+    path:     /cours
+    defaults: { _controller: AppBundle:Default:courses }
+    methods: [get]
+
 user_register:
     path:     /register
     defaults: { _controller: AppBundle:Default:register }
