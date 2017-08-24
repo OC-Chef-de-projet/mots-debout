@@ -16,10 +16,7 @@ services:
         class: AppBundle\Service\UserService
         arguments: [ "@doctrine.orm.entity_manager" ]
 
-    AppBundle\EventListener\PostPublishDate:
+    AppBundle\EventListener\PostListener:
             tags:
                 - { name: doctrine.event_listener, event: preUpdate }
-
-    AppBundle\EventListener\PostCreateDate:
-            tags:
-                - { name: doctrine.event_listener, event: preUpdate }
+                - { name: doctrine.event_listener, event: prePersist }

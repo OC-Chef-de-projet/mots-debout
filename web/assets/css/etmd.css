@@ -34,7 +34,7 @@
 }
 
 .bck-red {
-    background-color: #5E1616;
+    background-color: #5E1616 !important;
 }
 
 .bck-brown {
@@ -42,7 +42,7 @@
 }
 
 .post-title {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #FFD46C;
 }
 .stage-image {
     background-repeat:no-repeat;
@@ -54,7 +54,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-
+    margin: 0;
+    background-color: #9E805A;
 }
 
 h1,
@@ -104,8 +105,9 @@ h4 {
     transition: border-bottom .2s ease-in , transform .2s ease-in-out;
 }
 .navbar-doublerow .navbar-down ul>li>a:hover{
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #FFD46C;
     color: #fff;
+    background-color: #5E1616 !important;
 }
 .navbar-doublerow .navbar-down .dropdown{
     padding: 5px;
@@ -115,6 +117,7 @@ h4 {
 .navbar-doublerow .navbar-down .dropdown ul>li>a:hover{
     color: #000;
     border-bottom: none;
+    background-color: #5E1616 !important;
 }
 .navbar-doublerow.navbar-trans.afterscroll {
 }
@@ -132,3 +135,7 @@ h4 {
 .text-white,.text-white-hover:hover{color:#fff!important}
 /*fontcolor*/
 .light-grey {color:#000!important;background-color:#E6E9ED!important}
+
+.article {
+    font-size: 2.5rem;
+}
