@@ -13,13 +13,17 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="{{ url('admin_homepage') }}">Accueil</a></li>
-              <li><a href="{{ url('admin_user_index') }}">Utilisateurs</a></li>
+                {% if is_granted('ROLE_ADMIN') %}
+                  <li><a href="{{ url('admin_user_index') }}">Utilisateurs</a></li>
+              {% endif %}
               <li><a href="{{ url('admin_post_index') }}">Articles</a></li>
+                {% if is_granted('ROLE_ADMIN') %}
               <li><a href="#">Pages</a></li>
+              {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compte <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ app.User.name }} <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Informations</a></li>
                   <li><a href="{{ url('logout') }}">Déconnexion</a></li>

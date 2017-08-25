@@ -3,10 +3,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+<<<<<<< HEAD
 use Symfony\Component\Validator\Constraints as Assert;
+=======
+use Symfony\Component\Validator\Constraints\DateTime;
+
+>>>>>>> 748febc9e6dca0cdcb78e4fd6fe1ce78f0707e93
 
 /**
- * Post
+ * PostService
  *
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PostRepository")
@@ -14,10 +19,17 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Post
 {
 
+<<<<<<< HEAD
     const PUBLISHED = 0;
     const DRAFT = 1;
     const TOBEVALIDATED = 2;
 
+=======
+    const DRAFT = 1;
+    const TO_BE_VALIDATED = 2;
+    const PUBLISHED = 3;
+    const REFUSED = 4;
+>>>>>>> 748febc9e6dca0cdcb78e4fd6fe1ce78f0707e93
 
     /**
      * @var int
@@ -79,6 +91,7 @@ class Post
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
 
     /**
      * Get id
@@ -258,6 +271,7 @@ class Post
         return $this->category;
     }
 
+<<<<<<< HEAD
     public function getStringStatus($status){
         switch($status){
             case Post::PUBLISHED:
@@ -274,5 +288,29 @@ class Post
                 break;
         }
         return $state;
+=======
+
+    public function getStatusString(){
+        return self::statusToString($this->status);
+    }
+
+    public static function statusToString($status){
+        switch ($status){
+            case self::DRAFT:
+                return 'Brouillon';
+
+            case self::TO_BE_VALIDATED:
+                return 'A valider';
+
+            case self::PUBLISHED:
+                return 'Publié';
+
+            case self::REFUSED:
+                return 'Refusé';
+
+            default:
+                return 'Erreur';
+        }
+>>>>>>> 748febc9e6dca0cdcb78e4fd6fe1ce78f0707e93
     }
 }

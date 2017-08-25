@@ -20,7 +20,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="{{ path('admin_user_new') }}">
-                                    Ajouter
+                                    <i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>
                                 </a>
                             </li>
                         </ul>
@@ -41,11 +41,7 @@
                         <td><a href="{{ path('admin_user_edit', { 'id': user.id }) }}">{{ user.name }}</a></td>
                         <td>{{ user.email }}</td>
                         <td>
-                            <ul class="list-inline">
-                            {% for role in user.roles %}
-                                <li>{{ role }}</li>
-                            {% endfor %}
-                            </ul>
+                            {{ user.rolesString }}
                         </td>
                     </tr>
                     {% endfor %}

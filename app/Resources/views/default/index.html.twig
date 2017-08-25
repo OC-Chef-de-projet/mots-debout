@@ -1,10 +1,74 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/video.css') }}"/>
+{% endblock %}
 
-    <div class="container-fluid">
-        <h1>Page principale du site</h1>
-        <a href="{{ url('admin_homepage') }}">Admin</a>
-    </div>
+{% block body %}
+    <nav class="navbar navbar-default navbar-doublerow navbar-trans navbar-fixed-top">
+        <!-- top nav -->
+        <nav class="navbar navbar-top hidden-xs">
+            <div class="container">
+                <!-- left nav top -->
+                <ul class="nav navbar-nav pull-left">
+
+                </ul>
+                <!-- right nav top -->
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="#" class="text-white">Nous contacter</a></li>
+                    <li><a href="{{ url('admin_homepage') }}">S'identifier</a></li>
+                </ul>
+            </div>
+            <div class="dividline bck-red"></div>
+        </nav>
+        <!-- down nav -->
+        <nav class="navbar navbar-down">
+            <div class="container">
+                <div class="flex-container">
+                    <div class="navbar-header flex-item">
+                        <div class="navbar-brand" href="#"><p>ECOLE THEATRE</p><p>MOTS DEBOUT</p></div>
+                    </div>
+                    <ul class="nav navbar-nav flex-item hidden-xs">
+                        <li><a href="{{ url('courses') }}">Cours</a></li>
+                        <li><a href="#">Ateliers</a></li>
+                        <li><a href="#">Résidences</a></li>
+                        <li><a href="#">Formations</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav flex-item hidden-xs pull-right">
+                        <!--<li><a href="#" class="">offer!</a></li>-->
+                    </ul>
+                    <!-- dropdown only moblie -->
+                    <div class="dropdown visible-xs pull-right">
+                        <button class="btn btn-default dropdown-toggle " type="button" id="dropdownmenu" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-align-justify"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">TheTeam</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">contact us</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </nav>
+    <!--bg img  -->
+    <header>
+        <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
+            <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
+            <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+        </video>
+        <div id="polina" class="text-white">
+            <h1 class="post-title text-red">Reprise des cours</h1>
+            <p class="article">La rentrée aura lieu</p>
+            <p class="article">mardi 5 septembre Niveau 3 à 19 h 30 deux ou trois œuvres seront soumises à la lecture et au vote collectif avant choix définitif</p>
+            <p class="article">mercredi 6 septembre Niveau 1 & 2 à 19 h 30 œuvre montée "LES PAS PERDUS" de <a href="https://fr.wikipedia.org/wiki/Denise_Bonal">Denise Bonal</a></p>
+        </div>
+    </header>
+
 {% endblock %}
 

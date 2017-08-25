@@ -1,14 +1,34 @@
 {% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}"/>
+{% endblock %}
+
+
+{% trans_default_domain "login" %}
 {% block body %}
-	<div class="container-fluid">
-		{{ form_start(form_login) }}
-			{% if error %}
-				<div class="alert alert-danger">
-					{{ error.messageKey|trans(error.messageData) }}
-				</div>
-			{% endif %}
-    		{{ form_widget(form_login) }}
-			<button type="submit" class="btn btn-default">Connexion</button>
-		{{ form_end(form_login) }}
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="wrap">
+                    <p class="form-title">&Eacute;cole théatre Mots Debout</p>
+                    {{ form_start(form_login, {'attr': {'class': 'login'}}) }}
+                    {{ form_widget(form_login._email) }}
+                    {{ form_widget(form_login._password) }}
+                    {{ form_widget(form_login.save) }}
+                    <div class="remember-forgot">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    <label>{{ form_widget(form_login._remember_me) }}Se souvenir de moi</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_end(form_login) }}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

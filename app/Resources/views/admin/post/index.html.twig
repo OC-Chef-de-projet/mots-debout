@@ -20,12 +20,18 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="{{ path('admin_post_new') }}">
-                                    Ajouter
+                                    <i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>
                                 </a>
                             </li>
                         </ul>
                     </div><!--/.nav-collapse -->
             </nav>
+
+            <a href="{{ path('admin_post_index') }}">Tous ({{ counts[0] }})</a> |
+            <a href="{{ path('admin_post_index_status', { 'id': constant('AppBundle\\Entity\\Post::DRAFT') }) }}">Brouillons ({{ counts[constant('AppBundle\\Entity\\Post::DRAFT')] }})</a> |
+            <a href="{{ path('admin_post_index_status', { 'id': constant('AppBundle\\Entity\\Post::TO_BE_VALIDATED') }) }}">En attente de validation ({{ counts[constant('AppBundle\\Entity\\Post::TO_BE_VALIDATED')] }})</a> |
+            <a href="{{ path('admin_post_index_status', { 'id': constant('AppBundle\\Entity\\Post::REFUSED') }) }}">Refusés ({{ counts[constant('AppBundle\\Entity\\Post::REFUSED')] }})</a> |
+            <a href="{{ path('admin_post_index_status', { 'id': constant('AppBundle\\Entity\\Post::PUBLISHED') }) }}">Publiés ({{ counts[constant('AppBundle\\Entity\\Post::PUBLISHED')] }})</a>
 
             <table class="table table-condensed">
                 <thead>
@@ -41,10 +47,21 @@
                     {% for post in posts %}
                     <tr>
                         <td>{{  post.createdAt|date('d/m/Y') }}</td>
-                        <td><a href="{{ path('admin_post_edit', { 'id': post.id }) }}">{{ post.title }}</a></td>
+                        <td>
+                            {% if view == true and ( post.status == constant('AppBundle\\Entity\\Post::TO_BE_VALIDATED') or post.status ==  constant('AppBundle\\Entity\\Post::PUBLISHED')) %}
+                                <a href="{{ path('admin_post_show', { 'id': post.id }) }}">{{ post.title }}</a>
+                            {% else %}
+                                <a href="{{ path('admin_post_edit', { 'id': post.id }) }}">{{ post.title }}</a>
+                            {% endif %}
+
+                        </td>
                         <td>{{  post.author.name  }}</td>
                         <td>{{  post.category.name  }}</td>
+<<<<<<< HEAD
                         <td>{{  post.getStringStatus(post.status)  }}</td>
+=======
+                        <td>{{  post.statusString  }}</td>
+>>>>>>> 748febc9e6dca0cdcb78e4fd6fe1ce78f0707e93
                     </tr>
                     {% endfor %}
                 </tbody>

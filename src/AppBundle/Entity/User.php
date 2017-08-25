@@ -173,6 +173,28 @@ class User implements UserInterface
         return $this;
     }
 
+    public function getRolesString(){
+        $result = '';
+        foreach($this->getRoles() as $role){
+            $result .= self::roleToString($role);
+            $result .= ',';
+        }
+        return trim($result,',');
+    }
+
+    public static function roleToString($role){
+        switch ($role){
+            case 'ROLE_ADMIN':
+                return 'Administrateur';
+            case 'ROLE_EDITOR':
+                return 'Editeur';
+            case 'ROLE_CONTRIBUTOR':
+                return 'Contributeur';
+            default:
+                return 'Utilisateur';
+        }
+    }
+
     public function removeRole($role)
     {
         if($key = array_search($role,$this->roles)){

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('assets/css/courses.css') }}"/>
+{% endblock %}
+
+
+{% block body %}
+    {% include '::navbar.html.twig' %}
+
+    <div class="container-fluid page-content row">
+    	<div class="col-sm-8 page-left">
+    		
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tortor metus, pretium non mattis laoreet, lacinia nec urna. Quisque condimentum mauris justo, a auctor velit egestas eget. Nullam mollis tincidunt tellus, vehicula tincidunt mauris sollicitudin at. Ut sed porttitor elit. Donec dapibus massa nisi, non semper odio viverra sit amet. Etiam tristique ligula quis justo suscipit facilisis. Cras sit amet varius neque, ut aliquam ligula. Mauris a rutrum ex. Etiam pretium tellus vitae leo malesuada, at suscipit nibh pulvinar. Donec lacinia mollis nisi, non finibus est bibendum et. Duis sed felis quis felis tincidunt luctus.</p>
+
+<img src="../../images/courses.jpg" alt="cours"/>
+
+<p>Duis sodales commodo egestas. Ut congue erat ut efficitur volutpat. Cras pretium arcu sit amet sapien dictum, at consectetur urna iaculis. Donec sagittis vel leo vel congue. Curabitur nec dui eget massa auctor tincidunt non id elit. Pellentesque et quam iaculis, scelerisque ante a, egestas odio. In fringilla dui in ullamcorper bibendum. Morbi consectetur tellus ante, nec ullamcorper dui feugiat a.</p>
+
+<p>Nulla feugiat commodo erat in lacinia. Ut mollis neque nulla, at fringilla tortor dictum et. Vivamus ornare orci sed orci pulvinar, condimentum porttitor felis ornare. Fusce lobortis diam libero, id condimentum neque lacinia vel. Nam quis ligula ac mauris mattis cursus. Aliquam eget lobortis urna. Morbi imperdiet risus sed ultricies tempus.</p>
+
+
+<p>Praesent id enim a lorem varius varius. In quis nibh quis quam pulvinar varius. Nullam id erat aliquet ante faucibus rutrum. Praesent aliquet augue elementum nulla aliquam, eget viverra elit pharetra. Aliquam erat volutpat. Nam euismod, massa sed posuere eleifend, quam mauris vehicula mauris, faucibus lacinia turpis erat vel nibh. Suspendisse potenti. Cras vitae urna accumsan, molestie mi vitae, lacinia nisi. Duis sed magna maximus, aliquam lorem vel, gravida ipsum. Praesent hendrerit mauris ipsum, nec ornare tortor malesuada non. Maecenas ut ultricies nibh. Pellentesque urna sapien, pharetra ut orci a, volutpat hendrerit eros. Integer placerat lorem nec congue porta.</p>
+
+<p>Praesent sodales quam non imperdiet tincidunt. Donec ex lorem, lacinia id urna tincidunt, cursus semper ex. Phasellus ut mattis nibh. Donec eget hendrerit mi. Sed vehicula varius nisi, eget ultrices risus tincidunt sed. Fusce non dui ultricies ligula porta aliquet maximus vitae orci. Curabitur commodo interdum feugiat. Nam suscipit porttitor leo. Vestibulum eros massa, condimentum at turpis non, cursus pharetra eros. Nullam eu odio in purus vulputate ornare at at odio. Etiam ut risus efficitur, vehicula lacus id, tristique eros. Praesent congue mauris vel tempor venenatis. Integer laoreet nunc non tempor tincidunt. Nulla fringilla nibh vel aliquam interdum. </p>
+
+
+    	</div>
+    	<div class="col-sm-4">
+    		<div class="section">
+  				<div class="top-border left"></div>
+  				<div class="top-border right"></div>
+  				<h2>Reprise des cours</h2>
+  				<p>La rentrée aura lieu</p>
+            	<p>mardi 5 septembre Niveau 3 à 19 h 30 deux ou trois œuvres seront soumises à la lecture et au vote collectif avant choix définitif</p>
+            	<p>mercredi 6 septembre Niveau 1 et 2 à 19 h 30 œuvre montée "LES PAS PERDUS" de <a href="https://	fr.wikipedia.org/wiki/Denise_Bonal">Denise Bonal</a></p>
+            </div>
+		</div>
+    </div>
+
+{% endblock %}
+
