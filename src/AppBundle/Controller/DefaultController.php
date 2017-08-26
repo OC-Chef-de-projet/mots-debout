@@ -38,6 +38,7 @@ class DefaultController extends Controller
         ]);
     }
 
+    
     public function residenceAction(Request $request)
     {
         return $this->render('default/residence.html.twig', [
@@ -45,6 +46,14 @@ class DefaultController extends Controller
         ]);
     }
 
+    public function trainingAction(Request $request)
+    {
+        return $this->render('default/training.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
+    }
+
+    
     /**
      *
      */

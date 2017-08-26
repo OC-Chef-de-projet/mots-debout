@@ -19,6 +19,12 @@ residence:
     defaults: { _controller: AppBundle:Default:residence }
     methods: [get]
 
+training:
+    path:     /formation
+    defaults: { _controller: AppBundle:Default:training }
+    methods: [get]
+
+
 user_register:
     path:     /register
     defaults: { _controller: AppBundle:Default:register }

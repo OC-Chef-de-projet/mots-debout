@@ -47,7 +47,8 @@
 
 
 nav a {
-    color: #FFD46C !important;
+    /*color: #FFD46C !important;*/
+    color: #33373B !important;
 }
 
 body {
@@ -91,7 +92,7 @@ h4 {
 }
 .navbar-doublerow .dividline{
     margin: 5px 100px;
-    padding-top: 1px;
+    padding-top: 5px;
     background-color: inherit;
 }
 /*top nav*/

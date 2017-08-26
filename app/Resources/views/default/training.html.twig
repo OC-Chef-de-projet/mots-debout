@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('assets/css/residence.css') }}"/>
+{% endblock %}
+
+
+{% block body %}
+
+	<div id="h2">
+		<div class="logo">
+            {% include '::navbar.html.twig' %}
+		</div><!--/logo-->
+
+
+		<div class="container centered">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h1>Formations</h1>
+					<h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h3>
+				</div>
+			</div><!--/row-->
+		</div><!--/container-->
+	</div><!--H-->
+
+	<div class="bck-dark-yellow text-white" style="padding-left:10px">
+		<div class="row" style="padding-left:10px">
+			<h2 class="centered mb">Préparation aux concours des conservatoires</h2>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+		</div>
+	</div><!-- /.container -->
+
+	<div class="bck-red text-white" style="padding-left:10px">
+		<div class="row" style="padding-left:10px">
+			<h2 class="centered mb">Prise de parole</h2>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+		</div>
+	</div><!-- /.container -->
+
+
+{% endblock %}
+
