@@ -19,19 +19,25 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
 
-    public function coursesAction(Request $request)
+    public function courseAction(Request $request)
     {
-        // replace this example code with whatever you need
         return $this->render('default/courses.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
+
+    public function workshopAction(Request $request)
+    {
+        return $this->render('default/workshop.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
+    }
+
     /**
      *
      */
