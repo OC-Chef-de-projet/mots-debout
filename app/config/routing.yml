@@ -24,6 +24,10 @@ training:
     defaults: { _controller: AppBundle:Default:training }
     methods: [get]
 
+contactus:
+    path:     /nous-contacter
+    defaults: { _controller: AppBundle:Default:contactus }
+    methods: [get]
 
 user_register:
     path:     /register

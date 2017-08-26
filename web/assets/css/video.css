@@ -17,22 +17,11 @@ video {
     opacity: .5;
 }
 
-#polina {
-    font-weight:100;
-    padding: 2rem;
-    width: 33%;
-    margin:2rem;
-    margin-top: 15rem;
-    float: right;
+.news {
+
+    margin-top: 200px !important;
 }
-/*
-h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    margin-top: 0;
-    letter-spacing: .3rem;
-}
-*/
+
 
 @media screen and (max-width: 500px) {
     div{width:70%;}

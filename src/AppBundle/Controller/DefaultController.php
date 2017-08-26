@@ -53,6 +53,13 @@ class DefaultController extends Controller
         ]);
     }
 
+    public function contactusAction(Request $request)
+    {
+        return $this->render('default/contactus.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
+    }
+
     
     /**
      *

@@ -1,14 +1,15 @@
-<nav class="navbar navbar-default navbar-doublerow navbar-trans navbar-fixed-top">
+<nav class="navbar navbar-default navbar-doublerow navbar-trans navbar-fixed-top nav-bck">
     <!-- top nav -->
     <nav class="navbar navbar-top hidden-xs">
         <div class="container">
+            <div class="navbar-brand text-red"><a href="{{ url('homepage') }}">ECOLE THEATRE<br>MOTS DEBOUT</a></div>
             <!-- left nav top -->
             <ul class="nav navbar-nav pull-left">
 
             </ul>
             <!-- right nav top -->
             <ul class="nav navbar-nav pull-right">
-                <li><a href="#">Nous contacter</a></li>
+                <li><a href="{{ url('contactus') }}">Nous contacter</a></li>
                 <li><a href="{{ url('admin_homepage') }}">S'identifier</a></li>
             </ul>
         </div>
@@ -19,7 +20,7 @@
         <div class="container">
             <div class="flex-container">
                 <div class="navbar-header flex-item">
-                    <div class="navbar-brand" href="#">ECOLE THEATRE<br>MOTS DEBOUT</div>
+                   
                 </div>
                 <ul class="nav navbar-nav flex-item hidden-xs">
                     <li><a href="{{ url('course') }}">Cours</a></li>

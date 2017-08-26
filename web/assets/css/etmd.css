@@ -26,7 +26,7 @@
 }
 
 .bck-yellow {
-    background-color: #FFD46C;
+    background-color: #FFD46C  !important;
 }
 
 .bck-dark-yellow {
@@ -45,6 +45,11 @@
     border-bottom: 2px solid #FFD46C;
 }
 
+.nav-bck {
+    background-color: #fff  !important;
+    opacity: 0.5;
+    font-weight: 900;
+}
 
 nav a {
     /*color: #FFD46C !important;*/
@@ -72,6 +77,122 @@ h3,
 h4 {
     font-family: 'Libre Baskerville', serif;
 }
+
+
+
+.container .card-post .featured {
+    width: 100% !important;
+    height: 450px !important;
+    margin: 0.5em 0 1em 0 !important;
+}
+.container .card-post .featured .image {
+    height: 450px !important;
+}
+.container .card-post .featured .content {
+    height: 450px !important;
+}
+.container .card-post .row {
+    display: flex;
+}
+.container .card-post .row .post:last-child {
+    margin-right: 0 !important;
+}
+.container .card-post .post {
+    flex: 1;
+    overflow: hidden;
+    background: white;
+    height: 200px;
+    -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+.container .card-post .post:hover {
+    -moz-box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+}
+.container .card-post .post:hover .image {
+    opacity: 0.8;
+}
+.container .card-post .post .image, .container .card-post .post .content {
+    display: inline-block;
+    position: relative;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.container .card-post .post .image {
+    float: left;
+    width: 50%;
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
+    /*font-size: 24px;*/
+}
+.container .card-post .post .image .time {
+    background: #5E1616;
+    width: 50px;
+    text-align: center;
+    padding: 0.5em 0;
+    color: white;
+}
+.container .card-post .post .image .time .date {
+    font-weight: bolder;
+}
+.container .card-post .post .image .time .month {
+    /*font-size: 0.7rem;*/
+}
+.container .card-post .post .content {
+    padding: 0.5em 1em;
+    width: 50%;
+    -moz-box-shadow: -2px 0 2px -1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -2px 0 2px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: -2px 0 2px -1px rgba(0, 0, 0, 0.1);
+    height: 200px;
+}
+.container .card-post .post .content:before {
+    content: '';
+    position: absolute;
+    background: white;
+    width: 10px;
+    height: 10px;
+    top: 20%;
+    left: -5px;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -moz-box-shadow: -1px 0 2px -1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px 0 2px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: -1px 0 2px -1px rgba(0, 0, 0, 0.1);
+}
+.container .card-post .post .content h1 {
+    font-weight: 600;
+    line-height: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.container .card-post .post .content p {
+    font-weight: 300;
+    /*font-size: 0.7rem;*/
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+    font-family: 'Merriweather', sans-serif;
+}
+.container .card-post .post .content .meta .icon-comment {
+    font-size: 0.7em;
+    line-height: 2;
+    margin-top: auto;
+}
+
+.pager li > a {
+    background-color: transparent;
+}
+
 
 /*scroll effect*/
 .navbar-trans {
@@ -104,7 +225,7 @@ h4 {
 .navbar-doublerow .navbar-down .navbar-brand {
     padding: 0px auto;
     float: left;
-    color: #fff;
+    color: #5E1616;
     font-size: 32px;
 }
 .navbar-doublerow .navbar-down ul>li>a{
@@ -145,10 +266,17 @@ h4 {
 .light-grey {color:#000!important;background-color:#E6E9ED!important}
 
 .article {
-    font-size: 0.5rem;
+    font-size: 2rem;
 }
 
 
+.card{float: left; width:100%}
+.card-block{padding:0 10px 10px;}
+.card-text{margin: 0}
+.card-img-overlay{padding: 0; top: 3px; left: 7px; height: 20%}
+.card-content {
+    height: 450px !important;
+}
 
 .section {
   position: relative;
@@ -208,4 +336,14 @@ h4 {
   .section h1 {
     margin: 20px 6px;
   }
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
 }

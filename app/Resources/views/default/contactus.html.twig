@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/contactus.css') }}"/>
+{% endblock %}
+
+{% block body %}
+
+    {% include '::navbar.html.twig' %}
+
+    <section id="contact">
+        <div class="section-content">
+            <h1 class="section-header">Laissez-nous un message</h1>
+            <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
+        </div>
+        <div class="contact-section">
+            <div class="container">
+                <form>
+                    <div class="col-md-6 form-line">
+                        <div class="form-group">
+                            <label for="exampleInputUsername">Votre nom</label>
+                            <input type="text" class="form-control" id="" placeholder=" Entrez votre nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail">Adresse Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Entrez votre adresse Email">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for ="description"> Message</label>
+                            <textarea  class="form-control" id="description" placeholder="Entrez votre message"></textarea>
+                        </div>
+                        <div>
+
+                            <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Envoyer</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+    </section>
+
+{% endblock %}
+
