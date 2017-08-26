@@ -38,6 +38,13 @@ class DefaultController extends Controller
         ]);
     }
 
+    public function residenceAction(Request $request)
+    {
+        return $this->render('default/residence.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
+    }
+
     /**
      *
      */

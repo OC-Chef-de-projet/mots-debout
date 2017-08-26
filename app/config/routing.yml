@@ -14,6 +14,10 @@ workshop:
     defaults: { _controller: AppBundle:Default:workshop }
     methods: [get]
 
+residence:
+    path:     /residence
+    defaults: { _controller: AppBundle:Default:residence }
+    methods: [get]
 
 user_register:
     path:     /register
