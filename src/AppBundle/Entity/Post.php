@@ -3,12 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-<<<<<<< HEAD
 use Symfony\Component\Validator\Constraints as Assert;
-=======
-use Symfony\Component\Validator\Constraints\DateTime;
-
->>>>>>> 748febc9e6dca0cdcb78e4fd6fe1ce78f0707e93
 
 /**
  * PostService
@@ -66,7 +61,7 @@ class Post
      * @var int
      *
      * @ORM\Column(name="status", type="integer")
-     * @Assert\Choice(choices = {Post::PUBLISHED, Post::DRAFT, Post::TOBEVALIDATED},strict = true)
+     * @Assert\Choice(choices = {Post::PUBLISHED, Post::DRAFT, Post::TO_BE_VALIDATED},strict = true)
      */
     private $status;
 
