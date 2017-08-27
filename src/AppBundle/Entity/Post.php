@@ -19,17 +19,11 @@ use Symfony\Component\Validator\Constraints\DateTime;
 class Post
 {
 
-<<<<<<< HEAD
-    const PUBLISHED = 0;
-    const DRAFT = 1;
-    const TOBEVALIDATED = 2;
 
-=======
     const DRAFT = 1;
     const TO_BE_VALIDATED = 2;
     const PUBLISHED = 3;
     const REFUSED = 4;
->>>>>>> 748febc9e6dca0cdcb78e4fd6fe1ce78f0707e93
 
     /**
      * @var int
@@ -271,24 +265,7 @@ class Post
         return $this->category;
     }
 
-<<<<<<< HEAD
-    public function getStringStatus($status){
-        switch($status){
-            case Post::PUBLISHED:
-                $state = "Publié";
-                break;
-            case Post::DRAFT:
-                $state = "Brouillon";
-                break;
-            case Post::TOBEVALIDATED:
-                $state = "A valider";
-                break;
-            default:
-                $state = "N/A";
-                break;
-        }
-        return $state;
-=======
+
 
     public function getStatusString(){
         return self::statusToString($this->status);
@@ -311,6 +288,5 @@ class Post
             default:
                 return 'Erreur';
         }
->>>>>>> 748febc9e6dca0cdcb78e4fd6fe1ce78f0707e93
     }
 }

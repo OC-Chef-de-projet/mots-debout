@@ -10,10 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use AppBundle\Entity\Post;
-<<<<<<< HEAD
-=======
 
->>>>>>> 748febc9e6dca0cdcb78e4fd6fe1ce78f0707e93
 
 class PostType extends AbstractType
 {
@@ -44,19 +41,8 @@ class PostType extends AbstractType
                     'attr' => [
                         'class' => 'form-control'
                     ],
-<<<<<<< HEAD
-                    'choices' =>
-                    [
-                        'Publié' => Post::PUBLISHED,
-                        'Brouillon' => Post::DRAFT,
-                        'A valider' => Post::TOBEVALIDATED
-                    ],
-                    'multiple' => false
-=======
+
                     'choices' => $options['status']
->>>>>>> 748febc9e6dca0cdcb78e4fd6fe1ce78f0707e93
-
-
                 ]
             )
             ->add('category',EntityType::class,
