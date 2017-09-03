@@ -192,7 +192,7 @@ input {
 /* HEADER SECTION */
 #h {
 
-    background: url(../../images/courses.jpg) no-repeat center top;
+    background: url(../images/courses.jpg) no-repeat center top;
     padding-top: 5px;
     background-attachment: relative;
     background-position: center center;
@@ -332,7 +332,7 @@ input {
 
 /* HEADER 2 - PORTFOLIO SECTION */
 #h2 {
-    background: url(../../images/rs1.png) no-repeat center top;
+    background: url(../images/rs1.png) no-repeat center top;
     padding-top: 5px;
     background-attachment: relative;
     background-position: center center;

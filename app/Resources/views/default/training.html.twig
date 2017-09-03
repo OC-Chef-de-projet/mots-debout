@@ -2,43 +2,79 @@
 
 
 {% block stylesheets %}
-	{{ parent() }}
-	<link rel="stylesheet" href="{{ asset('assets/css/residence.css') }}"/>
-{% endblock %}
+    {{ parent() }}
+	<style>
+		#training {
+            height: 900px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            float: left;
+            width: 100%;
+			background-image: url(../../images/rs1.png);
+		}
+        #training  .content {
+            margin-top: 150px;
+            text-align: center;
+        }
 
+        #training > .content > .summary {
+            text-align: center;
+            margin-bottom: 110px;
+        }
+
+
+        #training > .content > .summary > p {
+            color:white;
+            font-size: 25px;
+        }
+
+        .card {
+            clear: both;
+            position: relative;
+            text-align: left;
+            background-color: #5E1616;
+            margin-bottom: 10px;
+        }
+        .card > h2 {
+            color:#DAA520;
+            border-bottom: 1px solid #DAA520;
+        }
+        .card  p {
+            color:#DAA520;
+        }
+	</style>
+{% endblock %}
 
 {% block body %}
+    {% include '::navbar.html.twig' %}
+    <section id="training">
+        <div class="content">
+            <div class="col-md-8 col-md-offset-2 summary">
+                <h1>Formations</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 
-	<div id="h2">
-		<div class="logo">
-            {% include '::navbar.html.twig' %}
-		</div><!--/logo-->
+            </div>
+            <div class="card col-md-10 col-md-offset-1">
+                    <h2>Titre de la section</h2>
+                    <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </p>
 
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+            </div>
+            <div class="card col-md-10 col-md-offset-1">
+                <h2>Titre de la section</h2>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+            </div>
+        </div>
+    </section>
 
-		<div class="container centered">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<h1>Formations</h1>
-					<h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h3>
-				</div>
-			</div><!--/row-->
-		</div><!--/container-->
-	</div><!--H-->
-
-	<div class="bck-dark-yellow text-white" style="padding-left:10px">
-		<div class="row" style="padding-left:10px">
-			<h2 class="centered mb">Préparation aux concours des conservatoires</h2>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-		</div>
-	</div><!-- /.container -->
-
-	<div class="bck-red text-white" style="padding-left:10px">
-		<div class="row" style="padding-left:10px">
-			<h2 class="centered mb">Prise de parole</h2>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-		</div>
-	</div><!-- /.container -->
-
-
+    {% include '::footer.html.twig' %}
 {% endblock %}
+
 
