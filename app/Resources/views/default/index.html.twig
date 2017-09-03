@@ -2,57 +2,20 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('assets/css/video.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('assets/css/workshop.css') }}"/>
+    <style>
+        html {
+            margin:0;
+            padding:0;
+            background: url(../../images/workshop.png) no-repeat center fixed;
+            -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+            background-size: cover; /* version standardisée */
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
-
     {% include '::navbar.html.twig' %}
-
-    <header>
-        <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay
-               muted loop>
-            <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
-            <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
-        </video>
-
-
-        <div class='container news'>
-            <div class="card-post">
-                <div class='post featured'>
-                    <div class='image' style='background-image: url(../../images/etmd.jpg)'>
-                        <div class='time'>
-                            <div class='date'>4</div>
-                            <div class='month'>JAN</div>
-                        </div>
-                    </div>
-                    <div class='content'>
-                        <h2 class="text-brown">Reprise des cours</h2>
-                        <p class="card-text">
-                        <p class="text-black">La rentrée aura lieu</p>
-                        <p class="text-black">mardi 5 septembre Niveau 3 à 19 h 30 deux ou trois œuvres seront soumises
-                            à la lecture et au vote
-                            collectif avant choix définitif</p>
-                        <p class="text-black">mercredi 6 septembre Niveau 1 & 2 à 19 h 30 œuvre montée "LES PAS PERDUS"
-                            de <a
-                                    href="https://fr.wikipedia.org/wiki/Denise_Bonal">Denise Bonal</a></p>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-            <ul class="pager">
-                <li class="previous"><a href="#"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-                </li>
-                <li class="next"><a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i>
-                    </a></li>
-            </ul>
-
-
-        </div>
-    </header>
-
+    {% include '::news.html.twig' %}
+    {% include '::footer.html.twig' %}
 {% endblock %}
 

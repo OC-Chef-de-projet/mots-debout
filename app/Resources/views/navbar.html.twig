@@ -1,51 +1,30 @@
-<nav class="navbar navbar-default navbar-doublerow navbar-trans navbar-fixed-top nav-bck">
+
+
+<nav class="navbar navbar-default navbar-fixed-top nav-bck">
     <!-- top nav -->
     <nav class="navbar navbar-top hidden-xs">
         <div class="container">
-            <div class="navbar-brand text-red"><a href="{{ url('homepage') }}">ECOLE THEATRE<br>MOTS DEBOUT</a></div>
-            <!-- left nav top -->
-            <ul class="nav navbar-nav pull-left">
-
-            </ul>
-            <!-- right nav top -->
-            <ul class="nav navbar-nav pull-right">
-                <li><a href="{{ url('contactus') }}">Nous contacter</a></li>
-                <li><a href="{{ url('admin_homepage') }}">S'identifier</a></li>
+            <div class="navbar-brand"><a href="{{ url('homepage') }}">ECOLE THEATRE<br>MOTS DEBOUT</a></div>
+            <ul class="list-inline pull-right" >
+                <li class="right-mega"><a href="{{ url('contactus') }}"><span class="small">Nous contacter</span></a></li>
+                <li class="right-mega"><a href="{{ url('admin_homepage') }}"><span class="small">S'identifier</span></a></li>
             </ul>
         </div>
-        <div class="dividline bck-red"></div>
     </nav>
     <!-- down nav -->
-    <nav class="navbar navbar-down">
-        <div class="container">
-            <div class="flex-container">
-                <div class="navbar-header flex-item">
-                   
-                </div>
-                <ul class="nav navbar-nav flex-item hidden-xs">
-                    <li><a href="{{ url('course') }}">Cours</a></li>
-                    <li><a href="{{ url('workshop') }}">Ateliers</a></li>
-                    <li><a href="{{ url('residence') }}">Résidences</a></li>
-                    <li><a href="{{ url('training') }}">Formations</a></li>
+    <div class="navgation navbar-bck">
+        <ul class="list-inline">
+            <li class="non-mega"><a href="#">Cours</a>
+                <ul>
+                    <li><a href="#" style="padding-left:10px">Cours collectifs</a></li>
+                    <li><a href="#" style="padding-left:10px">Cours particuliers</a></li>
                 </ul>
-                <ul class="nav navbar-nav flex-item hidden-xs pull-right">
-                    <!--<li><a href="#" class="">offer!</a></li>-->
-                </ul>
-                <!-- dropdown only moblie -->
-                <div class="dropdown visible-xs pull-right">
-                    <button class="btn btn-default dropdown-toggle " type="button" id="dropdownmenu" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-align-justify"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">TheTeam</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">contact us</a></li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+            </li>
+            <li class="non-mega"><a href="{{ url('workshop') }}">Ateliers</a></li>
+            <li class="non-mega"><a href="{{ url('training') }}">Formations</a></li>
+            <li class="non-mega"><a href="{{ url('residence') }}">Résidences</a></li>
+            <li class="non-mega"><a href="#">Expositions</a></li>
+            <li class="non-mega"><a href="#">Spectacles</a></li>
+        </ul>
+    </div>
 </nav>

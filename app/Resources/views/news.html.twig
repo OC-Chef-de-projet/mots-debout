@@ -1,0 +1,109 @@
+<!--
+
+  Hello there! Go check out this wonderful dribbble by Andreea Nicolaescu!
+  http://dribbble.com/shots/1410207-Food-Widget
+
+-->
+
+<style>
+    .wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: 100% 100%
+    }
+
+    .news { position: absolute !important; top: 50%; left: 50%; margin: -197px 0 0 -310px }
+
+    .news
+    {
+        position: relative;
+        width: 720px;
+        height: 394px;
+        background: #FFF;
+        border-radius: 20px;
+        box-shadow: 0 50px 55px black;
+
+    }
+
+    .news > .cover
+    {
+        position: relative;
+        height: 260px;
+        background: transparent center no-repeat;
+        background-size: 100% auto;
+        border-radius: 2px 2px 0 0;
+    }
+
+    .news > .cover > label
+    {
+        position: absolute;
+        top: 22px;
+        left: -33px;
+        height: 33px;
+        padding: 0 30px 0 63px;
+        line-height: 33px;
+        vertical-align: middle;
+        font-size: 13px;
+        color: #DAA520;
+        background:#5E1616;
+    }
+
+
+    .news > .info
+    {
+        background-color: #DAA520;
+        color: #5E1616;
+        padding: 5px;
+        position: relative;
+        height: auto;
+        overflow: hidden;
+        border-radius: 0 0 2px 2px;
+    }
+
+    .news > .info  a
+    {
+        color: #5E1616;
+        text-decoration: underline;
+    }
+
+    .news > .publish
+    {
+        color: #DAA520;
+        font-size: 10px;
+        text-align: right;
+    }
+
+
+    .news > .cover > .more
+    {
+        text-align: right;
+    }
+</style>
+
+
+<div class="wrapper">
+    <div class="news">
+        <div class="cover" style="background-image: url(../images/etmd.jpg)">
+            <label>Reprise des cours</label>
+        </div>
+        <div class="info">
+            <p>La rentrée aura lieu le </p>
+            <ul>
+                <li><b>Mardi 5 septembre Niveau 3 à 19 h 30</b> deux ou trois œuvres seront soumises
+                    à la lecture et au vote
+                    collectif avant choix définitif</li>
+                <li><b>Mercredi 6 septembre Niveau 1 & 2 à 19 h 30 </b>œuvre montée "LES PAS PERDUS"
+                    de
+                    <a href="https://fr.wikipedia.org/wiki/Denise_Bonal">Denise Bonal</a></li>
+            </ul>
+            <div style="text-align:right">
+            <a href="#" class="more"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>
+            </a>
+            </div>
+        </div>
+        <div class="publish">Publié le 4 janvier 2017</div>
+    </div>
+</div>
