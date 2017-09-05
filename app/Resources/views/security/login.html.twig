@@ -1,18 +1,22 @@
 {% extends "base.html.twig" %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}"/>
-{% endblock %}
 
 
 {% trans_default_domain "login" %}
 {% block body %}
-    <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top nav-bck">
+        <!-- top nav -->
+        <nav class="navbar navbar-top hidden-xs">
+            <div class="container">
+                <div class="navbar-brand"><a href="{{ url('homepage') }}">ECOLE THEATRE<br>MOTS DEBOUT</a></div>
+            </div>
+        </nav>
+    </nav>
+
+    <section class="login cover-login">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 " >
                 <div class="wrap">
-                    <p class="form-title">&Eacute;cole théatre Mots Debout</p>
                     {{ form_start(form_login, {'attr': {'class': 'login'}}) }}
                     {{ form_widget(form_login._email) }}
                     {{ form_widget(form_login._password) }}
@@ -30,5 +34,6 @@
                 </div>
             </div>
         </div>
-    </div>
+
+    </section>
 {% endblock %}

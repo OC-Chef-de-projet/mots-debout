@@ -1,12 +1,10 @@
 
-* {
-    font-family: 'Roboto', sans-serif;
-}
 
 
 html, body {
     width: 100%;
     height: 100%;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .cover-home {
@@ -14,6 +12,14 @@ html, body {
     height: 100%;
     background: url(../../assets/img/workshop.png) center center no-repeat;
     background-size: cover;
+}
+
+.cover-login {
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/img/login.png) center center no-repeat;
+    background-size: cover;
+
 }
 
 
@@ -25,6 +31,140 @@ h1, h2, h3, h4 {
 
     font-family: 'Libre Baskerville', serif;
 }
+
+/**
+ * Login page
+ */
+
+.login {
+
+}
+.login .wrap
+{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    z-index: 99;
+}
+
+.login p.form-title
+{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #5E1616;
+    margin-top: 5%;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+}
+
+.login form
+{
+    width: 250px;
+    margin: 0 auto;
+}
+
+.login form.login input[type="text"],
+.login form.login input[type="email"],
+.login form.login input[type="password"]
+{
+    width: 100%;
+    margin: 0;
+    padding: 5px 10px;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid #5E1616;
+    outline: 0;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #5E1616;
+    outline: 0;
+    font-size: 20px;
+    font-weight: 900;
+
+}
+
+
+ form.login input[type="submit"],
+ #login_save
+{
+    width: 100%;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 16px;
+    outline: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+form.login input[type="submit"]:hover
+{
+    transition: background-color 0.5s ease;
+}
+
+form.login .remember-forgot
+{
+    float: left;
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+
+form.login .forgot-pass-content
+{
+    min-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+form.login label, form.login a
+{
+    font-size: 14px;
+    color: #5E1616;
+}
+
+form.login a
+{
+    transition: color 0.5s ease;
+}
+
+form.login a:hover
+{
+    color: #2ecc71;
+}
+
+.login .pr-wrap
+{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+
+.login .btn-success, .btn-success:active, .btn-success:visited {
+    background-color: #B97828;
+    border-color: #FFD46C ;
+    color: #5E1616;
+}
+
+.login .btn-success:hover {
+    background-color: #5E1616;
+    border-color: #FFD46C ;
+    color: #B97828;
+}
+
+
+
 
 
 /**
