@@ -1,20 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    <style>
-        html {
-            margin:0;
-            padding:0;
-            background: url(../../assets/img/workshop.png) no-repeat center fixed;
-            -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-            background-size: cover; /* version standardisée */
-        }
-    </style>
-{% endblock %}
+
 
 {% block body %}
+
     {% include '::navbar.html.twig' %}
-    {% include '::news.html.twig' %}
+    <section class="cover-home ">
+        {% include '::news.html.twig' %}
+    </section>
     {% include '::footer.html.twig' %}
+
 {% endblock %}
