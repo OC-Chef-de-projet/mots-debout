@@ -127,23 +127,21 @@ module.exports = function (grunt) {
             }
         },
 
-        // CSS build configuration
-        //
-
 
         // Do some post processing on CSS files
-        //
         postcss: {
-            options   : {
+            options : {
                 processors: [
                     autoprefixer,
                     require('postcss-flexbugs-fixes')
                 ]
-            }
+            },
+	    compressed: {
+		src: 'web/assets/css/custom.min.css'
+	    }
         },
 
         // Minify CSS files
-        //
         cssmin: {
             options: {
                 compatibility      : 'ie9',
@@ -172,31 +170,20 @@ module.exports = function (grunt) {
     //require('time-grunt')(grunt);
 
     // Run "grunt" to watch SCSS and JS files as well as running browser-sync
-    //grunt.registerTask('default', ['browserSync', 'watch']);
-    //grunt.registerTask('serve', ['browserSync', 'watch']);
+    grunt.registerTask('default', ['dist', 'watch']);
 
-    /*
-    grunt.registerTask('summernote', 'update paths', function () {
-        grunt.file.write(
-            'web/assets/css/core.min.css',
-            grunt.file.read('web/assets/css/core.min.css').toString()
-                .replace(new RegExp("font/", 'g'), "../fonts/")
-        );
-    });
-    */
-    // POURQUOI ??? grunt.loadNpmTasks('grunt-css-urls');
 
     // Run "grunt dist" to publish the template in a ./dist folder
     grunt.registerTask('dist',
         [
-            'clean:before_copy',
+            //'clean:before_copy',
             'copy:font',
             'copy:jpg',
             'concat',
             'uglify',
             'cssmin',
-            //'postcss',
-            'imagemin'
+            'postcss'
+            //'imagemin'
         ]
     );
 
