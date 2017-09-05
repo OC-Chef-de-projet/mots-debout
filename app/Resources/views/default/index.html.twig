@@ -3,9 +3,16 @@
 
 
 {% block body %}
+    <style>
+        body {
+            background: url(../../assets/img/workshop.png) no-repeat center fixed;
+            -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+            background-size: cover; /* version standardisée */
 
+        }
+    </style>
     {% include '::navbar.html.twig' %}
-    <section class="cover-home ">
+    <section>
         {% include '::news.html.twig' %}
     </section>
     {% include '::footer.html.twig' %}
