@@ -3,15 +3,23 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Post
+ * PostService
  *
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PostRepository")
  */
 class Post
 {
+
+
+    const DRAFT = 1;
+    const TO_BE_VALIDATED = 2;
+    const PUBLISHED = 3;
+    const REFUSED = 4;
+
     /**
      * @var int
      *
@@ -38,7 +46,7 @@ class Post
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="publishedAt", type="datetimetz")
+     * @ORM\Column(name="publishedAt", type="datetimetz", nullable=true)
      */
     private $publishedAt;
 
@@ -53,6 +61,7 @@ class Post
      * @var int
      *
      * @ORM\Column(name="status", type="integer")
+     * @Assert\Choice(choices = {Post::PUBLISHED, Post::DRAFT, Post::TO_BE_VALIDATED},strict = true)
      */
     private $status;
 
@@ -71,6 +80,14 @@ class Post
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagelink", type="string", length=255, nullable=true)
+     */
+    private $imagelink;
+
 
     /**
      * Get id
@@ -201,5 +218,77 @@ class Post
     {
         return $this->status;
     }
-}
 
+    /**
+     * Set author
+     *
+     * @param \AppBundle\Entity\User $author
+     *
+     * @return Post
+     */
+    public function setAuthor(\AppBundle\Entity\User $author)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \AppBundle\Entity\Category $category
+     *
+     * @return Post
+     */
+    public function setCategory(\AppBundle\Entity\Category $category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \AppBundle\Entity\Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+
+
+    public function getStatusString(){
+        return self::statusToString($this->status);
+    }
+
+    public static function statusToString($status){
+        switch ($status){
+            case self::DRAFT:
+                return 'Brouillon';
+
+            case self::TO_BE_VALIDATED:
+                return 'A valider';
+
+            case self::PUBLISHED:
+                return 'Publié';
+
+            case self::REFUSED:
+                return 'Refusé';
+
+            default:
+                return 'Erreur';
+        }
+    }
+}

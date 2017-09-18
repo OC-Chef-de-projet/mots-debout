@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
+
 use AppBundle\Form\RegistrationForm;
 use AppBundle\Form\Type\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -19,37 +20,177 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'post' => $em->getRepository('AppBundle:Post')->getLastPost()
         ]);
     }
 
-    public function courseAction(Request $request)
+    public function tutoringAction(Request $request)
     {
-        return $this->render('default/courses.html.twig', [
+        $header = [
+            'title' => 'Cours particuliers',
+            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+            'cover' => 'rs1.png'
+        ];
+        $sections = [
+            0 => [
+                'imagelink' => 'etmd.jpg',
+                'title' => '1. Lorem ipsum dolor sit amet',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ],
+            1 => [
+                'imagelink' => 'etmd.jpg',
+                'title' => '2. Lorem ipsum dolor sit amet',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ]
+
+        ];
+        return $this->render('default/page.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'header' => $header,
+            'sections' => $sections
         ]);
     }
+
+    public function exhibitionsAction(Request $request)
+    {
+        $header = [
+            'title' => 'Expositions',
+            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+            'cover' => 'rs1.png'
+        ];
+        $sections = [
+            0 => [
+                'imagelink' => 'etmd.jpg',
+                'title' => '1. Lorem ipsum dolor sit amet',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ],
+            1 => [
+                'imagelink' => 'etmd.jpg',
+                'title' => '2. Lorem ipsum dolor sit amet',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ]
+
+        ];
+        return $this->render('default/page.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'header' => $header,
+            'sections' => $sections
+        ]);
+    }
+
+    public function entertainmentAction(Request $request)
+    {
+        $header = [
+            'title' => 'Spectacles',
+            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+            'cover' => 'rs1.png'
+        ];
+        $sections = [
+            0 => [
+                'imagelink' => 'etmd.jpg',
+                'title' => '1. Lorem ipsum dolor sit amet',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ],
+            1 => [
+                'imagelink' => 'etmd.jpg',
+                'title' => '2. Lorem ipsum dolor sit amet',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ]
+
+        ];
+        return $this->render('default/page.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'header' => $header,
+            'sections' => $sections
+        ]);
+    }
+
+
+
 
     public function workshopAction(Request $request)
     {
-        return $this->render('default/workshop.html.twig', [
+        $header = [
+            'title' => 'Cours collectifs',
+            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+            'cover' => 'rs1.png'
+        ];
+        $sections = [
+            0 => [
+                'imagelink' => 'etmd.jpg',
+                'title' => '1. Lorem ipsum dolor sit amet',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ],
+            1 => [
+                'imagelink' => 'etmd.jpg',
+                'title' => '2. Lorem ipsum dolor sit amet',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ]
+
+        ];
+        return $this->render('default/page.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'header' => $header,
+            'sections' => $sections
         ]);
     }
 
     
     public function residenceAction(Request $request)
     {
-        return $this->render('default/residence.html.twig', [
+        $header = [
+            'title' => 'Résidences',
+            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+            'cover' => 'rs1.png'
+            ];
+        $sections = [
+            0 => [
+             'imagelink' => 'etmd.jpg',
+             'title' => '1. Lorem ipsum dolor sit amet',
+             'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ],
+            1 => [
+                'imagelink' => 'etmd.jpg',
+                'title' => '2. Lorem ipsum dolor sit amet',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ]
+
+        ];
+        return $this->render('default/page.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'header' => $header,
+            'sections' => $sections
         ]);
     }
 
     public function trainingAction(Request $request)
     {
-        return $this->render('default/training.html.twig', [
+        $header = [
+            'title' => 'Formations',
+            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+            'cover' => 'rs1.png'
+        ];
+        $sections = [
+            0 => [
+                'imagelink' => 'etmd.jpg',
+                'title' => '1. Lorem ipsum dolor sit amet',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ],
+            1 => [
+                'imagelink' => 'etmd.jpg',
+                'title' => '2. Lorem ipsum dolor sit amet',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum justo mi, et imperdiet tortor condimentum sed. Duis lectus ligula, ultricies sed aliquet in, pretium nec nisi. Aenean sit amet odio odio. Sed rutrum maximus neque, sed posuere magna rhoncus eu. Vestibulum non scelerisque nisi, et feugiat eros. Maecenas a odio id nisl accumsan congue. Sed tempus ante nibh, vitae volutpat nulla suscipit nec. Vivamus convallis felis in lorem tristique, ut feugiat orci mattis. Fusce sed augue rhoncus, malesuada nisl non, ullamcorper tellus. Donec vel volutpat nisl, ut commodo sapien.'
+            ]
+
+        ];
+        return $this->render('default/page.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'header' => $header,
+            'sections' => $sections
         ]);
     }
 

@@ -81,6 +81,13 @@ class Post
      */
     private $category;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagelink", type="string", length=255, nullable=true)
+     */
+    private $imagelink;
+
 
     /**
      * Get id
@@ -283,5 +290,29 @@ class Post
             default:
                 return 'Erreur';
         }
+    }
+
+    /**
+     * Set imagelink
+     *
+     * @param string $imagelink
+     *
+     * @return Post
+     */
+    public function setImagelink($imagelink)
+    {
+        $this->imagelink = $imagelink;
+
+        return $this;
+    }
+
+    /**
+     * Get imagelink
+     *
+     * @return string
+     */
+    public function getImagelink()
+    {
+        return $this->imagelink;
     }
 }

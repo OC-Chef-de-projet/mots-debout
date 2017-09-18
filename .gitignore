@@ -16,3 +16,5 @@
 /vendor/
 /web/bundles/
 .htaccess
+/web/assets/
+/node_modules/

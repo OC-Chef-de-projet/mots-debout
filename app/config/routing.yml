@@ -4,14 +4,9 @@ homepage:
     defaults: { _controller: AppBundle:Default:index }
     methods: [get]
 
-course:
-    path:     /cours
-    defaults: { _controller: AppBundle:Default:course }
-    methods: [get]
-
-workshop:
-    path:     /ateliers
-    defaults: { _controller: AppBundle:Default:workshop }
+training:
+    path:     /formation
+    defaults: { _controller: AppBundle:Default:training }
     methods: [get]
 
 residence:
@@ -19,10 +14,28 @@ residence:
     defaults: { _controller: AppBundle:Default:residence }
     methods: [get]
 
-training:
-    path:     /formation
-    defaults: { _controller: AppBundle:Default:training }
+workshop:
+    path:     /cours_collectifs
+    defaults: { _controller: AppBundle:Default:workshop }
     methods: [get]
+
+tutoring:
+    path:     /cours_particluers
+    defaults: { _controller: AppBundle:Default:tutoring }
+    methods: [get]
+
+exhibitions:
+    path:     /expositions
+    defaults: { _controller: AppBundle:Default:exhibitions }
+    methods: [get]
+
+
+entertainment:
+    path:     /spectacles
+    defaults: { _controller: AppBundle:Default:entertainment }
+    methods: [get]
+
+# -------------------
 
 contactus:
     path:     /nous-contacter

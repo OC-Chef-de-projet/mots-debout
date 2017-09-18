@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\Post;
+
 /**
  * PostRepository
  *
@@ -10,4 +12,18 @@ namespace AppBundle\Repository;
  */
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function getLastPost()
+    {
+        $query = $this->createQueryBuilder('p')
+            ->where('p.publishedAt IS NOT NULL')
+            ->andWhere('p.status = :status')
+            ->setParameter('status',Post::PUBLISHED)
+            ->orderBy('p.publishedAt', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery();
+        $results = $query->getOneOrNullResult();
+        return $results;
+    }
+
 }

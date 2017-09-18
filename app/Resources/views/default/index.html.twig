@@ -1,20 +1,11 @@
 {% extends 'base.html.twig' %}
 
-
-
 {% block body %}
-    <style>
-        body {
-            background: url(../../assets/img/workshop.png) no-repeat center fixed;
-            -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-            background-size: cover; /* version standardisée */
-
-        }
-    </style>
-    {% include '::navbar.html.twig' %}
-    <section>
-        {% include '::news.html.twig' %}
-    </section>
-    {% include '::footer.html.twig' %}
-
+    <main id="home">
+        <div style="margin-top:50px"></div>
+        <div class="container">
+            {% include '::post.html.twig' %}
+        </div>
+    </main>
 {% endblock %}
+

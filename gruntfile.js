@@ -73,6 +73,7 @@ module.exports = function (grunt) {
         copy: {
             font: {
                 files: [
+                    {expand: true, cwd: 'resources/vendor/materialize/fonts', src: ['**'], dest: 'web/assets/fonts/'},
                     {expand: true, cwd: 'resources/vendor/font-awesome/fonts', src: ['**'], dest: 'web/assets/fonts/'}
                 ]
             },
@@ -91,13 +92,13 @@ module.exports = function (grunt) {
                     // Javascript
                     'web/assets/js/core.min.js': [
                         'resources/vendor/jquery/jquery-3.2.1.min.js',
-                        'resources/vendor/bootstrap/js/bootstrap.min.js'
+                        'resources/vendor/materialize/js/materialize.min.js'
                     ],
 
 
                     // CSS
                     'web/assets/css/core.min.css': [
-                        'resources/vendor/bootstrap/css/bootstrap.min.css',
+                        'resources/vendor/materialize/css/materialize.min.css',
                         'resources/vendor/font-awesome/css/font-awesome.min.css'
                     ]
                 }

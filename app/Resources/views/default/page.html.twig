@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <main id="page">
+        <div class="container">
+            {% include '::sectionheader.html.twig' %}
+            <section>
+                {% for section in sections %}
+                    {% include '::section.html.twig' with {'section':section } only %}
+                    <br/>
+                {% endfor %}
+            </section>
+        </div>
+    </main>
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        #page {
+            background: url(../../assets/img/{{ header.cover }}) no-repeat center fixed;*/
+            -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+            background-size: cover; /* version standardisée */
+        }
+    </style>
+{% endblock %}
+

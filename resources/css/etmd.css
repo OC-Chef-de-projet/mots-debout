@@ -1,4 +1,110 @@
+html, body {
+    font-family: 'Roboto', sans-serif !important;
+}
 
+.nav-top {
+    background-color: #DAA520;
+}
+.nav-top  ul a  {
+    color: #5E1616;
+}
+
+.nav-tabs {
+    background-color: #5E1616;
+}
+
+nav ul a {
+    color: #DAA520;
+    text-transform: uppercase;
+}
+
+.text-brown {
+    color: #5E1616;
+}
+
+nav ul a:hover {
+    background-color: #DAA520;
+    color: #5E1616;
+    text-transform: uppercase;
+}
+
+.tabs.tabs-transparent .tab a, .tabs.tabs-transparent .tab.disabled a, .tabs.tabs-transparent .tab.disabled a:hover {
+    color: #DAA520;
+}
+
+.tabs.tabs-transparent .tab a.active, .tabs.tabs-transparent .tab a:hover {
+    color: #DAA520 !important;
+    /*background-color: #DAA520;*/
+}
+
+.tabs .indicator {
+    background-color: #DAA520 !important;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.page-footer {
+    background-color: #DAA520;
+}
+
+
+.btn-floating {
+    background-color: #5E1616;
+}
+
+.btn-floating:hover {
+    background-color: #DAA520;
+}
+
+.card-content {
+    background-color: #DAA520;
+    color: #5E1616;
+}
+
+.card .card-action{
+    color: #DAA520;
+    background-color: #5E1616;
+
+}
+
+.card-section {
+    color: #DAA520;
+    background-color: #5E1616;
+}
+
+.card-title
+{
+    position: absolute;
+    top: 22px;
+    height: 80px;
+    font-size: 13px;
+    color: #DAA520 !important;
+    background:#5E1616;
+}
+
+.dropdown-content li a:hover {
+    background-color: #DAA520;
+    color: #5E1616 !important;
+}
+
+.dropdown-content li a  {
+    color: #DAA520 !important;
+    background-color: #5E1616;
+}
+
+a {
+    color: white;
+}
+
+/*
 
 
 html, body {
@@ -17,7 +123,9 @@ html, body {
 }
 
 
-
+.text-white {
+    color:white !important;
+}
 
 h1 {
     color: white;
@@ -28,9 +136,6 @@ h1, h2, h3, h4 {
     font-family: 'Libre Baskerville', serif;
 }
 
-/**
- * Login page
- */
 
 .login {
 
@@ -163,9 +268,6 @@ form.login a:hover
 
 
 
-/**
- * Footer
- */
  footer {
      background-color: #DAA520;
      position: fixed;
@@ -189,9 +291,13 @@ footer p {
 
 }
 
-/*
- * Nav bar
- */
+.nav-top {
+    background-color: #5E1616;
+}
+.nav-top  ul a  {
+    color: #DAA520;
+}
+
 .nav-bck {
     background-color: #DAA520   !important;
     font-weight: 900;
@@ -323,9 +429,6 @@ footer p {
     justify-content: center;
 }
 
-/*
- *  News
- */
 
 .wrapper {
     position: absolute;
@@ -429,53 +532,7 @@ footer p {
     text-align: right;
 }
 
-
-/*
-.bck-black {
-    background-color: #33373B;
-}
-
-.bck-yellow {
-    background-color: #FFD46C  !important;
-}
-
-.bck-dark-yellow {
-    background-color: #B97828;
-}
-
-.bck-red {
-    background-color: #5E1616 !important;
-}
-
-.bck-brown {
-    background-color: #9E805A;
-}
-
-.post-title {
-    border-bottom: 2px solid #FFD46C;
-}
-
-
-.navbar-bck {
-    background-color: #5E1616   !important;
-}
-
-nav a {
-    color: #FFD700 !important;
-    text-decoration: none;
-}
-
-
-.page-content {
-    margin-top: 200px;
-}
-
-.page-left {
-    
-    background-color: #5E1616;
-}
 */
-
 
 
 

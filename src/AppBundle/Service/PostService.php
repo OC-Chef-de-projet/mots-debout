@@ -23,7 +23,7 @@ class PostService
     {
         $this->repository = $entityManager->getRepository(Post::class);
     }
-
+    
     /**
      * Titre pour l'action de modification ou de validation d'un article
      *
