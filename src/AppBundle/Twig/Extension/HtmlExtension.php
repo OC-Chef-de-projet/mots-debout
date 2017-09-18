@@ -31,3 +31,4 @@ class HtmlExtension extends \Twig_Extension
         return 'html_extension';
     }
 }
+
