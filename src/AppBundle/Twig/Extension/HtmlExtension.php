@@ -8,8 +8,26 @@
 
 namespace AppBundle\Twig\Extension;
 
-
-class HtmlExtension
+/**
+ * Class HtmlExtension
+ * @package AppBundle\Twig\Extension
+ */
+class HtmlExtension extends \Twig_Extension
 {
+    public function getFilters()
+    {
+        return [
+            new \Twig_SimpleFilter('html', [$this, 'html'], ['is_safe' => ['html']]),
+        ];
+    }
 
+    public function html($html)
+    {
+        return $html;
+    }
+
+    public function getName()
+    {
+        return 'html_extension';
+    }
 }

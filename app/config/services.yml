@@ -20,3 +20,8 @@ services:
             tags:
                 - { name: doctrine.event_listener, event: preUpdate }
                 - { name: doctrine.event_listener, event: prePersist }
+
+    AppBundle.twig.html_extension:
+        class: AppBundle\Twig\Extension\HtmlExtension
+        tags:
+            - { name: twig.extension }
