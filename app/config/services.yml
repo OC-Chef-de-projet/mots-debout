@@ -17,9 +17,14 @@ services:
         arguments: [ "@doctrine.orm.entity_manager" ]
 
     AppBundle\EventListener\PostListener:
-            tags:
-                - { name: doctrine.event_listener, event: preUpdate }
-                - { name: doctrine.event_listener, event: prePersist }
+        tags:
+            - { name: doctrine.event_listener, event: preUpdate }
+            - { name: doctrine.event_listener, event: prePersist }
+
+
+    AppBundle\EventListener\PageListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
 
     AppBundle.twig.html_extension:
         class: AppBundle\Twig\Extension\HtmlExtension

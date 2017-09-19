@@ -13,16 +13,12 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use AppBundle\Entity\User;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
-
-class LoadUserData implements FixtureInterface, ContainerAwareInterface
+class LoadUserData extends Fixture implements FixtureInterface, ContainerAwareInterface
 {
 
-    private $container;
-    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->container = $container;
-    }
+
 
     public function load(ObjectManager $manager)
     {
@@ -36,7 +32,7 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $user->setPassword($encoder->encodePassword('test', $user->getSalt()));
         $user->addRole('ROLE_ADMIN');
         $manager->persist($user);
-        $manager->flush();
+
 
         // Add editor
         $user = new User();
@@ -46,7 +42,7 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $user->setPassword($encoder->encodePassword('test', $user->getSalt()));
         $user->addRole('ROLE_EDITOR');
         $manager->persist($user);
-        $manager->flush();
+        $this->addReference('editor', $user);
 
         // Add contributor
         $user = new User();
@@ -56,6 +52,7 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $user->setPassword($encoder->encodePassword('test', $user->getSalt()));
         $user->addRole('ROLE_CONTRIBUTOR');
         $manager->persist($user);
+
         $manager->flush();
     }
 }

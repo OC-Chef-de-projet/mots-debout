@@ -3,9 +3,10 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
-
+use AppBundle\Entity\Page;
 use AppBundle\Form\RegistrationForm;
 use AppBundle\Form\Type\UserType;
+use AppBundle\Repository\PageRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,11 +31,10 @@ class DefaultController extends Controller
 
     public function tutoringAction(Request $request)
     {
-        $header = [
-            'title' => 'Cours particuliers',
-            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-            'cover' => 'rs1.png'
-        ];
+        $em = $this->getDoctrine()->getManager();
+
+
+
         $sections = [
             0 => [
                 'imagelink' => 'etmd.jpg',
@@ -50,18 +50,15 @@ class DefaultController extends Controller
         ];
         return $this->render('default/page.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'header' => $header,
+            'header' => $em->getRepository('AppBundle:Page')->getHeader(Page::TUTORING),
             'sections' => $sections
         ]);
     }
 
     public function exhibitionsAction(Request $request)
     {
-        $header = [
-            'title' => 'Expositions',
-            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-            'cover' => 'rs1.png'
-        ];
+        $em = $this->getDoctrine()->getManager();
+
         $sections = [
             0 => [
                 'imagelink' => 'etmd.jpg',
@@ -77,18 +74,14 @@ class DefaultController extends Controller
         ];
         return $this->render('default/page.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'header' => $header,
+            'header' => $em->getRepository('AppBundle:Page')->getHeader(Page::EXHIBITION),
             'sections' => $sections
         ]);
     }
 
     public function entertainmentAction(Request $request)
     {
-        $header = [
-            'title' => 'Spectacles',
-            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-            'cover' => 'rs1.png'
-        ];
+        $em = $this->getDoctrine()->getManager();
         $sections = [
             0 => [
                 'imagelink' => 'etmd.jpg',
@@ -104,7 +97,7 @@ class DefaultController extends Controller
         ];
         return $this->render('default/page.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'header' => $header,
+            'header' => $em->getRepository('AppBundle:Page')->getHeader(Page::ENTERTAINMENT),
             'sections' => $sections
         ]);
     }
@@ -114,11 +107,7 @@ class DefaultController extends Controller
 
     public function workshopAction(Request $request)
     {
-        $header = [
-            'title' => 'Cours collectifs',
-            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-            'cover' => 'rs1.png'
-        ];
+        $em = $this->getDoctrine()->getManager();
         $sections = [
             0 => [
                 'imagelink' => 'etmd.jpg',
@@ -134,7 +123,7 @@ class DefaultController extends Controller
         ];
         return $this->render('default/page.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'header' => $header,
+            'header' => $em->getRepository('AppBundle:Page')->getHeader(Page::WORKSHOP),
             'sections' => $sections
         ]);
     }
@@ -142,11 +131,7 @@ class DefaultController extends Controller
     
     public function residenceAction(Request $request)
     {
-        $header = [
-            'title' => 'Résidences',
-            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-            'cover' => 'rs1.png'
-            ];
+        $em = $this->getDoctrine()->getManager();
         $sections = [
             0 => [
              'imagelink' => 'etmd.jpg',
@@ -162,18 +147,14 @@ class DefaultController extends Controller
         ];
         return $this->render('default/page.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'header' => $header,
+            'header' => $em->getRepository('AppBundle:Page')->getHeader(Page::RESIDENCE),
             'sections' => $sections
         ]);
     }
 
     public function trainingAction(Request $request)
     {
-        $header = [
-            'title' => 'Formations',
-            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-            'cover' => 'rs1.png'
-        ];
+        $em = $this->getDoctrine()->getManager();
         $sections = [
             0 => [
                 'imagelink' => 'etmd.jpg',
@@ -189,7 +170,7 @@ class DefaultController extends Controller
         ];
         return $this->render('default/page.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'header' => $header,
+            'header' => $em->getRepository('AppBundle:Page')->getHeader(Page::TRAINING),
             'sections' => $sections
         ]);
     }

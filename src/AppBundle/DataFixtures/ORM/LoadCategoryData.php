@@ -11,9 +11,9 @@ namespace AppBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use AppBundle\Entity\Category;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
-
-class LoadCategoryData implements FixtureInterface
+class LoadCategoryData extends Fixture implements FixtureInterface
 {
 
 
@@ -21,15 +21,19 @@ class LoadCategoryData implements FixtureInterface
 
     public function load(ObjectManager $manager)
     {
-        $this->add($manager,'CAT1');
-        $this->add($manager,'CAT2');
-        $this->add($manager,'CAT3');
-    }
-
-    private function add(ObjectManager $manager,$catName){
         $cat = new Category();
-        $cat->setName($catName);
+        $cat->setName('CATEGORIE 1');
         $manager->persist($cat);
+
+        $cat = new Category();
+        $cat->setName('CATEGORIE 2');
+        $manager->persist($cat);
+        $this->addReference('category', $cat);
+
+        $cat = new Category();
+        $cat->setName('CATEGORIE 3');
+        $manager->persist($cat);
+
         $manager->flush();
     }
 }
