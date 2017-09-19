@@ -171,11 +171,24 @@ module.exports = function (grunt) {
     //require('time-grunt')(grunt);
 
     // Run "grunt" to watch SCSS and JS files as well as running browser-sync
-    grunt.registerTask('default', ['dist', 'watch']);
+    grunt.registerTask('default', ['dist', 'dev', 'watch']);
 
 
-    // Run "grunt dist" to publish the template in a ./dist folder
+
     grunt.registerTask('dist',
+        [
+            'clean:before_copy',
+            'copy:font',
+            'copy:jpg',
+            'concat',
+            'uglify',
+            'cssmin',
+            'postcss',
+            'imagemin'
+        ]
+    );
+
+    grunt.registerTask('dev',
         [
             //'clean:before_copy',
             'copy:font',
@@ -187,12 +200,4 @@ module.exports = function (grunt) {
             //'imagemin'
         ]
     );
-
-    // Run "grunt dev" to make sure your CSS and JS files are up to date for development
-    grunt.registerTask('dev',
-        [
-            'dist'
-        ]
-    );
-
 };
