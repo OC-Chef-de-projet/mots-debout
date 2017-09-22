@@ -20,9 +20,7 @@ class PageListener
      */
     public function prePersist(LifecycleEventArgs $args)
     {
-        /*
         $entity = $args->getObject();
         $entity->setCreatedAt(new \DateTime());
-        */
     }
 }
