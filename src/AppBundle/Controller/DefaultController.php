@@ -12,6 +12,12 @@ use AppBundle\Repository\PagesectionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class DefaultController extends Controller
 {
@@ -65,9 +71,39 @@ class DefaultController extends Controller
 
     public function contactusAction(Request $request)
     {
-        return $this->render('default/contactus.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $form = $this->createFormBuilder()
+            ->add('name', TextType::class,[
+                'label' => 'Votre nom',
+                'attr' => array('class' => 'validate  input-field'),
+            ])
+            ->add('email', EmailType::class,[
+                'label' => 'Votre adresse email',
+                'attr' => array('class' => 'validate input-field'),
+            ])
+            ->add('message', TextareaType::class,[
+                'label' => 'Votre message',
+                'attr' => array(
+                    'class' => 'materialize-textarea validate',
+                ),
+            ])
+            ->add('send', SubmitType::class,[
+                'label' => 'Envoyer'
+            ])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->get('service_mailer')->sendMessage($form->getData());
+        }
+
+
+        return $this->render(
+            'default/contactus.html.twig',
+            [
+                'form' => $form->createView()
+            ]
+        );
     }
 
     

@@ -119,3 +119,23 @@ a {
     -webkit-background-size: cover; /* pour anciens Chrome et Safari */
     background-size: cover; /* version standardisée */
 }
+
+
+.input-field label {
+    color: #5E1616 !important;
+}
+
+.validate {
+    color: #5E1616 !important;
+}
+
+button:focus {
+    background-color: #5E1616;
+    color: #DAA520;
+}
+
+button {
+    color: #5E1616;
+    /*background-color: #DAA520;*/
+
+}
