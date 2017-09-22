@@ -13,12 +13,11 @@ class MailerService
 {
 
     private $mailer = null;
-    private $templating = null;
 
     private $from = 'info@lignedemire.eu';
     private $fromName = 'Info ETMD';
 
-    public function __construct($mailer, $templating)
+    public function __construct($mailer)
     {
         $this->mailer = $mailer;
         $this->templating = $templating;

@@ -18,7 +18,7 @@ services:
 
     service_mailer:
         class: AppBundle\Service\MailerService
-        arguments: ["@Swift_Mailer",'@templating']
+        arguments: ['@Swift_Mailer']
 
     AppBundle\EventListener\PostListener:
         tags:
