@@ -7,7 +7,7 @@
             <div class="card-content">
                 <span class="card-title activator text-darken-4">{{ post.title }}<i
                             class="material-icons right">more_vert</i></span>
-                <p>{{ post.content | html }}</p>
+                <p>{{ post.content | html |wordwrap(500) }}</p>
             </div>
 
             <div class="card-reveal">
@@ -17,16 +17,6 @@
                 <p>{{ post.content | html }}</p>
             </div>
             <a class="halfway-fab waves-effect waves-light right publish">Publié le {{ post.publishedAt|date('d/m/Y') }}</a>
-        </div>
-        <div class="container center-align">
-            <ul class="pagination">
-                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                <li class="active"><a href="#!">1</a></li>
-                <li class="disabled"><a href="#!">2</a></li>
-                <li class="waves-effect"><a href="#!">3</a></li>
-                <li class="waves-effect"><a href="#!">4</a></li>
-                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-            </ul>
         </div>
     </div>
 </div>

@@ -26,12 +26,14 @@ class DefaultController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function indexAction(Request $request)
+    public function indexAction($offset = 0)
     {
-        $em = $this->getDoctrine()->getManager();
 
+        $em = $this->getDoctrine()->getManager();
         return $this->render('default/index.html.twig', [
-            'post' => $em->getRepository('AppBundle:Post')->getLastPost()
+            'current' => $offset,
+            'maxPages' => $em->getRepository('AppBundle:Post')->getPostCount(),
+            'post' => $em->getRepository('AppBundle:Post')->getPost($offset),
         ]);
     }
 

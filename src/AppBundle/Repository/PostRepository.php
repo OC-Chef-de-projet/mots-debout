@@ -13,17 +13,35 @@ use AppBundle\Entity\Post;
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
 
-    public function getLastPost()
+    public function getPost($offset = 1)
     {
+
         $query = $this->createQueryBuilder('p')
             ->where('p.publishedAt IS NOT NULL')
             ->andWhere('p.status = :status')
             ->setParameter('status',Post::PUBLISHED)
+            ->andWhere('p.status = :status')
+            ->setParameter('status',Post::PUBLISHED)
             ->orderBy('p.publishedAt', 'DESC')
             ->setMaxResults(1)
+            ->setFirstResult($offset)
             ->getQuery();
         $results = $query->getOneOrNullResult();
         return $results;
+    }
+
+
+    public function getPostCount()
+    {
+        $count = $this->createQueryBuilder('p')
+            ->select('count(p.id)')
+            ->where('p.publishedAt IS NOT NULL')
+            ->andWhere('p.status = :status')
+            ->setParameter('status',Post::PUBLISHED)
+            ->orderBy('p.publishedAt', 'DESC')
+            ->getQuery()
+            ->getSingleScalarResult();
+        return $count - 1;
     }
 
 }
