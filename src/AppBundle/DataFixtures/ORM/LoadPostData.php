@@ -19,8 +19,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use AppBundle\DataFixtures\ORM\LoadUserData;
 use AppBundle\DataFixtures\ORM\LoadCategoryData;
 
-
-
 class LoadPostData extends Fixture implements FixtureInterface, ContainerAwareInterface
 {
 
@@ -30,7 +28,7 @@ class LoadPostData extends Fixture implements FixtureInterface, ContainerAwareIn
 
         $post = new Post();
         $post->setTitle('Titre de l\'article');
-        $post->setContent('Contenu de l\'article');
+        $post->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
         $post->setCreatedAt(new \DateTime());
         $post->setAuthor($this->getReference('editor'));
         $post->setCategory($this->getReference('category'));

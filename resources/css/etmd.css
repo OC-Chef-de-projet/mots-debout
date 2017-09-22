@@ -55,7 +55,11 @@ main {
     background-color: #DAA520;
 }
 
-
+.publish {
+    color: #5E1616;
+    padding-right: 5px;
+    font-size:10px;
+}
 .btn-floating {
     background-color: #5E1616;
 }
@@ -67,6 +71,16 @@ main {
 .card-content {
     background-color: #DAA520;
     color: #5E1616;
+}
+
+.card .card-reveal {
+    background-color: #DAA520;
+    color: #5E1616;
+
+}
+.card.large {
+    background-color: #DAA520;
+
 }
 
 .card .card-action{
@@ -82,12 +96,8 @@ main {
 
 .card-title
 {
-    position: absolute;
-    top: 22px;
-    height: 80px;
-    font-size: 13px;
-    color: #DAA520 !important;
-    background:#5E1616;
+    color: #5E1616 !important;
+    font-weight: bold !important;
 }
 
 .dropdown-content li a:hover {

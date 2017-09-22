@@ -4,6 +4,7 @@ namespace AppBundle\Repository;
 
 use AppBundle\Entity\Page;
 
+
 /**
  * PostRepository
  *
@@ -23,5 +24,5 @@ class PageRepository extends \Doctrine\ORM\EntityRepository
         $results = $query->getOneOrNullResult();
         return $results;
     }
-
 }
+

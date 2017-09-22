@@ -19,7 +19,7 @@ class Page
     const EXHIBITION = 2;
     const ENTERTAINMENT = 3;
     const WORKSHOP = 4;
-    const RESIDENCE = 5;
+    const RESIDENCY = 5;
     const TRAINING = 6;
 
     /**
@@ -41,7 +41,7 @@ class Page
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="string", length=255)
+     * @ORM\Column(name="content", type="text")
      */
     private $content;
 
@@ -63,7 +63,7 @@ class Page
      * @var int
      *
      * @ORM\Column(name="section", type="integer")
-     * @Assert\Choice(choices = {Page::TUTORING, Page::EXHIBITION, Page::ENTERTAINMENT, Page::WORKSHOP, Page::RESIDENCE, Page::TRAINING },strict = true)
+     * @Assert\Choice(choices = {Page::TUTORING, Page::EXHIBITION, Page::ENTERTAINMENT, Page::WORKSHOP, Page::RESIDENCY, Page::TRAINING },strict = true)
      */
     private $section;
 

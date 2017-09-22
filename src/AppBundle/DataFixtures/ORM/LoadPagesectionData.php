@@ -8,80 +8,96 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
+use AppBundle\Entity\Pagesection;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use AppBundle\Entity\Page;
+use AppBundle\DataFixtures\ORM\LoadSectionData;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
-
-class LoadPagesectionData implements FixtureInterface, ContainerAwareInterface
+class LoadPagesectionData extends Fixture implements FixtureInterface, ContainerAwareInterface
 {
 
-    private $container;
-    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->container = $container;
-    }
 
     public function load(ObjectManager $manager)
     {
         // bin/console doctrine:fixtures:load -n --env=test
 
-        $page = new Page();
-        $page->setTitle('Titre formation');
-        $page->setContent('Présentation de la formation');
-        $page->setCover('grey-square.jpg');
-        $page->setSection(Page::TRAINING);
-        $page->setCreatedAt(new \DateTime());
-        $manager->persist($page);
-        //$manager->flush();
 
-        $page = new Page();
-        $page->setTitle('Cours collectifs');
-        $page->setContent('Présentation des cours collectifs');
-        $page->setCover('grey-square.jpg');
-        $page->setSection(Page::WORKSHOP);
-        $page->setCreatedAt(new \DateTime());
-        $manager->persist($page);
+        $section = new Pagesection();
+        $section->setImagelink('etmd.jpg');
+        $section->setCreatedAt(new \DateTime());
+        $section->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
+        $section->setTitle('1. Titre Formations');
+        $section->setSortorder(1);
+        $section->setPage($this->getReference('training'));
+        $manager->persist($section);
 
-        $page = new Page();
-        $page->setTitle('Cours particuliers');
-        $page->setContent('Présentation des cours particuliers');
-        $page->setCover('grey-square.jpg');
-        $page->setSection(Page::TUTORING);
-        $page->setCreatedAt(new \DateTime());
-        $manager->persist($page);
-
-        $page = new Page();
-        $page->setTitle('Résidences');
-        $page->setContent('Présentation des résidences');
-        $page->setCover('grey-square.jpg');
-        $page->setSection(Page::RESIDENCE);
-        $page->setCreatedAt(new \DateTime());
-        $manager->persist($page);
-
-        $page = new Page();
-        $page->setTitle('Expositions');
-        $page->setContent('Présentation des expositions');
-        $page->setCover('grey-square.jpg');
-        $page->setSection(Page::EXHIBITION);
-        $page->setCreatedAt(new \DateTime());
-        $manager->persist($page);
+        $section = new Pagesection();
+        $section->setImagelink('etmd.jpg');
+        $section->setCreatedAt(new \DateTime());
+        $section->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
+        $section->setTitle('2. Titre Formations');
+        $section->setSortorder(1);
+        $section->setPage($this->getReference('training'));
+        $manager->persist($section);
 
 
-        $page = new Page();
-        $page->setTitle('Spectacles');
-        $page->setContent('Présentation des spectacles');
-        $page->setCover('grey-square.jpg');
-        $page->setSection(Page::ENTERTAINMENT);
-        $page->setCreatedAt(new \DateTime());
-        $manager->persist($page);
+        $section = new Pagesection();
+        $section->setImagelink('etmd.jpg');
+        $section->setCreatedAt(new \DateTime());
+        $section->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
+        $section->setTitle('1. Titre Cours collectifs');
+        $section->setSortorder(1);
+        $section->setPage($this->getReference('workshop'));
+        $manager->persist($section);
 
+        $section = new Pagesection();
+        $section->setImagelink('etmd.jpg');
+        $section->setCreatedAt(new \DateTime());
+        $section->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
+        $section->setTitle('1. Titre Cours particuliers');
+        $section->setSortorder(1);
+        $section->setPage($this->getReference('tutoring'));
+        $manager->persist($section);
 
+        $section = new Pagesection();
+        $section->setImagelink('etmd.jpg');
+        $section->setCreatedAt(new \DateTime());
+        $section->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
+        $section->setTitle('1. Titre Résidences');
+        $section->setSortorder(1);
+        $section->setPage($this->getReference('residency'));
+        $manager->persist($section);
+
+        $section = new Pagesection();
+        $section->setImagelink('etmd.jpg');
+        $section->setCreatedAt(new \DateTime());
+        $section->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
+        $section->setTitle('1. Titre Expositions');
+        $section->setSortorder(1);
+        $section->setPage($this->getReference('exhibition'));
+        $manager->persist($section);
+
+        $section = new Pagesection();
+        $section->setImagelink('etmd.jpg');
+        $section->setCreatedAt(new \DateTime());
+        $section->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
+        $section->setTitle('1. Titre Spectacles');
+        $section->setSortorder(1);
+        $section->setPage($this->getReference('entertainment'));
+        $manager->persist($section);
 
         $manager->flush();
 
+    }
 
+    public function getDependencies()
+    {
+        return array(
+            LoadPageData::class
+        );
     }
 }

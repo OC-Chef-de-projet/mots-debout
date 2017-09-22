@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * PagesectionService
  *
  * @ORM\Table(name="pagesection")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\PostRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PagesectionRepository")
  */
 class Pagesection
 {
@@ -33,7 +33,7 @@ class Pagesection
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="string", length=255)
+     * @ORM\Column(name="content", type="text")
      */
     private $content;
 

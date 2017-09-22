@@ -13,16 +13,11 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use AppBundle\Entity\Page;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
-
-class LoadPageData implements FixtureInterface, ContainerAwareInterface
+class LoadPageData extends Fixture implements FixtureInterface, ContainerAwareInterface
 {
 
-    private $container;
-    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->container = $container;
-    }
 
     public function load(ObjectManager $manager)
     {
@@ -30,52 +25,58 @@ class LoadPageData implements FixtureInterface, ContainerAwareInterface
 
         $page = new Page();
         $page->setTitle('Titre formation');
-        $page->setContent('Présentation de la formation');
+        $page->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
         $page->setCover('grey-square.jpg');
         $page->setSection(Page::TRAINING);
         $page->setCreatedAt(new \DateTime());
         $manager->persist($page);
-        //$manager->flush();
+        $this->addReference('training', $page);
+
 
         $page = new Page();
         $page->setTitle('Cours collectifs');
-        $page->setContent('Présentation des cours collectifs');
+        $page->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
         $page->setCover('grey-square.jpg');
         $page->setSection(Page::WORKSHOP);
         $page->setCreatedAt(new \DateTime());
+        $this->addReference('workshop', $page);
         $manager->persist($page);
 
         $page = new Page();
         $page->setTitle('Cours particuliers');
-        $page->setContent('Présentation des cours particuliers');
+        $page->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
         $page->setCover('grey-square.jpg');
         $page->setSection(Page::TUTORING);
         $page->setCreatedAt(new \DateTime());
+        $this->addReference('tutoring', $page);
         $manager->persist($page);
 
         $page = new Page();
         $page->setTitle('Résidences');
-        $page->setContent('Présentation des résidences');
+        $page->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
         $page->setCover('grey-square.jpg');
-        $page->setSection(Page::RESIDENCE);
+        $page->setSection(Page::RESIDENCY);
         $page->setCreatedAt(new \DateTime());
+        $this->addReference('residency', $page);
         $manager->persist($page);
 
         $page = new Page();
         $page->setTitle('Expositions');
-        $page->setContent('Présentation des expositions');
+        $page->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
         $page->setCover('grey-square.jpg');
         $page->setSection(Page::EXHIBITION);
         $page->setCreatedAt(new \DateTime());
+        $this->addReference('exhibition', $page);
         $manager->persist($page);
 
 
         $page = new Page();
         $page->setTitle('Spectacles');
-        $page->setContent('Présentation des spectacles');
+        $page->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
         $page->setCover('grey-square.jpg');
         $page->setSection(Page::ENTERTAINMENT);
         $page->setCreatedAt(new \DateTime());
+        $this->addReference('entertainment', $page);
         $manager->persist($page);
 
 

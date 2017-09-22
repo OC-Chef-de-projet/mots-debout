@@ -4,39 +4,6 @@ homepage:
     defaults: { _controller: AppBundle:Default:index }
     methods: [get]
 
-training:
-    path:     /formation
-    defaults: { _controller: AppBundle:Default:training }
-    methods: [get]
-
-residence:
-    path:     /residence
-    defaults: { _controller: AppBundle:Default:residence }
-    methods: [get]
-
-workshop:
-    path:     /cours_collectifs
-    defaults: { _controller: AppBundle:Default:workshop }
-    methods: [get]
-
-tutoring:
-    path:     /cours_particluers
-    defaults: { _controller: AppBundle:Default:tutoring }
-    methods: [get]
-
-exhibitions:
-    path:     /expositions
-    defaults: { _controller: AppBundle:Default:exhibitions }
-    methods: [get]
-
-
-entertainment:
-    path:     /spectacles
-    defaults: { _controller: AppBundle:Default:entertainment }
-    methods: [get]
-
-# -------------------
-
 contactus:
     path:     /nous-contacter
     defaults: { _controller: AppBundle:Default:contactus }
@@ -66,6 +33,16 @@ security_login_check:
 
 logout:
     path: /logout
+
+
+page:
+    path:     /{category}
+    defaults: { _controller: AppBundle:Default:page }
+    requirements:
+        category: "formation|expositions|residence|cours_collectifs|cours_particuliers|spectacles"
+    methods: [get]
+
+
 
 admin_import:
     resource: "@AppBundle/Resources/config/routing/admin.yml"

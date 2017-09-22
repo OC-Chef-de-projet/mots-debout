@@ -22,17 +22,17 @@
             <ul class="hide-on-med-and-down" style="display:flex;justify-content: space-around">
                 <li><a id="hometab" target="_self" href="{{ url('homepage') }}">Accueil</a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Ateliers<i class="material-icons right">arrow_drop_down</i></a></li>
-                <li><a id="trainingtab" target="_self" href="{{ url('training') }}">Formations</a></li>
-                <li><a id="residencetab" target="_self" href="{{ url('residence') }}">Résidences</a></li>
-                <li><a id="exhibitiontab" href="{{ url('exhibitions') }}">Expositions</a></li>
-                <li><a id="showtab" href="{{ url('entertainment') }}">Spectacles</a></li>
+                <li><a id="trainingtab" target="_self" href="{{ url('page',{'category':'formation'}) }}">Formations</a></li>
+                <li><a id="residencetab" target="_self" href="{{ url('page',{'category': 'residence'}) }}">Résidences</a></li>
+                <li><a id="exhibitiontab" href="{{ url('page',{'category':'expositions'}) }}">Expositions</a></li>
+                <li><a id="showtab" href="{{ url('page',{'category':'spectacles'}) }}">Spectacles</a></li>
             </ul>
 
         </div>
     </nav>
     <ul id="dropdown1" class="dropdown-content">
-        <li><a href="{{ url('tutoring') }}">Cours particuliers</a></li>
-        <li><a href="{{ url('workshop') }}">Cours collectifs</a></li>
+        <li><a href="{{ url('page',{'category':'cours_particuliers'}) }}">Cours particuliers</a></li>
+        <li><a href="{{ url('page',{'category':'cours_collectifs'}) }}">Cours collectifs</a></li>
     </ul>
 
 </div>
