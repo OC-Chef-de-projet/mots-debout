@@ -20,7 +20,6 @@ class MailerService
     public function __construct($mailer)
     {
         $this->mailer = $mailer;
-        $this->templating = $templating;
     }
 
 
