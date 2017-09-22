@@ -1,10 +1,3 @@
-
-homepage:
-    path:     /{offset}
-    defaults: { _controller: AppBundle:Default:index, offset: 0 }
-    methods: [get]
-
-
 contactus:
     path:     /nous-contacter
     defaults: { _controller: AppBundle:Default:contactus }
@@ -31,10 +24,8 @@ security_login_check:
     defaults: { _controller: AppBundle:Security:loginCheck }
     methods: [get]
 
-
 logout:
     path: /logout
-
 
 page:
     path:     /{category}
@@ -43,7 +34,10 @@ page:
         category: "formation|expositions|residence|cours_collectifs|cours_particuliers|spectacles"
     methods: [get]
 
-
+homepage:
+    path:     /{offset}/{page}
+    defaults: { _controller: AppBundle:Default:index, offset: 0, page: 1 }
+    methods: [get]
 
 admin_import:
     resource: "@AppBundle/Resources/config/routing/admin.yml"

@@ -26,7 +26,7 @@ class DefaultController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function indexAction($offset = 0)
+    public function indexAction($offset = 0,$page = 1)
     {
 
         $em = $this->getDoctrine()->getManager();

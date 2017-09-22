@@ -7,7 +7,7 @@
             <div class="card-content">
                 <span class="card-title activator text-darken-4">{{ post.title }}<i
                             class="material-icons right">more_vert</i></span>
-                <p>{{ post.content | html |wordwrap(500) }}</p>
+                <p>{{ post.content | html | truncate(300, true) }}</p>
             </div>
 
             <div class="card-reveal">
@@ -16,7 +16,8 @@
                 </span>
                 <p>{{ post.content | html }}</p>
             </div>
-            <a class="halfway-fab waves-effect waves-light right publish">Publié le {{ post.publishedAt|date('d/m/Y') }}</a>
+            <!--<a class="halfway-fab waves-effect waves-light right publish">Publié le {{ post.publishedAt|date('d/m/Y') }}</a>-->
+            <a class="waves-effect waves-light btn right publish">Publié le {{ post.publishedAt|date('d/m/Y') }}</a>
         </div>
     </div>
 </div>

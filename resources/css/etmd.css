@@ -56,9 +56,23 @@ main {
 }
 
 .publish {
-    color: #5E1616;
-    padding-right: 5px;
+    background-color: #5E1616 !important;
+    color: #DAA520;
+    text-transform: none !important;
     font-size:10px;
+    opacity: 0.7;
+}
+
+.pagination li.active {
+    background-color: #DAA520;
+}
+
+.pagination li.active a {
+    color: #5E1616;
+}
+
+.pagination li a {
+    color: #5E1616;
 }
 .btn-floating {
     background-color: #5E1616;
