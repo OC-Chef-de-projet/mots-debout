@@ -178,26 +178,19 @@ module.exports = function (grunt) {
     grunt.registerTask('dist',
         [
             'clean:before_copy',
-            'copy:font',
-            'copy:jpg',
-            'concat',
-            'uglify',
-            'cssmin',
-            'postcss',
+	    'dev',
             'imagemin'
         ]
     );
 
     grunt.registerTask('dev',
         [
-            //'clean:before_copy',
             'copy:font',
             'copy:jpg',
             'concat',
             'uglify',
             'cssmin',
             'postcss'
-            //'imagemin'
         ]
     );
 };
