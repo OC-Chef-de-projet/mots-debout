@@ -11,19 +11,75 @@ namespace AppBundle\Service;
 use Doctrine\ORM\EntityManager;
 use AppBundle\Entity\Post;
 use AppBundle\Entity\User;
+use Symfony\Component\Form\Form;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 
 class PostService
 {
 
     protected $em;
-    protected $repository;
+    private $ts;
 
-    public function __construct(EntityManager $entityManager)
+    public function __construct(EntityManager $em,  TokenStorage $ts)
     {
-        $this->repository = $entityManager->getRepository(Post::class);
+        $this->em = $em;
+        $this->ts = $ts;
     }
-    
+
+    /**
+     * Mise à jour d'un article
+     *
+     * @param Post $post        Post entity
+     * @param $form             Form
+     *
+     * @return bool
+     */
+    public function savePost(Post $post, Form $form)
+    {
+
+        $data = $form->getData();
+        /*
+        echo "DATA ".$data->getImagelink();
+        echo "POST ".$post->getImagelink();
+        exit;
+        */
+        if($data->getImagelink()) {
+            $file = $post->getImagelink();
+            if($file) {
+                $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+                $file->move(
+                    './assets/img/',
+                    $fileName
+                );
+                $post->setImagelink($fileName);
+            }
+        }
+        $this->em->persist($post);
+        $this->em->flush();
+        return true;
+    }
+
+    /**
+     * Création d'un article
+     *
+     * @param Post $post Post
+     * @param $form      Form
+     */
+    public function createPost(Post $post, Form $form)
+    {
+
+        $user = $this->ts->getToken()->getUser();
+        $post->setAuthor($user);
+        $file = $post->getImagelink();
+        $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+        $file->move('./assets/img/', $fileName);
+        $post->setImagelink($fileName);
+        $this->em->persist($post);
+        $this->em->flush();
+    }
+
+
     /**
      * Titre pour l'action de modification ou de validation d'un article
      *
@@ -65,7 +121,10 @@ class PostService
      */
     private function selectAllStatus(User $user)
     {
-        $queryBuilder = $this->repository->createQueryBuilder('p');
+
+
+        $post_repo = $this->em->getRepository(Post::class);
+        $queryBuilder = $post_repo->createQueryBuilder('p');
         $queryBuilder->select('p');
 
         // if contributor only contributor's posts
@@ -108,8 +167,7 @@ class PostService
     private function selectWithStatus(User $user,$status)
     {
 
-
-        $queryBuilder = $this->repository->createQueryBuilder('p');
+        $queryBuilder = $this->post_repo->createQueryBuilder('p');
         $queryBuilder->select('p');
         $queryBuilder->where('1 = 1');
 
@@ -172,8 +230,8 @@ class PostService
 
     private function getCount(User $user,$status = null)
     {
-
-        $queryBuilder = $this->repository->createQueryBuilder('f');
+        $post_repo = $this->em->getRepository(Post::class);
+        $queryBuilder = $post_repo->createQueryBuilder('f');
         $queryBuilder->select($queryBuilder->expr()->count('f'));
         $queryBuilder->where('1 = 1');
         if($status) {

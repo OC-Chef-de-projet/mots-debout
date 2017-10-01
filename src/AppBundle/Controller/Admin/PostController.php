@@ -1,15 +1,18 @@
 <?php
+
 namespace AppBundle\Controller\Admin;
+
 use AppBundle\Entity\Post;
 use AppBundle\Form\Type\PostType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\HttpFoundation\File\File;
 
 class PostController extends Controller
 {
-   
-        /**
+
+    /**
      * Lists all user entities.
      *
      */
@@ -20,7 +23,7 @@ class PostController extends Controller
         $UserService = $this->get('service_user');
         $user = $this->getUser();
 
-        $posts = $PostService->getPostsByRoleAndStatus($user,$status);
+        $posts = $PostService->getPostsByRoleAndStatus($user, $status);
 
         return $this->render('@AdminPost/index.html.twig', array(
             'posts' => $posts,
@@ -39,16 +42,11 @@ class PostController extends Controller
         $PostService = $this->get('service_post');
         $post = new Post();
 
-        $form = $this->createForm(PostType::class, $post, ['status' => $PostService->getStatusOptions($user,$post)]);
+        $form = $this->createForm(PostType::class, $post, ['status' => $PostService->getStatusOptions($user, $post)]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Save
-            $post->setCreatedAt(new \DateTime('now'));
-            $post->setAuthor($user);
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($post);
-            $em->flush();
+            $this->container->get('service_post')->createPost($post, $form);
             return $this->redirectToRoute('admin_post_index');
         }
 
@@ -64,23 +62,46 @@ class PostController extends Controller
      */
     public function editAction(Request $request, Post $post, UserInterface $user)
     {
-        $PostService = $this->get('service_post');
-        $deleteForm = $this->createDeleteForm($post);
-        $editForm = $this->createForm(PostType::class, $post,['status' => $PostService->getStatusOptions($user,$post)]);
-        $editForm->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+
+        if($post->getImagelink()) {
+            $post->setImageLink(
+                new File('./assets/img/' . $post->getImagelink())
+            );
+        }
+        $PostService = $this->get('service_post');
+        $form = $this->createForm(PostType::class, $post, ['status' => $PostService->getStatusOptions($user, $post)]);
+        $form->handleRequest($request);
+
+        $deleteForm = $this->createDeleteForm($post);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->container->get('service_post')->savePost($post, $form);
             return $this->redirectToRoute('admin_post_index');
         }
 
         return $this->render('@AdminPost/edit.html.twig', array(
-            'title' => $PostService->getActionTitle($user, $post),
+            'title' => $this->container->get('service_post')->getActionTitle($user, $post),
             'post' => $post,
-            'form' => $editForm->createView(),
+            'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
             'admin' => 1
         ));
+    }
+
+    /**
+     * Creates a form to delete a post entity.
+     *
+     * @param Post $post The post entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createDeleteForm(Post $post)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('admin_post_delete', array('id' => $post->getId())))
+            ->setMethod('DELETE')
+            ->getForm();
     }
 
     /**
@@ -111,22 +132,6 @@ class PostController extends Controller
         return $this->render('@AdminPost/show.html.twig', array(
             'post' => $post,
         ));
-    }
-
-    /**
-     * Creates a form to delete a post entity.
-     *
-     * @param Post $post The post entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Post $post)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_post_delete', array('id' => $post->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-            ;
     }
 
 }

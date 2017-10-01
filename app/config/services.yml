@@ -10,7 +10,7 @@ services:
 
     service_post:
         class: AppBundle\Service\PostService
-        arguments: [ "@doctrine.orm.entity_manager" ]
+        arguments: [ "@doctrine.orm.entity_manager", "@security.token_storage" ]
 
     service_user:
         class: AppBundle\Service\UserService

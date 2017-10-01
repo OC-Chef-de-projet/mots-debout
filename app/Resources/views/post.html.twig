@@ -5,9 +5,9 @@
                 <img class="activator" src="../../assets/img/{{ post.imagelink }}">
             </div>
             <div class="card-content">
-                <span class="card-title activator text-darken-4">{{ post.title }}<i
+                <span class="card-title activator">{{ post.title }}<i
                             class="material-icons right">more_vert</i></span>
-                <p>{{ post.content | html | truncate(300, true) }}</p>
+                <p>{{ post.content | html }}</p>
             </div>
 
             <div class="card-reveal">

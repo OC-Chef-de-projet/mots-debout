@@ -33,6 +33,11 @@ class PostListener
         if ($args->hasChangedField('status') && $args->getNewValue('status') === Post::PUBLISHED) {
             $entity->setPublishedAt(new \DateTime());
         }
+
+        // Manage image change
+        if (!$args->getNewValue('imagelink')) {
+            $entity->setImagelink($args->getOldValue('imagelink'));
+        }
     }
 
     /**

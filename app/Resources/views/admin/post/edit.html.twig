@@ -26,15 +26,11 @@
                     {{ form_errors(form) }}
                     {{ form_start(form,{'attr': {'class': 'form-horizontal'} }) }}
 
-                    <div class="form-group">
-                        <div class="col-sm-2">
+                    <div class="row">
+                        <div class="col col-sm-6">
                             {{ form_widget(form.category) }}
                         </div>
-
-                        <div class="col-sm-8">
-
-                        </div>
-                        <div class="col-sm-2">
+                        <div class="col col-sm-6">
                             {{ form_widget(form.status) }}
                         </div>
                     </div>
@@ -57,6 +53,24 @@
                         </div>
                     </div>
 
+                    <!-- Image -->
+                    <div class="col s12 m6">
+                        <div class="col m8 push-m2">
+                            {{ form_label(form.imagelink) }}
+                            <div class="file-field input-field">
+                                <div class="btn-floating btn-medium waves-effect waves-light">
+                                    <i class="material-icons dp48">add_a_photo</i>
+                                    {{ form_widget(form.imagelink) }}
+                                </div>
+
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text"/>
+                                </div>
+                            </div>
+                            <img src="{{ asset('./'~post.imagelink) }}" style="width:50%">
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="input-field col s6">
                             <button type="submit">Enregistrer</button>
@@ -70,6 +84,8 @@
                         </div>
                         {% endif %}
                     </div>
+
+
 
                     {{ form_end(form) }}
                 </div>

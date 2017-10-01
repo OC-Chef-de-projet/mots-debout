@@ -49,7 +49,7 @@
                         </div>
                     </div>
 
-                    {# Email #}
+                    {# Contenu #}
                     {{ form_errors(form.content) }}
                     <div class="form-group">
                         <div class="col-sm-12">
@@ -58,6 +58,22 @@
                         </div>
                     </div>
 
+                    {# Image #}
+                    <div class="col s12 m6">
+                        <div class="col m8 push-m2">
+                            {{ form_label(form.imagelink) }}
+                            <div class="file-field input-field">
+                                <div class="btn-floating btn-medium waves-effect waves-light">
+                                    <i class="material-icons dp48">add_a_photo</i>
+                                    {{ form_widget(form.imagelink) }}
+                                </div>
+
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     {# Validation #}
                     <div class="form-group">

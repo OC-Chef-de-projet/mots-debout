@@ -8,6 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use AppBundle\Entity\Post;
 
@@ -55,6 +56,14 @@ class PostType extends AbstractType
 
                 ]
             )
+            ->add('imagelink', FileType::class, [
+                'label' => ' ',
+                'data_class' => null,
+                'required' => false,
+                'attr' => [
+                    'class' => 'upload'
+                ],
+            ])
             ;
     }
 
