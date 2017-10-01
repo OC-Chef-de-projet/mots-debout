@@ -47,7 +47,7 @@ class DefaultController extends Controller
             case 'expositions':
                 $category = Page::EXHIBITION;
                 break;
-            case 'residense':
+            case 'residence':
                 $category = Page::RESIDENCY;
                 break;
             case 'cours_collectifs':
