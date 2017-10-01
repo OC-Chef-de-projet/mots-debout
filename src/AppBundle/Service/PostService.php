@@ -61,7 +61,7 @@ class PostService
      * @param Post $post Post
      * @param $form      Form
      */
-    public function createPost(Post $post, Form $form)
+    public function createPost(Post $post)
     {
 
         $user = $this->ts->getToken()->getUser();
