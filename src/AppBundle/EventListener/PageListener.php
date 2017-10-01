@@ -21,6 +21,8 @@ class PageListener
     public function prePersist(LifecycleEventArgs $args)
     {
         $entity = $args->getObject();
-        $entity->setCreatedAt(new \DateTime());
+         if($entity instanceof Page) {
+			$entity->setCreatedAt(new \DateTime());
+		}
     }
 }

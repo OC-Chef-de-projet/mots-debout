@@ -1,0 +1,41 @@
+<div class="navbar-fixed nav-extended">
+    <nav class="nav-top lighten-1" role="navigation">
+        <div class="nav-wrapper containers">
+            <a href="{{ url('homepage') }}" class="brand-logo">ECOLE THEATRE MOTS DEBOUT</a>
+
+            <ul class="right hide-on-med-and-down">
+                <li><h6><a href="{{ url('logout') }}">Déconnexion</a></h6></li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav" style="left: 0px;">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+</div>
+
+<div class="navbar-fixed nav-extended">
+    <nav class="nav-tabs lighten-1" role="navigation">
+        <div class="nav-wrapper containers">
+            <ul class="hide-on-med-and-down" style="display:flex;justify-content: space-around">
+                <li><a id="hometab" target="_self" href="{{ url('admin_homepage') }}">Accueil</a></li>
+
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a id="usertab" target="_self" href="{{ url('admin_user_index') }}">Utilisateurs</a></li>
+                {% endif %}
+
+
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a id="pagetab" target="_self" href="#">Pages</a></li>
+                {% endif %}
+
+                <li><a id="posttab" target="_self" href="{{ url('admin_post_index') }}">Articles</a></li>
+
+
+            </ul>
+
+        </div>
+    </nav>
+</div>
+

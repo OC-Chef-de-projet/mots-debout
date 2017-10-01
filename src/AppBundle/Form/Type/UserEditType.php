@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class UserEditType extends AbstractType
 {
@@ -28,13 +29,19 @@ class UserEditType extends AbstractType
                 'attr' => ['class' => ''],
                 "required" => true,
                 'multiple' => true,
-                'expanded' => true, // render check-boxes
                 'choices' => [
                     'Administrateur' => 'ROLE_ADMIN',
                     'Editeur' => 'ROLE_EDITOR',
                     'Contributeur' => 'ROLE_CONTRIBUTOR'
                 ]
-            ]);
+            ])
+            ->add('save', SubmitType::class,
+                [
+                    'attr' => [],
+                    'label' => 'Modifier'
+                ]
+            )
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -20,27 +20,28 @@ class LoginType extends AbstractType
             ->add('_email', EmailType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Adresse email'
+                        'label' => 'Adresse email',
+                        'class' => 'validate  input-field'
                     ]
                 ]
             )
             ->add('_password', PasswordType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Mot de passe'
+                        'label' => 'Mot de passe',
+                        'class' => 'validate  input-field'
                     ]
                 ]
             )
             ->add('save', SubmitType::class,
                 [
-                    'attr' => array('class' => 'btn btn-success btn-sm'),
                     'label' => 'Connexion'
                 ]
             )
             ->add('_remember_me', CheckboxType::class,
                 [
                     'data' => true,
-                    'required' => false
+                    'label' => "Se souvenir de moi"
                 ]
             );
     }

@@ -1,22 +1,47 @@
 <div class="navbar-fixed nav-extended">
     <nav class="nav-top lighten-1" role="navigation">
         <div class="nav-wrapper containers">
-            <a href="{{ url('homepage') }}" class="brand-logo">ECOLE THEATRE MOTS DEBOUT</a>
+            <span class="hide-on-small-only">
+            <a href="{{ url('homepage') }}" class="brand-logo" >
+                <img src="../../images/logo.png" alt="Ecole Théatre Mots Debout" style="vertical-align:middle;height:80px" >
+                <span>Ecole Théatre Mots Debout</span>
+            </a>
+            </span>
 
+            <span class="hide-on-med-and-up">
+            <a href="{{ url('homepage') }}" class="brand-logos" >
+                <img src="../../images/logo.png" alt="Ecole Théatre Mots Debout" style="vertical-align:middle;height:40px" >
+                <span style="font-size: 15px">Ecole Théatre Mots Debout</span>
+            </a>
+            </span>
+
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><h6><a href="{{ url('contactus') }}">Nous contacter</a></h6></li>
                 <li><h6><a href="{{ url('admin_homepage') }}">S'identifier</a></h6></li>
             </ul>
 
-            <ul id="nav-mobile" class="side-nav" style="left: 0px;">
-                <li><a href="#">Navbar Link</a></li>
+            <ul id="nav-mobile" class="side-nav">
+                <li class="center"><b>Ecole Théatre Mots Debout</b></li>
+                <li><div class="divider"></div></li>
+                <li><a target="_self" href="{{ url('homepage') }}">Accueil</a></li>
+                <li><a href="{{ url('page',{'category':'cours_particuliers'}) }}">Cours particuliers</a></li>
+                <li><a href="{{ url('page',{'category':'cours_collectifs'}) }}">Cours collectifs</a></li>
+                <li><a href="{{ url('page',{'category':'formation'}) }}">Formations</a></li>
+                <li><a target="_self" href="{{ url('page',{'category': 'residence'}) }}">Résidences</a></li>
+                <li><a href="{{ url('page',{'category':'expositions'}) }}">Expositions</a></li>
+                <li><a href="{{ url('page',{'category':'spectacles'}) }}">Spectacles</a></li>
+                <li><div class="divider"></div></li>
+                <li><h6><a href="{{ url('contactus') }}">Nous contacter</a></h6></li>
+                <li><h6><a href="{{ url('admin_homepage') }}">S'identifier</a></h6></li>
             </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+
+
         </div>
     </nav>
 </div>
 
-<div class="navbar-fixed nav-extended">
+<div class="navbar-fixed nav-extended hide-on-small-only">
     <nav class="nav-tabs lighten-1" role="navigation">
         <div class="nav-wrapper containers">
             <ul class="hide-on-med-and-down" style="display:flex;justify-content: space-around">

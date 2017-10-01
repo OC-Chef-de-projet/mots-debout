@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+
 {% block form_errors %}
     {% spaceless %}
         {% if errors|length > 0 %}
@@ -12,6 +13,58 @@
 {% endblock form_errors %}
 
 {% block body %}
+    <main id="admin">
+        <div class="col container">
+            <div class="card">
+                <div class="card-image">
+                    <h4 class="hdeader">Modification d'un compte utilisateur
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        {{ form_errors(edit_form) }}
+                        {{ form_start(edit_form,{'attr': {'class': 'form-horizontal'} }) }}
+                        <div class="row">
+
+
+                            {# Nom #}
+                            {{ form_errors(edit_form.name ) }}
+                            <div class="input-field col s12">
+                                {{ form_widget(edit_form.name) }}
+                                <label class="active" >{{ form_label(edit_form.name) }}</label>
+                            </div>
+
+                            {# Email #}
+                            {{ form_errors(edit_form.email) }}
+                            <div class="input-field col s12">
+                                {{ form_widget(edit_form.email) }}
+                                <label class="active" style="width:100%">{{ form_label(edit_form.email) }}</label>
+                            </div>
+
+
+                            {# Roles #}
+                            <div class="input-field col s12">
+                                {{ form_widget(edit_form.roles) }}
+                                <p></p>
+                                <label class="active" for="roles">{{ form_label(edit_form.roles) }}</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                {{ form_end(edit_form) }}
+                            </div>
+                            <div class="input-field col s6">
+                                {{ form_start(delete_form) }}
+                                    <button type="submit">Supprimer</button>
+                                {{ form_end(delete_form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!--
     {% include "@Admin/admin.html.twig" %}
     <div class="container">
         <div class="jumbotron">
@@ -33,7 +86,7 @@
                             </a>
                         </li>
                     </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </nav>
             {{ form_errors(edit_form) }}
             {{ form_start(edit_form,{'attr': {'class': 'form-horizontal'} }) }}
@@ -79,5 +132,6 @@
 
         </div>
     </div>
+    -->
 {% endblock %}
 

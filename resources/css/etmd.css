@@ -22,6 +22,26 @@ nav ul a {
     color: #5E1616;
 }
 
+.back-brown {
+    color: #5E1616;
+}
+
+.btn-floating i {
+    color: #DAA520;
+}
+
+.btn-floating i:hover {
+    color: #5E1616;
+}
+
+.text-yellow {
+    color: #DAA520 !important;
+}
+
+.back-yellow {
+    background-color: #DAA520;
+}
+
 nav ul a:hover {
     background-color: #DAA520;
     color: #5E1616;
@@ -114,6 +134,12 @@ main {
     font-weight: bold !important;
 }
 
+.card {
+    background-color: #DAA520;
+    color: #5E1616;
+    text-align: center;
+}
+
 .dropdown-content li a:hover {
     background-color: #DAA520;
     color: #5E1616 !important;
@@ -134,9 +160,49 @@ a {
     background-size: cover; /* version standardisée */
 }
 
+#admin {
+    background: url(../../assets/img/workshop1.png) no-repeat center fixed;
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover; /* version standardisée */
+
+
+}
+
+.button-collapse {
+    color: #5E1616;
+}
+
+.side-nav {
+    color: #5E1616;
+    background-color: #DAA520;
+
+}
+
+#sidenav-overlay {
+    background-color: rgba(0,0,0,0.3);
+}
+
+.divider {
+    background-color: #5E1616;
+}
+
+
+
+.dropdown-content  {
+    background-color: #5E1616;
+    color: #DAA520;
+}
+
+.dropdown-content li > span {
+    color: #DAA520;
+}
 
 .input-field label {
     color: #5E1616 !important;
+}
+
+input {
+    border-bottom: 1px solid #5E1616 !important;
 }
 
 .validate {

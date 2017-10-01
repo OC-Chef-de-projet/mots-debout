@@ -15,6 +15,67 @@
 
 
 {% block body %}
+    <main id="admin">
+        <div class="col container">
+            <div class="card">
+                <div class="card-image">
+                    <h4 class="hdeader">Création de compte utilisateur
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        {{ form_errors(form) }}
+                        {{ form_start(form,{'attr': {'class': 'form-horizontal'} }) }}
+                        <div class="row">
+
+
+                            {# Nom #}
+                            {{ form_errors(form.name ) }}
+                            <div class="input-field col s12">
+                                {{ form_widget(form.name) }}
+                                <label class="active" for="first_name2">{{ form_label(form.name) }}</label>
+                            </div>
+
+                            {# Email #}
+                            {{ form_errors(form.email) }}
+                            <div class="input-field col s12">
+                                {{ form_widget(form.email) }}
+                                <label class="active" for="email" style="width:100%">{{ form_label(form.email) }}</label>
+                            </div>
+
+                            {# Roles #}
+                            <div class="input-field col s12">
+                                {{ form_widget(form.roles) }}
+                                <p></p>
+                                <label class="active" for="roles">{{ form_label(form.roles) }}</label>
+                            </div>
+
+                            {# Mot de passe #}
+                            {{ form_errors(form.plainPassword.first) }}
+                            {% for passwordField in form.plainPassword %}
+                                <div class="input-field col s12">
+                                    {{ form_widget(passwordField) }}
+                                    <label class="active"  style="width:100%" for="password">{{ form_label(passwordField) }}</label>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 right">
+                                <button type="submit">Créér</button>
+                                {{ form_end(form) }}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+
+    <!--
     {% include "@Admin/admin.html.twig" %}
 
     <div class="container">
@@ -37,7 +98,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </div><!--/.nav-collapse -->
+                    </div>
             </nav>
             {{ form_errors(form) }}
             {{ form_start(form,{'attr': {'class': 'form-horizontal'} }) }}
@@ -88,4 +149,5 @@
             {{ form_end(form) }}
         </div>
     </div>
+    -->
 {% endblock %}

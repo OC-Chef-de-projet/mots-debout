@@ -27,7 +27,6 @@ class UserType extends AbstractType
                 'label' => 'Rôles',
                 'attr' => ['class' => ''],
                 'multiple' => true,
-                'expanded' => true, // render check-boxes
                 'choices' => [
                     'Administrateur' => 'ROLE_ADMIN',
                     'Editeur' => 'ROLE_EDITOR',

@@ -20,7 +20,13 @@
 </head>
 
 <body>
-    <header>{% include '::navbar.html.twig' %}</header>
+    <header>
+        {%  if admin is defined %}
+            {% include '@Admin/navbaradmin.html.twig' %}
+        {% else %}
+            {% include '::navbar.html.twig' %}
+        {% endif %}
+    </header>
 
     {% block body %}{% endblock %}
 
@@ -28,6 +34,16 @@
 
 
     {% block javascripts %}{% endblock %}
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+            $(".button-collapse").sideNav();
+            $('.button-collapse').click(removeOverlay);
+        });
+        function removeOverlay() {
+            $('div[id^=sidenav-overlay]').remove();
+        }
+    </script>
 
 </body>
 </html>

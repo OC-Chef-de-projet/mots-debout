@@ -107,31 +107,22 @@ class PostService
      */
     private function selectWithStatus(User $user,$status)
     {
+
+
         $queryBuilder = $this->repository->createQueryBuilder('p');
         $queryBuilder->select('p');
+        $queryBuilder->where('1 = 1');
 
-        // contributor only contributor's posts with requested status
-        if(in_array('ROLE_CONTRIBUTOR', $user->getRoles())) {
-            $queryBuilder->where($queryBuilder->expr()->eq('p.author',':user'))->setParameter('user', $user);
+        $queryBuilder->andwhere($queryBuilder->expr()->eq('p.status',':status'))->setParameter('status', $status);
 
+        if($status == Post::DRAFT){
+            $queryBuilder->andwhere($queryBuilder->expr()->eq('p.author',':user'))->setParameter('user', $user);
         }
 
-        // editor all post with requested status if not Draft
-        if(in_array('ROLE_EDITOR', $user->getRoles()) && $status != Post::DRAFT) {
-            $queryBuilder->where($queryBuilder->expr()->eq('p.status',':status'))
-                ->setParameter('status', $status);
-        }
-
-        // editor all post with requested status and exclude contributor's draft
-        if(in_array('ROLE_EDITOR', $user->getRoles()) && $status == Post::DRAFT) {
-            $queryBuilder->where($queryBuilder->expr()->eq('p.author',':user'))->setParameter('user', $user);
-            $queryBuilder->andwhere($queryBuilder->expr()->eq('p.status',':status'))->setParameter('status', $status);
-        }
 
         $queryBuilder->orderBy('p.id', 'DESC');
         $query = $queryBuilder->getQuery();
         return $query->getResult();
-
     }
 
 
@@ -182,21 +173,15 @@ class PostService
     private function getCount(User $user,$status = null)
     {
 
-        $withUser = true;
-        if(in_array('ROLE_EDITOR', $user->getRoles())) {
-            $withUser = false;
-        }
         $queryBuilder = $this->repository->createQueryBuilder('f');
         $queryBuilder->select($queryBuilder->expr()->count('f'));
-
         $queryBuilder->where('1 = 1');
-        if($withUser) {
-            $queryBuilder->andWhere('f.author = :author')->setParameter('author', $user);
-        }
-        if($status){
+        if($status) {
             $queryBuilder->andWhere('f.status = :status')->setParameter('status', $status);
         }
-
+        if($status == Post::DRAFT){
+            $queryBuilder->andWhere('f.author = :author')->setParameter('author', $user);
+        }
         $query = $queryBuilder->getQuery();
         $singleScalar = $query->getSingleScalarResult();
         return $singleScalar;

@@ -15,6 +15,64 @@
 
 
 {% block body %}
+<main id="admin">
+
+    <div class="col container">
+        <div class="card">
+            <div class="card-image">
+                <h4 class="hdeader">Création d'un article
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    {{ form_errors(form) }}
+                    {{ form_start(form,{'attr': {'class': 'form-horizontal'} }) }}
+
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            {{ form_widget(form.category) }}
+                        </div>
+
+                        <div class="col-sm-6">
+
+                        </div>
+                        <div class="col-sm-2">
+                            {{ form_widget(form.status) }}
+                        </div>
+                    </div>
+
+                    {# Nom #}
+                    {{ form_errors(form.title ) }}
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label for="title">{{ form_label(form.title) }}</label>
+                            {{ form_widget(form.title) }}
+                        </div>
+                    </div>
+
+                    {# Email #}
+                    {{ form_errors(form.content) }}
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label for="content">{{ form_label(form.content) }}</label>
+                            {{ form_widget(form.content) }}
+                        </div>
+                    </div>
+
+
+                    {# Validation #}
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="submit">Enregistrer</button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <!--
     {% include "@Admin/admin.html.twig" %}
 
     <div class="container">
@@ -36,7 +94,7 @@
                             <a href="{{ path('admin_post_index') }}">Retour à la liste</a>
                         </li>
                     </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </nav>
             {{ form_errors(form) }}
             {{ form_start(form,{'attr': {'class': 'form-horizontal'} }) }}
@@ -82,6 +140,7 @@
             {{ form_end(form) }}
         </div>
     </div>
+    -->
 {% endblock %}
 
 {% block javascripts %}

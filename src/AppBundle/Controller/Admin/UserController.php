@@ -21,6 +21,7 @@ class UserController extends Controller
 
         return $this->render('@AdminUser/index.html.twig', array(
             'users' => $users,
+            'admin' => 1
         ));
     }
 
@@ -51,6 +52,7 @@ class UserController extends Controller
         return $this->render('@AdminUser/new.html.twig', array(
             'user' => $user,
             'form' => $form->createView(),
+            'admin' => 1
         ));
     }
 
@@ -65,6 +67,7 @@ class UserController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->persist($user);
             $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('admin_user_index');
         }
@@ -73,6 +76,7 @@ class UserController extends Controller
             'user' => $user,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'admin' => 1
         ));
     }
 

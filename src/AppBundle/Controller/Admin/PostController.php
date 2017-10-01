@@ -19,12 +19,14 @@ class PostController extends Controller
         $PostService = $this->get('service_post');
         $UserService = $this->get('service_user');
         $user = $this->getUser();
+
         $posts = $PostService->getPostsByRoleAndStatus($user,$status);
 
         return $this->render('@AdminPost/index.html.twig', array(
             'posts' => $posts,
             'view' => $UserService->haveView($user),
-            'counts' => $PostService->getPostsCount($user)
+            'counts' => $PostService->getPostsCount($user),
+            'admin' => 1
         ));
     }
 
@@ -52,6 +54,7 @@ class PostController extends Controller
 
         return $this->render('@AdminPost/new.html.twig', array(
             'form' => $form->createView(),
+            'admin' => 1
         ));
     }
 
@@ -76,6 +79,7 @@ class PostController extends Controller
             'post' => $post,
             'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'admin' => 1
         ));
     }
 
