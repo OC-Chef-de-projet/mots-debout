@@ -39,11 +39,6 @@ class PostService
     {
 
         $data = $form->getData();
-        /*
-        echo "DATA ".$data->getImagelink();
-        echo "POST ".$post->getImagelink();
-        exit;
-        */
         if($data->getImagelink()) {
             $file = $post->getImagelink();
             if($file) {
