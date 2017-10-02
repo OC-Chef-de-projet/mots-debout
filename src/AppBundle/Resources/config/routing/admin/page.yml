@@ -1,0 +1,5 @@
+admin_page_index:
+    path:     /
+    defaults: { _controller: AppBundle:Admin\Page:index }
+    methods:  GET
+

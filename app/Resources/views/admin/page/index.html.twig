@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main id="admin">
+        <div class="col container">
+            <div class="card">
+                <div class="card-image">
+                    <h4 class="hdeader">Gestion des pages</h4>
+                </div>
+
+                <div class="card-stacked">
+
+                    <div class="card-content card-section">
+
+                        <table class="table table-condensed">
+                            <thead>
+                            <tr>
+                                <th>Section</th>
+                                <th>Titre</th>
+                                <th>Sous section</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for page in pages %}
+                                <tr>
+                                    <td>{{ page.sectionString }}</td>
+                                    <td>{{ page.title }}</td>
+                                    <td>
+                                        <a href="#"
+                                           class="btn-floating btn-large waves-effect waves-light back-brown text-yellow">
+                                            <i class="material-icons">add</i>
+                                        </a>
+                                        <a href="#"
+                                           class="dropdown-button btn-floating btn-large waves-effect waves-light back-brown text-yellow"
+                                           data-activates='dropdown1'
+                                        >
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                        <!-- Dropdown Structure -->
+                                        <ul id='dropdown1' class='dropdown-content'>
+                                            {% for sub in page.pagesections %}
+                                            <li>
+                                                <a href="#">{{ sub.title }}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </main>
+{% endblock %}

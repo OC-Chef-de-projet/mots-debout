@@ -16,6 +16,10 @@ services:
         class: AppBundle\Service\UserService
         arguments: [ "@doctrine.orm.entity_manager" ]
 
+    service_page:
+        class: AppBundle\Service\PageService
+        arguments: [ "@doctrine.orm.entity_manager" ]
+
     service_mailer:
         class: AppBundle\Service\MailerService
         arguments: ['@Swift_Mailer']

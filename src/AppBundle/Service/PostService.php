@@ -161,8 +161,8 @@ class PostService
      */
     private function selectWithStatus(User $user,$status)
     {
-
-        $queryBuilder = $this->post_repo->createQueryBuilder('p');
+        $post_repo = $this->em->getRepository(Post::class);
+        $queryBuilder = $post_repo->createQueryBuilder('p');
         $queryBuilder->select('p');
         $queryBuilder->where('1 = 1');
 

@@ -59,10 +59,10 @@ class Pagesection
     private $sortorder;
 
     /**
-     * @var User
+     * @var Page
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Page")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Page", inversedBy="pagesections", cascade={"persist"})
+     * @ORM\JoinColumn(name="page_id", referencedColumnName="id")
      */
     private $page;
 

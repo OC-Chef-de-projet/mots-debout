@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * PageService
@@ -59,6 +60,12 @@ class Page
      */
     private $createdAt;
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="Pagesection", mappedBy="page", cascade={"all"}, orphanRemoval=true)
+     */
+    private $pagesections;
+
     /**
      * @var int
      *
@@ -66,6 +73,14 @@ class Page
      * @Assert\Choice(choices = {Page::TUTORING, Page::EXHIBITION, Page::ENTERTAINMENT, Page::WORKSHOP, Page::RESIDENCY, Page::TRAINING },strict = true)
      */
     private $section;
+
+
+    public function __construct()
+    {
+        $this->pagesections = new ArrayCollection();
+    }
+
+
 
     /**
      * Get id
@@ -196,4 +211,69 @@ class Page
     {
         return $this->section;
     }
+
+    public function getSectionString(){
+        return self::sectionToString($this->section);
+    }
+
+    public static function sectionToString($section){
+        switch ($section){
+            case self::TRAINING:
+                return 'Formations';
+
+            case self::WORKSHOP:
+                return 'Cours collectifs';
+
+            case self::TUTORING:
+                return 'Cours particuliers';
+
+            case self::RESIDENCY:
+                return 'Résidence';
+
+            case self::ENTERTAINMENT:
+                return 'Spectacles';
+
+            case self::EXHIBITION:
+                return 'Expositions';
+
+            default:
+                return 'Erreur';
+        }
+    }
+
+    /**
+     * Add pagesection
+     *
+     * @param \AppBundle\Entity\Pagesection $pagesection
+     *
+     * @return Page
+     */
+    public function addPagesection(\AppBundle\Entity\Pagesection $pagesection)
+    {
+        $this->pagesections[] = $pagesection;
+
+        return $this;
+    }
+
+    /**
+     * Remove pagesection
+     *
+     * @param \AppBundle\Entity\Pagesection $pagesection
+     */
+    public function removePagesection(\AppBundle\Entity\Pagesection $pagesection)
+    {
+        $this->pagesections->removeElement($pagesection);
+    }
+
+    /**
+     * Get pagesections
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPagesections()
+    {
+        return $this->pagesections;
+    }
 }
+
+
