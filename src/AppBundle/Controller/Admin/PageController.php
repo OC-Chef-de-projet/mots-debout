@@ -33,7 +33,6 @@ class PageController extends Controller
     public function editAction(Request $request, Post $post, UserInterface $user)
     {
 
-        /*
 
         if($post->getImagelink()) {
             $post->setImageLink(
@@ -58,7 +57,6 @@ class PageController extends Controller
             'delete_form' => $deleteForm->createView(),
             'admin' => 1
         ));
-        */
     }
 }
 
