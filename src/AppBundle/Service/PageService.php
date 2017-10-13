@@ -18,7 +18,6 @@ class PageService
 {
 
     protected $em;
-    private $ts;
 
     public function __construct(EntityManager $em)
     {
@@ -29,7 +28,6 @@ class PageService
     public function getSections()
     {
         $pages = $this->em->getRepository(Page::class)->findAll();
-        dump($pages);
         return $pages;
     }
 }
