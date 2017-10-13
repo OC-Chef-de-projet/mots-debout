@@ -61,7 +61,7 @@ class Pagesection
     /**
      * @var Page
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Page", inversedBy="pagesections", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Page", fetch="EAGER", inversedBy="pagesections", cascade={"persist"})
      * @ORM\JoinColumn(name="page_id", referencedColumnName="id")
      */
     private $page;

@@ -62,7 +62,7 @@ class Page
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Pagesection", mappedBy="page", cascade={"all"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Pagesection", mappedBy="page", cascade={"all"}, orphanRemoval=true,fetch="EAGER")
      */
     private $pagesections;
 
