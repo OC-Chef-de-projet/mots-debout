@@ -97,6 +97,7 @@ class DefaultController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('service_mailer')->sendMessage($form->getData());
+	    return $this->redirectToRoute('homepage');
         }
 
 
