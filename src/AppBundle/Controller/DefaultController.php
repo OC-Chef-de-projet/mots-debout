@@ -32,30 +32,13 @@ class DefaultController extends Controller
     public function pageAction($category)
     {
 
-        switch ($category) {
-            case 'formation':
-                $category = Page::TRAINING;
-                break;
-            case 'expositions':
-                $category = Page::EXHIBITION;
-                break;
-            case 'residence':
-                $category = Page::RESIDENCY;
-                break;
-            case 'cours_collectifs':
-                $category = Page::WORKSHOP;
-                break;
-            case 'cours_particuliers':
-                $category = Page::TUTORING;
-                break;
-            case 'spectacles':
-                $category = Page::ENTERTAINMENT;
-                break;
-        }
-
         $em = $this->getDoctrine()->getManager();
 
-        $header = $em->getRepository('AppBundle:Page')->getHeader($category);
+
+        $categoryID = $this->get('service_page')->getCategoryID($category);
+
+
+        $header = $em->getRepository('AppBundle:Page')->getHeader($categoryID);
         $sections = $em->getRepository('AppBundle:Pagesection')->getContents($header);
         return $this->render('default/page.html.twig', [
             'header' => $header,
@@ -79,7 +62,7 @@ class DefaultController extends Controller
             ]
         );
     }
-    
+
     /**
      *
      */
