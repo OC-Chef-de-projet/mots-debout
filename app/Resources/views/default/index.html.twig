@@ -11,7 +11,7 @@
                             <i class="material-icons">chevron_left</i>
                         </a>
                     </li>
-                    {% for i in current..current+4 %}
+                    {% for i in 0..maxPages %}
                         <li class="waves-effect {{ current == i ? 'active' }}{{ i > maxPages ? 'disabled' }}">
                             <a href="{{ path('homepage', {offset:i}) }}">{{ i+1 }}</a>
                         </li>
