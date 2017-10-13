@@ -2,22 +2,14 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\User;
+use AppBundle\Form\Type\ContactusType;
 use AppBundle\Entity\Page;
-use AppBundle\Entity\Pagesection;
+use AppBundle\Entity\User;
 use AppBundle\Form\RegistrationForm;
 use AppBundle\Form\Type\UserType;
-use AppBundle\Repository\PageRepository;
-use AppBundle\Repository\PagesectionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
 class DefaultController extends Controller
 {
@@ -26,7 +18,7 @@ class DefaultController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function indexAction($offset = 0,$page = 1)
+    public function indexAction($offset = 0, $page = 1)
     {
 
         $em = $this->getDoctrine()->getManager();
@@ -40,7 +32,7 @@ class DefaultController extends Controller
     public function pageAction($category)
     {
 
-        switch($category){
+        switch ($category) {
             case 'formation':
                 $category = Page::TRAINING;
                 break;
@@ -73,42 +65,20 @@ class DefaultController extends Controller
 
     public function contactusAction(Request $request)
     {
-        $form = $this->createFormBuilder()
-            ->add('name', TextType::class,[
-                'label' => 'Votre nom',
-                'attr' => array('class' => 'validate  input-field'),
-            ])
-            ->add('email', EmailType::class,[
-                'label' => 'Votre adresse email',
-                'attr' => array('class' => 'validate input-field'),
-            ])
-            ->add('message', TextareaType::class,[
-                'label' => 'Votre message',
-                'attr' => array(
-                    'class' => 'materialize-textarea validate',
-                ),
-            ])
-            ->add('send', SubmitType::class,[
-                'label' => 'Envoyer'
-            ])
-            ->getForm();
 
+        $form = $this->createForm(ContactusType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('service_mailer')->sendMessage($form->getData());
-	    return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('homepage');
         }
 
-
-        return $this->render(
-            'default/contactus.html.twig',
-            [
+        return $this->render('default/contactus.html.twig', [
                 'form' => $form->createView()
             ]
         );
     }
-
     
     /**
      *
