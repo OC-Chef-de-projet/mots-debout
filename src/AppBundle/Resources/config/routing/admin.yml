@@ -9,3 +9,4 @@ admin_post_import:
 admin_page_import:
     resource: "admin/page.yml"
     prefix: /page
+
