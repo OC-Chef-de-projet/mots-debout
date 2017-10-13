@@ -20,10 +20,9 @@ class PageController extends Controller
     public function indexAction(Request $request)
     {
         $pages = $this->get('service_page')->getSections();
-        return $this->render('@AdminPage/index.html.twig', array(
+        return $this->render('@AdminPage/index.html.twig', [
             'pages' => $pages,
-            'admin' => 1
-        ));
+        ]);
     }
 
 
@@ -51,13 +50,12 @@ class PageController extends Controller
             return $this->redirectToRoute('admin_post_index');
         }
 
-        return $this->render('@AdminPost/edit.html.twig', array(
+        return $this->render('@AdminPost/edit.html.twig', [
             'title' => $this->container->get('service_post')->getActionTitle($user, $post),
             'post' => $post,
             'form' => $form->createView(),
-            'delete_form' => $deleteForm->createView(),
-            'admin' => 1
-        ));
+            'delete_form' => $deleteForm->createView()
+        ]);
     }
 }
 

@@ -20,6 +20,10 @@ services:
         class: AppBundle\Service\PageService
         arguments: [ "@doctrine.orm.entity_manager" ]
 
+    service_role:
+        class: AppBundle\Service\RoleService
+        arguments: [ "@security.role_hierarchy" ]
+
     service_mailer:
         class: AppBundle\Service\MailerService
         arguments: ['@Swift_Mailer']

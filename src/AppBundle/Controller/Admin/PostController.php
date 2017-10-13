@@ -28,8 +28,7 @@ class PostController extends Controller
         return $this->render('@AdminPost/index.html.twig', array(
             'posts' => $posts,
             'view' => $UserService->haveView($user),
-            'counts' => $PostService->getPostsCount($user),
-            'admin' => 1
+            'counts' => $PostService->getPostsCount($user)
         ));
     }
 
@@ -51,8 +50,7 @@ class PostController extends Controller
         }
 
         return $this->render('@AdminPost/new.html.twig', array(
-            'form' => $form->createView(),
-            'admin' => 1
+            'form' => $form->createView()
         ));
     }
 
@@ -84,8 +82,7 @@ class PostController extends Controller
             'title' => $this->container->get('service_post')->getActionTitle($user, $post),
             'post' => $post,
             'form' => $form->createView(),
-            'delete_form' => $deleteForm->createView(),
-            'admin' => 1
+            'delete_form' => $deleteForm->createView()
         ));
     }
 

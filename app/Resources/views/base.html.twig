@@ -21,7 +21,7 @@
 
 <body>
     <header>
-        {%  if admin is defined %}
+        {% if is_granted('ROLE_CONTRIBUTOR') %}
             {% include '@Admin/navbaradmin.html.twig' %}
         {% else %}
             {% include '::navbar.html.twig' %}
