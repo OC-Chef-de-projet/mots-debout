@@ -14,7 +14,7 @@ services:
 
     service_user:
         class: AppBundle\Service\UserService
-        arguments: [ "@doctrine.orm.entity_manager" ]
+        arguments: [ ]
 
     service_page:
         class: AppBundle\Service\PageService

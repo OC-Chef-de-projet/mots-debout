@@ -28,7 +28,7 @@ class Newsletter
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
      *
-     * @Assert\Email(message = "Cet email '{{ value }}' n'st pas correct.", checkMX = true)
+     * @Assert\Email(message = "Cet email '{{ value }}' n'est pas correct.", checkMX = true)
      */
     private $email;
 

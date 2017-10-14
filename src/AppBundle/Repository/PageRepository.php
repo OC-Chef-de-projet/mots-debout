@@ -16,7 +16,6 @@ class PageRepository extends \Doctrine\ORM\EntityRepository
 
     public function getHeader($section)
     {
-        error_log($section);
         $query = $this->createQueryBuilder('p')
             ->where('p.section = :section')
             ->setParameter('section',$section)

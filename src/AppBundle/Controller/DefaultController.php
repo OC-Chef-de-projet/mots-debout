@@ -31,12 +31,8 @@ class DefaultController extends Controller
 
     public function pageAction($category)
     {
-
         $em = $this->getDoctrine()->getManager();
-
-
         $categoryID = $this->get('service_page')->getCategoryID($category);
-
 
         $header = $em->getRepository('AppBundle:Page')->getHeader($categoryID);
         $sections = $em->getRepository('AppBundle:Pagesection')->getContents($header);

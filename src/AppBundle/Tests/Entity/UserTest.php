@@ -12,8 +12,9 @@ use AppBundle\Entity\User;
 
 class UserTest extends \PHPUnit_Framework_TestCase
 {
-    public function testEnity()
+    public function testEntity()
     {
+
         $user = new User();
         $user->setName('test');
         $this->assertEquals('test',$user->getName());

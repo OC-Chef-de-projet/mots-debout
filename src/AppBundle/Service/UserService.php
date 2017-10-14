@@ -15,14 +15,6 @@ use AppBundle\Entity\User;
 class UserService
 {
 
-    protected $em;
-    protected $repository;
-
-    public function __construct(EntityManager $entityManager)
-    {
-        $this->repository = $entityManager->getRepository(User::class);
-    }
-
     public function haveView(User $user)
     {
         $haveView = false;
