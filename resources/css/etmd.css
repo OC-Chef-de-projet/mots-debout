@@ -8,7 +8,7 @@ h1 {
 }
 
 h5 {
-    color: #DAA520;
+    color: #C3C3C3;
 }
 
 .nav-top {
@@ -34,6 +34,33 @@ nav ul a {
 
 .back-brown {
     color: #5E1616;
+}
+
+.btn {
+    color: #DAA520;
+    background-color: #5E1616;
+}
+
+.btn:focus {
+    background-color: #DAA520;
+    color: #5E1616;
+}
+
+.btn:hover {
+    color: #DAA520;
+    background-color: #5E1616;
+}
+
+#toast-container {
+    top: auto !important;
+    right: auto !important;
+    bottom: 10%;
+    left: 50%;
+}
+
+.toast {
+    color: #DAA520;
+    background-color: #5E1616;
 }
 
 .btn-floating i {
@@ -204,13 +231,27 @@ a {
     color: #DAA520;
 }
 
-.input-field label {
+.input-field label,
+label {
     color: #5E1616 !important;
 }
 
-input {
+input,
+input.valid[type="email"]  {
     border-bottom: 1px solid #5E1616 !important;
 }
+
+/* label focus color */
+input[type=email]:focus + label {
+    color: #5E1616;
+}
+/* label underline focus color */
+input[type=email]:focus {
+    border-bottom: 1px solid #5E1616 !important;
+    box-shadow: 0 1px 0 0 #5E1616;
+}
+
+
 
 .validate {
     color: #5E1616 !important;

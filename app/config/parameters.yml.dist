@@ -17,3 +17,5 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: auraiBettesGauleOnyx
+
+    mailchimp: { api_key: 'APIKEY', server: 'USXX.', list_id: 'LISTID' }

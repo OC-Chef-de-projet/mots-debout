@@ -1,10 +1,16 @@
-
-    <div class="row">
-        <div class="col s6">
-            <span class="text-brown">&copy; 2017 - Ecole Théatre Mots Debout</span>
-        </div>
-        <div class="col s6">
-            <a class="right waves-effect waves-light btn-floating social facebook" style="margin-left:10px;" href="https://www.facebook.com/catherine.rouzeau">
-                <i class="fa fa-facebook"></i> Facebook</a>
-        </div>
+<div class="row">
+    <div class="col s3">
+        <span class="text-brown">&copy; 2017 - Ecole Théatre Mots Debout</span>
     </div>
+
+
+    <div class="col s4">
+        {{ render(controller('AppBundle:Newsletter:subscribe', {})) }}
+    </div>
+
+    <div class="col s2 right">
+        <a class="right waves-effect waves-light btn-floating social facebook" style="margin-left:10px;"
+           href="https://www.facebook.com/catherine.rouzeau">
+            <i class="fa fa-facebook"></i> Facebook</a>
+    </div>
+</div>

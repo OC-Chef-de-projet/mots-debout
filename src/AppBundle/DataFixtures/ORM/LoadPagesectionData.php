@@ -67,10 +67,10 @@ le travail de l\'année est sur la pièce "Comme s\'il en pleuvait" de Sébastie
 
         // Titre Cours particuliers
         $section = new Pagesection();
-        $section->setImagelink('etmd.jpg');
+        $section->setImagelink('coursp.jpg');
         $section->setCreatedAt(new \DateTime());
-        $section->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
-        $section->setTitle('1. Titre Cours particuliers');
+        $section->setContent('Si vous êtes chanteurs, artistes lyriques, comédiens professionnels ou même amateurs et si vous voulez perfectionner votre interprétation, vous préparer à des castings ou à des auditions, notre professeur est là pour répondre à vos attentes et concocter avec vous un programme sur mesure.');
+        $section->setTitle('Coaching théâtral');
         $section->setSortorder(1);
         $section->setPage($this->getReference('tutoring'));
         $manager->persist($section);
@@ -87,10 +87,10 @@ le travail de l\'année est sur la pièce "Comme s\'il en pleuvait" de Sébastie
 
         // Titre Expositions
         $section = new Pagesection();
-        $section->setImagelink('etmd.jpg');
+        $section->setImagelink('geisha.jpg');
         $section->setCreatedAt(new \DateTime());
-        $section->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper orci elit, tincidunt bibendum arcu ullamcorper a. In bibendum non mauris ut elementum. Aliquam non sem malesuada, rhoncus dolor eget, pretium turpis. Nulla facilisi. Proin tempor erat sit amet tempor vehicula. Aliquam metus nisl, ultrices at elit at, pretium maximus neque. Sed eu bibendum felis. Donec convallis, leo non pretium fermentum, felis purus sollicitudin risus, vitae imperdiet ipsum sapien dignissim velit. Aliquam blandit et quam et lobortis. Nunc maximus libero sit amet sapien luctus, molestie maximus diam aliquam. Sed nec urna eu metus blandit commodo quis nec sem. ');
-        $section->setTitle('1. Titre Expositions');
+        $section->setContent('MA GEISHA<br>Une geisha (芸者), plus souvent appelée geiko (芸妓) à Kyōto, est au Japon une artiste et une dame de compagnie, qui consacre sa vie à la pratique artistique raffinée des arts traditionnels japonais pour des prestations d\'accompagnement et de divertissement, pour une clientèle très aisée. Elle a été entierement crée en papier mâché, et pâte à papier mâché. Ses épingles dans les cheveux ont été recouverte à la feuille d\' or, ainsi que la large ceinture de soie, nommée obi .<br ><a href = "http://lapierouge.canalblog.com" > http://lapierouge.canalblog.com</a>');
+        $section->setTitle('La Pie Rouge');
         $section->setSortorder(1);
         $section->setPage($this->getReference('exhibition'));
         $manager->persist($section);
@@ -100,7 +100,6 @@ le travail de l\'année est sur la pièce "Comme s\'il en pleuvait" de Sébastie
         $section->setImagelink('Mojo.jpg');
         $section->setCreatedAt(new \DateTime());
         $section->setContent('Dans la pièce de théâtre Mojo Mickybo, l\'auteur Owen McCafferty met en scène deux petits garçons d’une dizaine d’années vivant dans deux quartiers populaires de Belfast au début des années 1970 et nous donne à voir la construction de leur identité à plusieurs niveaux.
-
 La place du cinéma est déterminante dans l\'élaboration de leur identité masculine. En effet, fascinés par le film Butch Cassidy and the Sundance Kid, dont ils connaissent des morceaux par cœur, ils cherchent à construire une amitié solide, voire éternelle et universelle.
 Dans la pièce, les enfants vivent dans l’imaginaire et l’innocence et
 se rêvent en héros, mais ils sont vite rattrapés par la réalité des

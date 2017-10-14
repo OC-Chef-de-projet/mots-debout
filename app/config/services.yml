@@ -24,6 +24,10 @@ services:
         class: AppBundle\Service\RoleService
         arguments: [ "@security.role_hierarchy" ]
 
+    service_newsletter:
+        class: AppBundle\Service\NewsletterService
+        arguments: [ "@doctrine.orm.entity_manager", "%mailchimp%" ]
+
     service_mailer:
         class: AppBundle\Service\MailerService
         arguments: ['@Swift_Mailer']

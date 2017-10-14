@@ -16,7 +16,9 @@
 
     <script src="{{ asset('assets/js/core.min.js') }}"></script>
     <script src="{{ asset('assets/js/etmd.min.js') }}"></script>
+    <style>
 
+    </style>
 </head>
 
 <body>
@@ -39,6 +41,21 @@
             $('select').material_select();
             $(".button-collapse").sideNav();
             $('.button-collapse').click(removeOverlay);
+            $('#subscribe').click(function(){
+                var newsletter_email = $("#newsletter_email").val();
+                $.ajax({
+                    type: "POST",
+                    url: "{{ path('newsletter_subscribe')}}",
+                    data:  {
+                        'email': newsletter_email
+                    },
+                    cache: false,
+                    success: function(data){
+                        Materialize.toast(data.message, 4000)
+                    }
+                });
+                return false;
+            });
         });
         function removeOverlay() {
             $('div[id^=sidenav-overlay]').remove();

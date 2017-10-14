@@ -8,6 +8,11 @@ user_register:
     defaults: { _controller: AppBundle:Default:register }
     methods: [get,post]
 
+newsletter_subscribe:
+    path:     /subscribe
+    defaults: { _controller: AppBundle:Newsletter:subscribe }
+    methods: [post]
+
 admin_homepage:
     path:     /admin
     defaults: { _controller: AppBundle:Admin\Default:index }

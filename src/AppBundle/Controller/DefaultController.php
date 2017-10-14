@@ -25,7 +25,7 @@ class DefaultController extends Controller
         return $this->render('default/index.html.twig', [
             'current' => $offset,
             'maxPages' => $em->getRepository('AppBundle:Post')->getPostCount(),
-            'post' => $em->getRepository('AppBundle:Post')->getPost($offset),
+            'post' => $em->getRepository('AppBundle:Post')->getPost($offset)
         ]);
     }
 
@@ -46,6 +46,10 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
     public function contactusAction(Request $request)
     {
 
@@ -62,6 +66,7 @@ class DefaultController extends Controller
             ]
         );
     }
+
 
     /**
      *
