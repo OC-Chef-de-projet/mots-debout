@@ -13,8 +13,11 @@ class SecurityController extends Controller
      */
     public function loginAction()
     {
-        $helper = $this->get('security.authentication_utils');
+        if($this->getUser()){
+            return $this->redirectToRoute('homepage');
+        }
 
+        $helper = $this->get('security.authentication_utils');
         $formLogin = $this->createForm(LoginType::class, ['_email' => $helper->getLastUsername()]);
 
         return $this->render('security/login.html.twig', [
