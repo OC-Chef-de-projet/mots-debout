@@ -4,6 +4,7 @@ namespace AppBundle\Service;
 
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\Role\RoleHierarchyInterface;
+use AppBundle\Entity\User;
 
 class RoleService
 {
@@ -26,7 +27,7 @@ class RoleService
      * @param $user
      * @return bool
      */
-    public function isGranted($role, $user)
+    public function isGranted($role, User $user)
     {
         $role = new Role($role);
 
@@ -37,4 +38,3 @@ class RoleService
         return false;
     }
 }
-
