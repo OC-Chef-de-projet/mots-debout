@@ -120,9 +120,7 @@ class NewsletterService
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
 
-        $result = curl_exec($ch);
-
-        $result_obj = json_decode($result);
+        curl_exec($ch);
     }
 
 }
