@@ -10,3 +10,4 @@ parameters:
     mailer_password: ~
     secret: ThisIsVerySecret!
     locale: fr
+    mailchimp: { api_key: 'APIKEY', server: 'SR00.', list_id: '000' }
