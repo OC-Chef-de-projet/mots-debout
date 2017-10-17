@@ -92,7 +92,6 @@ class DefaultController extends Controller
         ]);
     }
 
-
     public function legalNoticeAction()
     {
         return $this->render('::legal_notice.html.twig');
