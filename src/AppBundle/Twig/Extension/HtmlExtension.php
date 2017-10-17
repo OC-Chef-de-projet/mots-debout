@@ -3,14 +3,13 @@
  * Created by PhpStorm.
  * User: psa
  * Date: 18/09/17
- * Time: 21:25
+ * Time: 21:25.
  */
 
 namespace AppBundle\Twig\Extension;
 
 /**
- * Class HtmlExtension
- * @package AppBundle\Twig\Extension
+ * Class HtmlExtension.
  */
 class HtmlExtension extends \Twig_Extension
 {
@@ -31,4 +30,3 @@ class HtmlExtension extends \Twig_Extension
         return 'html_extension';
     }
 }
-

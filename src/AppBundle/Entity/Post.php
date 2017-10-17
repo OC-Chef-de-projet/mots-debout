@@ -6,15 +6,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * PostService
+ * PostService.
  *
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PostRepository")
  */
 class Post
 {
-
-
     const DRAFT = 1;
     const TO_BE_VALIDATED = 2;
     const PUBLISHED = 3;
@@ -88,9 +86,8 @@ class Post
      */
     private $imagelink;
 
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -100,7 +97,7 @@ class Post
     }
 
     /**
-     * Set title
+     * Set title.
      *
      * @param string $title
      *
@@ -114,7 +111,7 @@ class Post
     }
 
     /**
-     * Get title
+     * Get title.
      *
      * @return string
      */
@@ -124,7 +121,7 @@ class Post
     }
 
     /**
-     * Set content
+     * Set content.
      *
      * @param string $content
      *
@@ -138,7 +135,7 @@ class Post
     }
 
     /**
-     * Get content
+     * Get content.
      *
      * @return string
      */
@@ -148,7 +145,7 @@ class Post
     }
 
     /**
-     * Set publishedAt
+     * Set publishedAt.
      *
      * @param \DateTime $publishedAt
      *
@@ -162,7 +159,7 @@ class Post
     }
 
     /**
-     * Get publishedAt
+     * Get publishedAt.
      *
      * @return \DateTime
      */
@@ -172,7 +169,7 @@ class Post
     }
 
     /**
-     * Set createdAt
+     * Set createdAt.
      *
      * @param \DateTime $createdAt
      *
@@ -186,7 +183,7 @@ class Post
     }
 
     /**
-     * Get createdAt
+     * Get createdAt.
      *
      * @return \DateTime
      */
@@ -196,9 +193,9 @@ class Post
     }
 
     /**
-     * Set status
+     * Set status.
      *
-     * @param integer $status
+     * @param int $status
      *
      * @return Post
      */
@@ -210,7 +207,7 @@ class Post
     }
 
     /**
-     * Get status
+     * Get status.
      *
      * @return int
      */
@@ -220,7 +217,7 @@ class Post
     }
 
     /**
-     * Set author
+     * Set author.
      *
      * @param \AppBundle\Entity\User $author
      *
@@ -234,7 +231,7 @@ class Post
     }
 
     /**
-     * Get author
+     * Get author.
      *
      * @return \AppBundle\Entity\User
      */
@@ -244,7 +241,7 @@ class Post
     }
 
     /**
-     * Set category
+     * Set category.
      *
      * @param \AppBundle\Entity\Category $category
      *
@@ -258,7 +255,7 @@ class Post
     }
 
     /**
-     * Get category
+     * Get category.
      *
      * @return \AppBundle\Entity\Category
      */
@@ -267,14 +264,14 @@ class Post
         return $this->category;
     }
 
-
-
-    public function getStatusString(){
+    public function getStatusString()
+    {
         return self::statusToString($this->status);
     }
 
-    public static function statusToString($status){
-        switch ($status){
+    public static function statusToString($status)
+    {
+        switch ($status) {
             case self::DRAFT:
                 return 'Brouillon';
 
@@ -293,7 +290,7 @@ class Post
     }
 
     /**
-     * Set imagelink
+     * Set imagelink.
      *
      * @param string $imagelink
      *
@@ -307,7 +304,7 @@ class Post
     }
 
     /**
-     * Get imagelink
+     * Get imagelink.
      *
      * @return string
      */

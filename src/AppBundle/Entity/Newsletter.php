@@ -1,12 +1,13 @@
 <?php
+
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
- * User
+ * User.
  *
  * @ORM\Table(name="newsletter")
  * @UniqueEntity(fields="email", message="Cette adresse email est déjà utilisée")
@@ -33,9 +34,9 @@ class Newsletter
     private $email;
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -43,7 +44,7 @@ class Newsletter
     }
 
     /**
-     * Set email
+     * Set email.
      *
      * @param string $email
      *
@@ -57,7 +58,7 @@ class Newsletter
     }
 
     /**
-     * Get email
+     * Get email.
      *
      * @return string
      */

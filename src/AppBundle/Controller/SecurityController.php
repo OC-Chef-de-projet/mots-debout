@@ -3,17 +3,13 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Form\Type\LoginType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class SecurityController extends Controller
 {
-    /**
-     *
-     */
     public function loginAction()
     {
-        if($this->getUser()){
+        if ($this->getUser()) {
             return $this->redirectToRoute('homepage');
         }
 
@@ -22,15 +18,11 @@ class SecurityController extends Controller
 
         return $this->render('security/login.html.twig', [
             'form_login' => $formLogin->createView(),
-            'error' => $helper->getLastAuthenticationError(),
+            'error'      => $helper->getLastAuthenticationError(),
         ]);
     }
 
-    /**
-     * 
-     */
     public function loginCheckAction()
     {
-
     }
 }

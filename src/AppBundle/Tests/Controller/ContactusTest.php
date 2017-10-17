@@ -3,14 +3,12 @@
  * Created by PhpStorm.
  * User: psa
  * Date: 14/10/17
- * Time: 11:02
+ * Time: 11:02.
  */
 
 namespace Tests\AppBundle\Service;
 
-
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-
 
 class ContactusTest extends WebTestCase
 {
@@ -22,7 +20,7 @@ class ContactusTest extends WebTestCase
         $client->followRedirects(true);
 
         // Response
-        $this->assertEquals(200,  $client->getResponse()->getStatusCode());
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         // Form
         $this->assertContains('contactus_name', $client->getResponse()->getContent());
@@ -36,5 +34,4 @@ class ContactusTest extends WebTestCase
         $crawler = $client->request($form->getMethod(), $form->getUri(), $values, $form->getPhpFiles());
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
-
 }

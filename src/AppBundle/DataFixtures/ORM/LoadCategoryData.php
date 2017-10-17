@@ -3,22 +3,18 @@
  * Created by PhpStorm.
  * User: Pierre-Sylvain
  * Date: 30-07-17
- * Time: 22:04
+ * Time: 22:04.
  */
 
 namespace AppBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
-use Doctrine\Common\Persistence\ObjectManager;
 use AppBundle\Entity\Category;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\Persistence\ObjectManager;
 
 class LoadCategoryData extends Fixture implements FixtureInterface
 {
-
-
-
-
     public function load(ObjectManager $manager)
     {
         $cat = new Category();

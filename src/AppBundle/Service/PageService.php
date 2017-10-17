@@ -3,20 +3,16 @@
  * Created by PhpStorm.
  * User: Pierre-Sylvain
  * Date: 18-08-17
- * Time: 20:44
+ * Time: 20:44.
  */
 
 namespace AppBundle\Service;
 
-use Doctrine\ORM\EntityManager;
 use AppBundle\Entity\Page;
-use AppBundle\Entity\Pagesection;
-use Symfony\Component\Form\Form;
-
+use Doctrine\ORM\EntityManager;
 
 class PageService
 {
-
     protected $em;
 
     /**
@@ -29,21 +25,23 @@ class PageService
         $this->em = $em;
     }
 
-
     /**
-     * Find all sections of pages
+     * Find all sections of pages.
+     *
      * @return Page[]|array
      */
     public function getSections()
     {
         $pages = $this->em->getRepository(Page::class)->findAll();
+
         return $pages;
     }
 
     /**
-     * Get category ID from category name
+     * Get category ID from category name.
      *
      * @param $category
+     *
      * @return int
      */
     public function getCategoryID($category)
@@ -71,6 +69,7 @@ class PageService
                 $id = Page::ENTERTAINMENT;
                 break;
         }
+
         return $id;
     }
 }
