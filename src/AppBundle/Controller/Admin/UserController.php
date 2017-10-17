@@ -1,17 +1,17 @@
 <?php
+
 namespace AppBundle\Controller\Admin;
+
 use AppBundle\Entity\User;
-use AppBundle\Form\Type\UserType;
 use AppBundle\Form\Type\UserEditType;
-use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Form\Type\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends Controller
 {
-   
-        /**
+    /**
      * Lists all user entities.
-     *
      */
     public function indexAction()
     {
@@ -19,15 +19,14 @@ class UserController extends Controller
 
         $users = $em->getRepository('AppBundle:User')->findAll();
 
-        return $this->render('@AdminUser/index.html.twig', array(
+        return $this->render('@AdminUser/index.html.twig', [
             'users' => $users,
-            'admin' => 1
-        ));
+            'admin' => 1,
+        ]);
     }
 
     /**
      * Creates a new user entity.
-     *
      */
     public function newAction(Request $request)
     {
@@ -36,7 +35,7 @@ class UserController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-			// Encode the new users password
+            // Encode the new users password
             $encoder = $this->get('security.password_encoder');
             $password = $encoder->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($password);
@@ -49,16 +48,15 @@ class UserController extends Controller
             return $this->redirectToRoute('admin_user_index');
         }
 
-        return $this->render('@AdminUser/new.html.twig', array(
-            'user' => $user,
-            'form' => $form->createView(),
-            'admin' => 1
-        ));
+        return $this->render('@AdminUser/new.html.twig', [
+            'user'  => $user,
+            'form'  => $form->createView(),
+            'admin' => 1,
+        ]);
     }
 
     /**
      * Displays a form to edit an existing user entity.
-     *
      */
     public function editAction(Request $request, User $user)
     {
@@ -69,20 +67,20 @@ class UserController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->persist($user);
             $this->getDoctrine()->getManager()->flush();
+
             return $this->redirectToRoute('admin_user_index');
         }
 
-        return $this->render('@AdminUser/edit.html.twig', array(
-            'user' => $user,
-            'edit_form' => $editForm->createView(),
+        return $this->render('@AdminUser/edit.html.twig', [
+            'user'        => $user,
+            'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-            'admin' => 1
-        ));
+            'admin'       => 1,
+        ]);
     }
 
     /**
      * Deletes a user entity.
-     *
      */
     public function deleteAction(Request $request, User $user)
     {
@@ -108,10 +106,8 @@ class UserController extends Controller
     private function createDeleteForm(User $user)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_user_delete', array('id' => $user->getId())))
+            ->setAction($this->generateUrl('admin_user_delete', ['id' => $user->getId()]))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }
-

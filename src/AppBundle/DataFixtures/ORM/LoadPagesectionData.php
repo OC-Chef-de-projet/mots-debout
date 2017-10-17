@@ -3,31 +3,26 @@
  * Created by PhpStorm.
  * User: Pierre-Sylvain
  * Date: 30-07-17
- * Time: 22:04
+ * Time: 22:04.
  */
 
 namespace AppBundle\DataFixtures\ORM;
 
 use AppBundle\Entity\Pagesection;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use AppBundle\Entity\Page;
-use AppBundle\DataFixtures\ORM\LoadSectionData;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class LoadPagesectionData extends Fixture implements FixtureInterface, ContainerAwareInterface
 {
-
-
     public function load(ObjectManager $manager)
     {
         // bin/console doctrine:fixtures:load -n --env=test
 
-
         /**
-         * Formation
+         * Formation.
+         *
          * @var Pagesection
          */
         $section = new Pagesection();
@@ -124,13 +119,12 @@ Autour des lessiveuses, cernées par le linge blanc tendu sur les fils, Titine, 
         $manager->persist($section);
 
         $manager->flush();
-
     }
 
     public function getDependencies()
     {
-        return array(
-            LoadPageData::class
-        );
+        return [
+            LoadPageData::class,
+        ];
     }
 }

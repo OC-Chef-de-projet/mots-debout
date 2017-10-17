@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: Pierre-Sylvain
  * Date: 30-07-17
- * Time: 19:35
+ * Time: 19:35.
  */
 
 namespace Tests\AppBundle\Entity;
@@ -16,7 +16,6 @@ class NewsletterTest extends \PHPUnit_Framework_TestCase
     {
         $nl = new Newsletter();
         $nl->setEmail('nobody@nowhere.com');
-        $this->assertEquals('nobody@nowhere.com',$nl->getEmail());
-
+        $this->assertEquals('nobody@nowhere.com', $nl->getEmail());
     }
 }

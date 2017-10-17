@@ -2,20 +2,18 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * PageService
+ * PageService.
  *
  * @ORM\Table(name="page")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PageRepository")
  */
 class Page
 {
-
-
     const TUTORING = 1;
     const EXHIBITION = 2;
     const ENTERTAINMENT = 3;
@@ -60,7 +58,6 @@ class Page
      */
     private $createdAt;
 
-
     /**
      * @ORM\OneToMany(targetEntity="Pagesection", mappedBy="page", cascade={"all"}, orphanRemoval=true,fetch="EAGER")
      */
@@ -74,18 +71,15 @@ class Page
      */
     private $section;
 
-
     public function __construct()
     {
         $this->pagesections = new ArrayCollection();
     }
 
-
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -93,7 +87,7 @@ class Page
     }
 
     /**
-     * Set title
+     * Set title.
      *
      * @param string $title
      *
@@ -107,7 +101,7 @@ class Page
     }
 
     /**
-     * Get title
+     * Get title.
      *
      * @return string
      */
@@ -117,7 +111,7 @@ class Page
     }
 
     /**
-     * Set content
+     * Set content.
      *
      * @param string $content
      *
@@ -131,7 +125,7 @@ class Page
     }
 
     /**
-     * Get content
+     * Get content.
      *
      * @return string
      */
@@ -141,7 +135,7 @@ class Page
     }
 
     /**
-     * Set cover
+     * Set cover.
      *
      * @param string $cover
      *
@@ -155,7 +149,7 @@ class Page
     }
 
     /**
-     * Get cover
+     * Get cover.
      *
      * @return string
      */
@@ -165,7 +159,7 @@ class Page
     }
 
     /**
-     * Set createdAt
+     * Set createdAt.
      *
      * @param \DateTime $createdAt
      *
@@ -179,7 +173,7 @@ class Page
     }
 
     /**
-     * Get createdAt
+     * Get createdAt.
      *
      * @return \DateTime
      */
@@ -189,9 +183,9 @@ class Page
     }
 
     /**
-     * Set section
+     * Set section.
      *
-     * @param integer $section
+     * @param int $section
      *
      * @return Page
      */
@@ -203,21 +197,23 @@ class Page
     }
 
     /**
-     * Get section
+     * Get section.
      *
-     * @return integer
+     * @return int
      */
     public function getSection()
     {
         return $this->section;
     }
 
-    public function getSectionString(){
+    public function getSectionString()
+    {
         return self::sectionToString($this->section);
     }
 
-    public static function sectionToString($section){
-        switch ($section){
+    public static function sectionToString($section)
+    {
+        switch ($section) {
             case self::TRAINING:
                 return 'Formations';
 
@@ -242,7 +238,7 @@ class Page
     }
 
     /**
-     * Add pagesection
+     * Add pagesection.
      *
      * @param \AppBundle\Entity\Pagesection $pagesection
      *
@@ -256,7 +252,7 @@ class Page
     }
 
     /**
-     * Remove pagesection
+     * Remove pagesection.
      *
      * @param \AppBundle\Entity\Pagesection $pagesection
      */
@@ -266,7 +262,7 @@ class Page
     }
 
     /**
-     * Get pagesections
+     * Get pagesections.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -275,5 +271,3 @@ class Page
         return $this->pagesections;
     }
 }
-
-

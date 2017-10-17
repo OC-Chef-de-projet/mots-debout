@@ -3,17 +3,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * PagesectionService
+ * PagesectionService.
  *
  * @ORM\Table(name="pagesection")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PagesectionRepository")
  */
 class Pagesection
 {
-
     /**
      * @var int
      *
@@ -66,11 +64,10 @@ class Pagesection
      */
     private $page;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -78,7 +75,7 @@ class Pagesection
     }
 
     /**
-     * Set title
+     * Set title.
      *
      * @param string $title
      *
@@ -92,7 +89,7 @@ class Pagesection
     }
 
     /**
-     * Get title
+     * Get title.
      *
      * @return string
      */
@@ -102,7 +99,7 @@ class Pagesection
     }
 
     /**
-     * Set content
+     * Set content.
      *
      * @param string $content
      *
@@ -116,7 +113,7 @@ class Pagesection
     }
 
     /**
-     * Get content
+     * Get content.
      *
      * @return string
      */
@@ -126,7 +123,7 @@ class Pagesection
     }
 
     /**
-     * Set imagelink
+     * Set imagelink.
      *
      * @param string $imagelink
      *
@@ -140,7 +137,7 @@ class Pagesection
     }
 
     /**
-     * Get imagelink
+     * Get imagelink.
      *
      * @return string
      */
@@ -150,7 +147,7 @@ class Pagesection
     }
 
     /**
-     * Set createdAt
+     * Set createdAt.
      *
      * @param \DateTime $createdAt
      *
@@ -164,7 +161,7 @@ class Pagesection
     }
 
     /**
-     * Get createdAt
+     * Get createdAt.
      *
      * @return \DateTime
      */
@@ -174,9 +171,9 @@ class Pagesection
     }
 
     /**
-     * Set sortorder
+     * Set sortorder.
      *
-     * @param integer $sortorder
+     * @param int $sortorder
      *
      * @return Pagesection
      */
@@ -188,9 +185,9 @@ class Pagesection
     }
 
     /**
-     * Get sortorder
+     * Get sortorder.
      *
-     * @return integer
+     * @return int
      */
     public function getSortorder()
     {
@@ -198,7 +195,7 @@ class Pagesection
     }
 
     /**
-     * Set page
+     * Set page.
      *
      * @param \AppBundle\Entity\Page $page
      *
@@ -212,7 +209,7 @@ class Pagesection
     }
 
     /**
-     * Get page
+     * Get page.
      *
      * @return \AppBundle\Entity\Page
      */
