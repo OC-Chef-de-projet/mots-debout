@@ -1,12 +1,14 @@
 <?php
+
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 /**
- * User
+ * User.
  *
  * @ORM\Table(name="user")
  * @UniqueEntity(fields="email", message="This email address is already in use")
@@ -46,7 +48,6 @@ class User implements UserInterface
      */
     private $password;
 
-
     /**
      * @var string
      */
@@ -57,9 +58,8 @@ class User implements UserInterface
      */
     private $roles = [];
 
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -69,7 +69,7 @@ class User implements UserInterface
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -83,7 +83,7 @@ class User implements UserInterface
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -93,7 +93,7 @@ class User implements UserInterface
     }
 
     /**
-     * Set email
+     * Set email.
      *
      * @param string $email
      *
@@ -107,7 +107,7 @@ class User implements UserInterface
     }
 
     /**
-     * Get email
+     * Get email.
      *
      * @return string
      */
@@ -117,7 +117,7 @@ class User implements UserInterface
     }
 
     /**
-     * Set password
+     * Set password.
      *
      * @param string $password
      *
@@ -131,7 +131,7 @@ class User implements UserInterface
     }
 
     /**
-     * Get password
+     * Get password.
      *
      * @return string
      */
@@ -140,10 +140,8 @@ class User implements UserInterface
         return $this->password;
     }
 
-
     public function getSalt()
     {
-        return null;
     }
 
     public function getUsername()
@@ -153,7 +151,6 @@ class User implements UserInterface
 
     public function eraseCredentials()
     {
-        return null;
     }
 
     public function getRoles()
@@ -162,28 +159,33 @@ class User implements UserInterface
         if (!in_array('ROLE_USER', $roles)) {
             $roles[] = 'ROLE_USER';
         }
+
         return $roles;
     }
 
     public function addRole($role)
     {
-        if (!in_array($role,$this->roles)) {
+        if (!in_array($role, $this->roles)) {
             $this->roles[] = $role;
         }
+
         return $this;
     }
 
-    public function getRolesString(){
+    public function getRolesString()
+    {
         $result = '';
-        foreach($this->getRoles() as $role){
+        foreach ($this->getRoles() as $role) {
             $result .= self::roleToString($role);
             $result .= ',';
         }
-        return trim($result,',');
+
+        return trim($result, ',');
     }
 
-    public static function roleToString($role){
-        switch ($role){
+    public static function roleToString($role)
+    {
+        switch ($role) {
             case 'ROLE_ADMIN':
                 return 'Administrateur';
             case 'ROLE_EDITOR':
@@ -197,8 +199,8 @@ class User implements UserInterface
 
     public function removeRole($role)
     {
-        if($key = array_search($role,$this->roles)){
-            array_splice($this->roles,$key,1);
+        if ($key = array_search($role, $this->roles)) {
+            array_splice($this->roles, $key, 1);
         }
     }
 
@@ -212,16 +214,18 @@ class User implements UserInterface
 
     /**
      * @param string $plainPassword
+     *
      * @return User
      */
     public function setPlainPassword($plainPassword)
     {
         $this->plainPassword = $plainPassword;
+
         return $this;
     }
 
     /**
-     * Set roles
+     * Set roles.
      *
      * @param array $roles
      *

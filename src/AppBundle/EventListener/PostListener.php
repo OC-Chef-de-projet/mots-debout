@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: Pierre-Sylvain
  * Date: 21-08-17
- * Time: 10:10
+ * Time: 10:10.
  */
 
 namespace AppBundle\EventListener;
@@ -14,9 +14,8 @@ use Doctrine\ORM\Event\PreUpdateEventArgs;
 
 class PostListener
 {
-
     /**
-     * Update publishedDate
+     * Update publishedDate.
      *
      * @param PreUpdateEventArgs $args
      */
@@ -46,13 +45,11 @@ class PostListener
     public function prePersist(LifecycleEventArgs $args)
     {
         $entity = $args->getObject();
-        if($entity instanceof Post) {
-            if($entity->getStatus() === Post::PUBLISHED){
+        if ($entity instanceof Post) {
+            if ($entity->getStatus() === Post::PUBLISHED) {
                 $entity->setPublishedAt(new \DateTime());
             }
             $entity->setCreatedAt(new \DateTime());
         }
     }
-
 }
-

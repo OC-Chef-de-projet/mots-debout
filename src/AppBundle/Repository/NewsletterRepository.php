@@ -3,12 +3,9 @@
 namespace AppBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use AppBundle\Entity\Newsletter;
 
 /**
- * Class NewsletterRepository
- *
- * @package AppBundle\Repository
+ * Class NewsletterRepository.
  */
 class NewsletterRepository extends EntityRepository
 {

@@ -1,10 +1,12 @@
 <?php
+
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 /**
- * User
+ * User.
  *
  * @ORM\Table(name="category")
  * @UniqueEntity(fields="name", message="This name is already in use")
@@ -28,9 +30,8 @@ class Category
      */
     private $name;
 
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -40,7 +41,7 @@ class Category
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -54,7 +55,7 @@ class Category
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -62,6 +63,4 @@ class Category
     {
         return $this->name;
     }
-
 }
-

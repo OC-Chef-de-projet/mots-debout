@@ -1,4 +1,5 @@
 <?php
+
 namespace AppBundle\Security;
 
 use AppBundle\Form\Type\LoginType;
@@ -12,15 +13,14 @@ use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
-use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
 class FormAuthenticator extends AbstractGuardAuthenticator
 {
-
     use TargetPathTrait;
     private $router;
     /**
@@ -33,13 +33,12 @@ class FormAuthenticator extends AbstractGuardAuthenticator
      */
     private $passwordEncoder;
 
-    public function __construct(RouterInterface $router, FormFactoryInterface $formFactory,  UserPasswordEncoder $passwordEncoder)
+    public function __construct(RouterInterface $router, FormFactoryInterface $formFactory, UserPasswordEncoder $passwordEncoder)
     {
         $this->router = $router;
         $this->formFactory = $formFactory;
         $this->passwordEncoder = $passwordEncoder;
     }
-
 
     /**
      * Returns a response that directs the user to authenticate.
@@ -54,7 +53,7 @@ class FormAuthenticator extends AbstractGuardAuthenticator
      *  B) For an API token authentication system, you return a 401 response
      *      return new Response('Auth header required', 401);
      *
-     * @param Request $request The request that resulted in an AuthenticationException
+     * @param Request                 $request       The request that resulted in an AuthenticationException
      * @param AuthenticationException $authException The exception that started the authentication process
      *
      * @return Response
@@ -92,20 +91,19 @@ class FormAuthenticator extends AbstractGuardAuthenticator
      */
     public function getCredentials(Request $request)
     {
-       $loginForm = $this->formFactory->create(LoginType::class);
-       $loginForm->handleRequest($request);
+        $loginForm = $this->formFactory->create(LoginType::class);
+        $loginForm->handleRequest($request);
 
-       if($loginForm->isSubmitted() && $loginForm->isValid()){
-           $data = $loginForm->getData();
+        if ($loginForm->isSubmitted() && $loginForm->isValid()) {
+            $data = $loginForm->getData();
 
-           $request->getSession()->set(
+            $request->getSession()->set(
                Security::LAST_USERNAME,
                $data['_email']
            );
 
-           return $data;
-       }
-       return;
+            return $data;
+        }
     }
 
     /**
@@ -116,7 +114,7 @@ class FormAuthenticator extends AbstractGuardAuthenticator
      * You may throw an AuthenticationException if you wish. If you return
      * null, then a UsernameNotFoundException is thrown for you.
      *
-     * @param mixed $credentials
+     * @param mixed                 $credentials
      * @param UserProviderInterface $userProvider
      *
      * @throws AuthenticationException
@@ -137,20 +135,19 @@ class FormAuthenticator extends AbstractGuardAuthenticator
      *
      * The *credentials* are the return value from getCredentials()
      *
-     * @param mixed $credentials
+     * @param mixed         $credentials
      * @param UserInterface $user
      *
-     * @return bool
-     *
      * @throws AuthenticationException
+     *
+     * @return bool
      */
     public function checkCredentials($credentials, UserInterface $user)
     {
-
-
-        if(!$this->passwordEncoder->isPasswordValid($user,$credentials['_password'])){
+        if (!$this->passwordEncoder->isPasswordValid($user, $credentials['_password'])) {
             throw new BadCredentialsException();
         }
+
         return true;
     }
 
@@ -163,7 +160,7 @@ class FormAuthenticator extends AbstractGuardAuthenticator
      * If you return null, the request will continue, but the user will
      * not be authenticated. This is probably not what you want to do.
      *
-     * @param Request $request
+     * @param Request                 $request
      * @param AuthenticationException $exception
      *
      * @return Response|null
@@ -171,6 +168,7 @@ class FormAuthenticator extends AbstractGuardAuthenticator
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {
         $request->getSession()->set(Security::AUTHENTICATION_ERROR, $exception);
+
         return new RedirectResponse($this->router->generate('security_login'));
     }
 
@@ -183,20 +181,21 @@ class FormAuthenticator extends AbstractGuardAuthenticator
      * If you return null, the current request will continue, and the user
      * will be authenticated. This makes sense, for example, with an API.
      *
-     * @param Request $request
+     * @param Request        $request
      * @param TokenInterface $token
-     * @param string $providerKey The provider (i.e. firewall) key
+     * @param string         $providerKey The provider (i.e. firewall) key
      *
      * @return Response|null
      */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
-        if($request->getSession() instanceof SessionInterface){
+        if ($request->getSession() instanceof SessionInterface) {
             $targetPath = $this->getTargetPath($request->getSession(), $providerKey);
         }
-        if( $targetPath === null){
+        if ($targetPath === null) {
             $targetPath = $this->router->generate('homepage');
         }
+
         return new RedirectResponse($targetPath);
     }
 
