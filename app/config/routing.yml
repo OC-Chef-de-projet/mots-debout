@@ -3,6 +3,11 @@ contactus:
     defaults: { _controller: AppBundle:Default:contactus }
     methods: [get,post]
 
+legal_notice:
+    path:     /mentions_legales
+    defaults: { _controller: AppBundle:Default:legalNotice }
+    methods: [get]
+
 user_register:
     path:     /register
     defaults: { _controller: AppBundle:Default:register }
