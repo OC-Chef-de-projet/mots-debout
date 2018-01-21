@@ -1,64 +1,45 @@
-<div class="navbar-fixed nav-extended">
-    <nav class="nav-top lighten-1" role="navigation">
-        <div class="nav-wrapper containers">
-            <span class="hide-on-small-only">
-            <a href="{{ url('homepage') }}" class="brand-logo" >
-                <img src="../../images/logo.png" alt="Ecole Théatre Mots Debout" style="vertical-align:middle;height:80px" >
-                <span>Ecole Théatre Mots Debout</span>
-            </a>
-            </span>
-
-            <span class="hide-on-med-and-up">
-            <a href="{{ url('homepage') }}" class="brand-logos" >
-                <img src="../../images/logo.png" alt="Ecole Théatre Mots Debout" style="vertical-align:middle;height:40px" >
-                <span style="font-size: 15px">Ecole Théatre Mots Debout</span>
-            </a>
-            </span>
-
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><h6><a href="{{ url('contactus') }}">Nous contacter</a></h6></li>
-                <li><h6><a href="{{ url('admin_homepage') }}">S'identifier</a></h6></li>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="{{ url('homepage') }}">
+            <img src="{{ asset('assets/img/logo-draft.png') }}" height="90px">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a data-toggle="dropdown" class="nav-link  dropdown-toggle" href="#">Cours <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link-dropdown" href="{{ url('privateLessons') }}">Cours particuliers</a></li>
+                        <li class="nav-item"><a class="nav-link-dropdown" href="{{ url('classroom') }}">Cours collectifs</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="{{ url('training') }}">Ateliers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#">Stages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="spectacles.html">Spectacles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#formations.html">Formations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#residences.html">Résidences</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="expositions.html">Expositions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#recherche">Ateliers recherche</a>
+                </li>
             </ul>
-
-            <ul id="nav-mobile" class="side-nav">
-                <li class="center"><b>Ecole Théatre Mots Debout</b></li>
-                <li><div class="divider"></div></li>
-                <li><a target="_self" href="{{ url('homepage') }}">Accueil</a></li>
-                <li><a href="{{ url('page',{'category':'cours_particuliers'}) }}">Cours particuliers</a></li>
-                <li><a href="{{ url('page',{'category':'cours_collectifs'}) }}">Cours collectifs</a></li>
-                <li><a href="{{ url('page',{'category':'formation'}) }}">Formations</a></li>
-                <li><a target="_self" href="{{ url('page',{'category': 'residence'}) }}">Résidences</a></li>
-                <li><a href="{{ url('page',{'category':'expositions'}) }}">Expositions</a></li>
-                <li><a href="{{ url('page',{'category':'spectacles'}) }}">Spectacles</a></li>
-                <li><div class="divider"></div></li>
-                <li><h6><a href="{{ url('contactus') }}">Nous contacter</a></h6></li>
-                <li><h6><a href="{{ url('admin_homepage') }}">S'identifier</a></h6></li>
-            </ul>
-
-
         </div>
-    </nav>
-</div>
-
-<div class="navbar-fixed nav-extended hide-on-small-only">
-    <nav class="nav-tabs lighten-1" role="navigation">
-        <div class="nav-wrapper containers">
-            <ul class="hide-on-med-and-down" style="display:flex;justify-content: space-around">
-                <li><a id="hometab" target="_self" href="{{ url('homepage') }}">Accueil</a></li>
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Ateliers<i class="material-icons right">arrow_drop_down</i></a></li>
-                <li><a id="trainingtab" target="_self" href="{{ url('page',{'category':'formation'}) }}">Formations</a></li>
-                <li><a id="residencetab" target="_self" href="{{ url('page',{'category': 'residence'}) }}">Résidences</a></li>
-                <li><a id="exhibitiontab" href="{{ url('page',{'category':'expositions'}) }}">Expositions</a></li>
-                <li><a id="showtab" href="{{ url('page',{'category':'spectacles'}) }}">Spectacles</a></li>
-            </ul>
-
-        </div>
-    </nav>
-    <ul id="dropdown1" class="dropdown-content">
-        <li><a href="{{ url('page',{'category':'cours_particuliers'}) }}">Cours particuliers</a></li>
-        <li><a href="{{ url('page',{'category':'cours_collectifs'}) }}">Cours collectifs</a></li>
-    </ul>
-
-</div>
+    </div>
+</nav>
 

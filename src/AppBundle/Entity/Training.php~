@@ -1,0 +1,64 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: psa
+ * Date: 11/01/18
+ * Time: 19:31
+ */
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Training
+ *
+ * @ORM\Table(name="training")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TrainingRepository")
+ */
+class Training
+{
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text")
+     */
+    private $content;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imageLink", type="string", length=255)
+     */
+    private $imageLink;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="startAt", type="datetimetz")
+     */
+    private $startAt;
+
+
+
+}

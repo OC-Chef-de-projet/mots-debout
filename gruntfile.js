@@ -27,21 +27,20 @@ module.exports = function (grunt) {
                 options: {
                     optimizationLevel: 7
                 },
-                files  : [
+                files: [
                     {
                         // Set to true to enable the following options…
                         expand: true,
                         // cwd is 'current working directory'
-                        cwd   : 'resources/images',
-                        src   : ['**/*.png'],
+                        cwd: 'resources/images',
+                        src: ['**/*.png'],
                         // Could also match cwd line above. i.e. project-directory/img/
-                        dest  : 'web/assets/img/',
-                        ext   : '.png'
+                        dest: 'web/assets/img/',
+                        ext: '.png'
                     }
                 ]
             }
         },
-
 
 
         // Watch on files
@@ -50,13 +49,13 @@ module.exports = function (grunt) {
 
             css_custom: {
                 files: ['resources/css/*.css'],
-                tasks: ['concat:custom', 'cssmin:custom']
+                tasks: ['concat:etmd', 'cssmin:etmd']
             },
-            js_script : {
-                files: ['resources/js/etmd.js'],
+            js_script: {
+                files: ['resources/js/*.js'],
                 tasks: ['uglify:script']
             },
-            img_png   : {
+            img_png: {
                 files: ['resources/images/**/*.png'],
                 tasks: ['imagemin:png']
             }
@@ -73,7 +72,6 @@ module.exports = function (grunt) {
         copy: {
             font: {
                 files: [
-                    {expand: true, cwd: 'resources/vendor/materialize/fonts', src: ['**'], dest: 'web/assets/fonts/'},
                     {expand: true, cwd: 'resources/vendor/font-awesome/fonts', src: ['**'], dest: 'web/assets/fonts/'}
                 ]
             },
@@ -91,14 +89,14 @@ module.exports = function (grunt) {
                 files: {
                     // Javascript
                     'web/assets/js/core.min.js': [
-                        'resources/vendor/jquery/jquery-3.2.1.min.js',
-                        'resources/vendor/materialize/js/materialize.min.js'
+                        'resources/vendor/jquery/jquery.min.js',
+                        'resources/vendor/bootstrap/js/bootstrap.bundle.min.js'
                     ],
 
 
                     // CSS
                     'web/assets/css/core.min.css': [
-                        'resources/vendor/materialize/css/materialize.min.css',
+                        'resources/vendor/bootstrap/css/bootstrap.min.css',
                         'resources/vendor/font-awesome/css/font-awesome.min.css'
                     ]
                 }
@@ -106,7 +104,8 @@ module.exports = function (grunt) {
 
             custom: {
                 files: {
-                    'web/assets/css/custom.min.css': [
+                    'web/assets/css/etmd.min.css': [
+                        'resources/css/creative.css',
                         'resources/css/etmd.css'
                     ]
                 }
@@ -118,12 +117,12 @@ module.exports = function (grunt) {
         //
         uglify: {
             options: {
-                mangle          : true,
+                mangle: true,
                 preserveComments: false
             },
 
-            script : {
-                src : 'resources/js/etmd.js',
+            script: {
+                src: 'resources/js/creative.js',
                 dest: 'web/assets/js/etmd.min.js'
             }
         },
@@ -131,32 +130,32 @@ module.exports = function (grunt) {
 
         // Do some post processing on CSS files
         postcss: {
-            options : {
+            options: {
                 processors: [
                     autoprefixer,
                     require('postcss-flexbugs-fixes')
                 ]
             },
-	    compressed: {
-		src: 'web/assets/css/custom.min.css'
-	    }
+            compressed: {
+                src: 'web/assets/css/etmd.min.css'
+            }
         },
 
         // Minify CSS files
         cssmin: {
             options: {
-                compatibility      : 'ie9',
+                compatibility: 'ie9',
                 keepSpecialComments: false,
-                sourceMap          : false,
-                advanced           : false
+                sourceMap: false,
+                advanced: false
             },
-            core   : {
-                src : 'web/assets/css/core.min.css',
+            core: {
+                src: 'web/assets/css/core.min.css',
                 dest: 'web/assets/css/core.min.css'
             },
-            custom : {
-                src : 'web/assets/css/custom.min.css',
-                dest: 'web/assets/css/custom.min.css'
+            etmd: {
+                src: 'web/assets/css/etmd.min.css',
+                dest: 'web/assets/css/etmd.min.css'
             }
         }
 
@@ -174,11 +173,10 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['dist', 'dev', 'watch']);
 
 
-
     grunt.registerTask('dist',
         [
             'clean:before_copy',
-	    'dev',
+            'dev',
             'imagemin'
         ]
     );

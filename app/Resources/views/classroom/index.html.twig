@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section class="bg-primary page-section" id="classroom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h1 class="section-heading text-white">Cours collectifs</h1>
+                    <h2 class="text-white mb-4">
+                        De septembre à juin <br>
+                        Conduits par Catherine Rouzeau
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-primary">
+        <div class="container">
+            <h3 class="section-heading text-white">Débutants/entrainement  Niveau 1-2</h3>
+            <p class="text-faded mb-4">
+            Apprentissage de la technique indispensable au jeu: respiration, voix, diction, corps. Approche de l’interprétation et du jeu qui impliquent l’attitude intérieure pour y accéder. Le répertoire est choisi pour permettre d’accueillir de nouveaux venus toute l’année.
+            </p>
+
+            <h3 class="section-heading text-white">Perfectionnement  Niveau 3</h3>
+            <p class="text-faded mb-4">Ouvert aux élèves ayant suivi 2 ans de formation dans l’école et qui ont solidement acquis les techniques de base. Le groupe est établi en juin, et immuable pour la saison. L’œuvre montée est en fonction de la distribution : âges, genres, nombre.
+            </p>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6 button-box">
+                    <a href="#" class="button">Renseignements et inscription</a>
+                </div>
+                <div class="col-lg-6 text-right button-box">
+                    <a href="#" class="button">Date des représentations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- -->
+    <section class="text-white" style="min-height:550px">
+        <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel2" data-slide-to="1"></li>
+                <li data-target="#myCarousel2" data-slide-to="2"></li>
+                <li data-target="#myCarousel2" data-slide-to="3"></li>
+                <li data-target="#myCarousel2" data-slide-to="4"></li>
+                <li data-target="#myCarousel2" data-slide-to="5"></li>
+                <li data-target="#myCarousel2" data-slide-to="6"></li>
+            </ol>
+
+            <!-- Content -->
+            <div class="carousel-inner">
+                    <div class="item carousel-item active">
+                        <div class="_img-box-full"><img src="{{ asset('assets/img/classroom/classroom_01.jpg') }}" alt=""></div>
+                    </div>
+                <div class="item carousel-item">
+                        <div class="_img-box-full"><img src="{{ asset('assets/img/classroom/classroom_02.jpg') }}" alt=""></div>
+                </div>
+                <div class="item carousel-item">
+                        <div class="_img-box-full"><img src="{{ asset('assets/img/classroom/classroom_03.jpg') }}" alt=""></div>
+                </div>
+                <div class="item carousel-item">
+                        <div class="_img-box-full"><img src="{{ asset('assets/img/classroom/classroom_04.jpg') }}" alt=""></div>
+                </div>
+                <div class="item carousel-item">
+                        <div class="_img-box-full"><img src="{{ asset('assets/img/classroom/classroom_05.jpg') }}" alt=""></div>
+                </div>
+                <div class="item carousel-item">
+                        <div class="_img-box-full"><img src="{{ asset('assets/img/classroom/classroom_06.jpg') }}" alt=""></div>
+                </div>
+                <div class="item carousel-item">
+                        <div class="_img-box-full"><img src="{{ asset('assets/img/classroom/classroom_07.jpg') }}" alt=""></div>
+                </div>
+            </div>
+
+            <!-- Carousel controls -->
+            <a class="carousel-control left carousel-control-prev" href="#myCarousel2" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control right carousel-control-next" href="#myCarousel2" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </section>
+
+        <section class="bg-red">
+        <div>
+        </div>
+        <div>
+        </div>
+
+    </section>
+
+{% endblock %}
+

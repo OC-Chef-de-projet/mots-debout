@@ -5,62 +5,25 @@
     <meta name="viewport" content="width=device-width"/>
     <title>{% block title %}Ecole Théâtre Mots Debout{% endblock %}</title>
 
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
 
     <link rel="stylesheet" href="{{ asset('assets/css/core.min.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('assets/css/custom.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/etmd.min.css') }}"/>
 
     {% block stylesheets %}{% endblock %}
-
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <script src="{{ asset('assets/js/core.min.js') }}"></script>
-    <script src="{{ asset('assets/js/etmd.min.js') }}"></script>
-    <style>
-
-    </style>
 </head>
 
-<body>
-    <header>
-        {% if is_granted('ROLE_CONTRIBUTOR') %}
-            {% include '@Admin/navbaradmin.html.twig' %}
-        {% else %}
-            {% include '::navbar.html.twig' %}
-        {% endif %}
-    </header>
-
+<body id="page-top">
+	{% include 'navbar.html.twig' %}
     {% block body %}{% endblock %}
-
-    <footer class="page-footer">{% include '::footer.html.twig' %}</footer>
-
-
-    {% block javascripts %}{% endblock %}
-    <script>
-        $(document).ready(function() {
-            $('select').material_select();
-            $(".button-collapse").sideNav();
-            $('.button-collapse').click(removeOverlay);
-            $('#subscribe').click(function(){
-                var newsletter_email = $("#newsletter_email").val();
-                $.ajax({
-                    type: "POST",
-                    url: "{{ path('newsletter_subscribe')}}",
-                    data:  {
-                        'email': newsletter_email
-                    },
-                    cache: false,
-                    success: function(data){
-                        Materialize.toast(data.message, 4000)
-                    }
-                });
-                return false;
-            });
-        });
-        function removeOverlay() {
-            $('div[id^=sidenav-overlay]').remove();
-        }
-    </script>
-
+    {% include 'footer.html.twig' %}
 </body>
+
+
+<script src="{{ asset('assets/js/core.min.js') }}"></script>
+<script src="{{ asset('assets/js/etmd.min.js') }}"></script>
+ {% block javascripts %}{% endblock %}
+
 </html>

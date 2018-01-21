@@ -1,58 +1,20 @@
-contactus:
-    path:     /nous-contacter
-    defaults: { _controller: AppBundle:Default:contactus }
-    methods: [get,post]
-
-legal_notice:
-    path:     /mentions_legales
-    defaults: { _controller: AppBundle:Default:legalNotice }
-    methods: [get]
-
-user_register:
-    path:     /register
-    defaults: { _controller: AppBundle:Default:register }
-    methods: [get,post]
-
-newsletter_subscribe:
-    path:     /subscribe
-    defaults: { _controller: AppBundle:Newsletter:subscribe }
-    methods: [post]
-
-admin_homepage:
-    path:     /admin
-    defaults: { _controller: AppBundle:Admin\Default:index }
-    methods: [get]
-
-
-security_login:
-    path:     /login
-    defaults: { _controller: AppBundle:Security:login }
-    methods: [get,post]
-
-security_login_check:
-    path:     /login
-    defaults: { _controller: AppBundle:Security:loginCheck }
-    methods: [get]
-
-logout:
-    path: /logout
-
-page:
-    path:     /{category}
-    defaults: { _controller: AppBundle:Default:page }
-    requirements:
-        category: "formation|expositions|residence|cours_collectifs|cours_particuliers|spectacles"
-    methods: [get]
-
 homepage:
-    path:     /{offset}/{page}
-    defaults: { _controller: AppBundle:Default:index, offset: 0, page: 1 }
+    path:     /
+    defaults: { _controller: AppBundle:Etmd:index }
     methods: [get]
 
-admin_import:
-    resource: "@AppBundle/Resources/config/routing/admin.yml"
-    prefix: /admin
+training:
+    path:     /training
+    defaults: { _controller: AppBundle:Training:index }
+    methods: [get]
 
+classroom:
+    path:     /classroom
+    defaults: { _controller: AppBundle:Classroom:index }
+    methods: [get]
 
-
+privateLessons:
+    path:     /privateLessons
+    defaults: { _controller: AppBundle:PrivateLessons:index }
+    methods: [get]
 

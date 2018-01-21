@@ -6,7 +6,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
 
 
 framework:
@@ -39,11 +39,7 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-    paths:
-        "%kernel.root_dir%/Resources/views/admin": Admin
-        "%kernel.root_dir%/Resources/views/admin/user": AdminUser
-        "%kernel.root_dir%/Resources/views/admin/post": AdminPost
-        "%kernel.root_dir%/Resources/views/admin/page": AdminPage
+
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -75,8 +71,3 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
-assetic:
-    debug:          '%kernel.debug%'
-    use_controller: '%kernel.debug%'
-    filters:
-        cssrewrite: ~
