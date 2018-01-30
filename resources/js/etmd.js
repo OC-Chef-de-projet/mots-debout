@@ -2,10 +2,10 @@
 $(window).scroll(function() {
     if($(this).scrollTop() > 50)
     {
-        $('.navbar-trans').addClass('afterscroll');
+        $(".navbar-trans").addClass("afterscroll");
     } else
     {
-        $('.navbar-trans').removeClass('afterscroll');
+        $(".navbar-trans").removeClass("afterscroll");
     }
 
 });
