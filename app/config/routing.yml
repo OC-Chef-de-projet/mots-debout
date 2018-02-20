@@ -3,18 +3,18 @@ homepage:
     defaults: { _controller: AppBundle:Etmd:index }
     methods: [get]
 
-training:
-    path:     /training
-    defaults: { _controller: AppBundle:Training:index }
+ateliers:
+    path:     /ateliers
+    defaults: { _controller: AppBundle:Etmd:ateliers }
     methods: [get]
 
-classroom:
-    path:     /classroom
-    defaults: { _controller: AppBundle:Classroom:index }
+cours_collectifs:
+    path:     /cours_collectifs
+    defaults: { _controller: AppBundle:Etmd:cours_collectifs }
     methods: [get]
 
-privateLessons:
-    path:     /privateLessons
-    defaults: { _controller: AppBundle:PrivateLessons:index }
+cours_particuliers:
+    path:     /cours_particuliers
+    defaults: { _controller: AppBundle:Etmd:cours_particuliers }
     methods: [get]
 
