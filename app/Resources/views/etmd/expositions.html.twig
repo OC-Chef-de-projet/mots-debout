@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section class="bg-primary page-section" id="expositions">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center ">
+                    <h1 class="section-heading text-white">Expositions</h1>
+                    <h2 class="text-white mb-4">Le théâtre ouvre à tous les Arts</h2>
+                    <h3 class="text-white mb-4">
+                        Les élèves et les artistes aux talents multiples trouvent-là un lieu d’accueil de leurs œuvres plastiques et la rencontre avec le public.
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary">
+        <div class="container ">
+            <h2 class="mb-4 text-white">Vernissages</h2>
+            <div class="row ">
+                <div class="col-lg-4 mx-auto" style="height:200px;">
+                    <div class="media mb-1 text-white">
+                        <a class="media-left waves-light" style="margin-right:10px">
+                            <img src="{{ asset('assets/img/expositions/pie_rouge.png') }}">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Le cabinet des curiosités</h4>
+                            <p class="text-white">
+                                Papier mâché Marottes Sylvette Marchive - 2016
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mx-auto" style="height:200px;">
+                    <div class="media mb-1 text-white">
+                        <a class="media-left waves-light" style="margin-right:10px">
+                            <img src="{{ asset('assets/img/expositions/bonnes_gens.png') }}">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Les bonnes gens</h4>
+                            <p class="text-white">
+                                Elise Gautier - 2018
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
+

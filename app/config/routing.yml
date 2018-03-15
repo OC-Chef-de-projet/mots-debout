@@ -18,3 +18,58 @@ cours_particuliers:
     defaults: { _controller: AppBundle:Etmd:cours_particuliers }
     methods: [get]
 
+formations:
+    path:     /formations
+    defaults: { _controller: AppBundle:Etmd:formations }
+    methods: [get]
+
+residences:
+    path:     /residences
+    defaults: { _controller: AppBundle:Etmd:residences }
+    methods: [get]
+
+expositions:
+    path:     /expositions
+    defaults: { _controller: AppBundle:Etmd:expositions }
+    methods: [get]
+
+spectacles:
+    path:     /spectacles
+    defaults: { _controller: AppBundle:Etmd:spectacles }
+    methods: [get]
+
+stages:
+    path:     /stages
+    defaults: { _controller: AppBundle:Etmd:stages }
+    methods: [get]
+
+ateliers_recherche:
+    path:     /ateliers_recherche
+    defaults: { _controller: AppBundle:Etmd:ateliers_recherche }
+    methods: [get]
+
+ecole:
+    path:     /ecole
+    defaults: { _controller: AppBundle:Etmd:ecole }
+    methods: [get]
+
+nos_amis:
+    path:     /nos_amis
+    defaults: { _controller: AppBundle:Etmd:nos_amis }
+    methods: [get]
+
+livre_or:
+    path:     /livre_or
+    defaults: { _controller: AppBundle:Etmd:livre_or }
+    methods: [get]
+
+mentions_legales:
+    path:     /mentions_legales
+    defaults: { _controller: AppBundle:Etmd:mentions_legales }
+    methods: [get]
+
+
+nous_contacter:
+    path:     /nous_contacter
+    defaults: { _controller: AppBundle:Etmd:nous_contacter }
+    methods: [get]

@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <section class="bg-primary page-section" id="privatelessons">
+    <section class="bg-primary page-section" id="cours_particuliers">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto text-center">
@@ -31,6 +31,12 @@
             </h3>
             <h3 class="text-white  mb-4">Les cours particuliers offrent un calendrier à la carte.
             </h3>
+
+            <div class="row">
+                <div class="col-lg-12 button-box">
+                    <a href="#" class="button">Renseignements</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -38,17 +44,17 @@
     <section class="text-white">
         <div class="container ">
             <h2 class="mb-4 txt-red">Réussite des élèves</h2>
-
             <div class="row ">
                 <div class="col-lg-4 mx-auto" style="height:200px;">
                     <div class="media mb-1 txt-red">
                         <a class="media-left waves-light">
-                            <img class="rounded-circle" src="{{ asset('assets/img/privatelessons/gaïa_berthommé.jpg') }}"
+                            <img class="rounded-circle" src="{{ asset('assets/img/eleves/gaïa_berthommé.jpg') }}"
                                  alt="Generic placeholder image">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">Gaïa Berthommé</h4>
-                            <p class="text-dark">&nbsp;<a href="http://lelftp.com/">Laboratoire de théâtre physique à Montreuil</a></p>
+                            <p class="text-dark">&nbsp;<a href="http://lelftp.com/">Laboratoire de théâtre physique à
+                                    Montreuil</a></p>
                         </div>
                     </div>
                 </div>
@@ -56,12 +62,12 @@
                 <div class="col-lg-4 mx-auto">
                     <div class="media mb-1 txt-red">
                         <a class="media-left waves-light">
-                            <img class="rounded-circle" src="assets/img/privatelessons/audrey_caille.png"
-                                 alt="Generic placeholder image">
+                            <img class="rounded-circle" src="{{ asset('assets/img/eleves/audrey_caille.png') }}">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">Audrey Caille</h4>
-                            <p class="text-dark">&nbsp;<a href="http://www.conservatoire-rennes.fr/">Conservatoire de Rennes</a></p>
+                            <p class="text-dark">&nbsp;<a href="http://www.conservatoire-rennes.fr/">Conservatoire de
+                                    Rennes</a></p>
                         </div>
                     </div>
                 </div>
@@ -69,12 +75,12 @@
                 <div class="col-lg-4 mx-auto">
                     <div class="media mb-1 txt-red">
                         <a class="media-left waves-light">
-                            <img class="rounded-circle" src="assets/img/privatelessons/maud_lassignardie.png"
-                                 alt="Generic placeholder image">
+                            <img class="rounded-circle" src="{{ asset('assets/img/eleves/maud_lassignardie.png') }}">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">Maud Lassignardie</h4>
-                            <p class="text-dark">&nbsp;<a href="http://www.ecoleclaudemathieu.com/">Ecole Claude Mathieu à Paris</a></p>
+                            <p class="text-dark">&nbsp;<a href="http://www.ecoleclaudemathieu.com/">Ecole Claude Mathieu
+                                    à Paris</a></p>
                         </div>
                     </div>
                 </div>
@@ -82,25 +88,25 @@
                 <div class="col-lg-4 mx-auto">
                     <div class="media mb-1 txt-red">
                         <a class="media-left waves-light">
-                            <img class="rounded-circle" src="assets/img/privatelessons/tristan_pelseneer.png"
-                                 alt="Generic placeholder image">
+                            <img class="rounded-circle" src="{{ asset('assets/img/eleves/tristan_pelseneer.png') }}">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">Tristan de Pelseneer</h4>
-                            <p class="text-dark">&nbsp;<a href="http://conservatoire-grandavignon.tumblr.com/">Conservatoire d'Avignon</a></p>
+                            <p class="text-dark">&nbsp;<a href="http://conservatoire-grandavignon.tumblr.com/">Conservatoire
+                                    d'Avignon</a></p>
                         </div>
                     </div>
                 </div>
-tristan_pelseneer
                 <div class="col-lg-4 mx-auto">
                     <div class="media mb-1 txt-red">
                         <a class="media-left waves-light">
-                            <img class="rounded-circle" src="assets/img/privatelessons/kayiane_lacoste-boghossian.png"
-                                 alt="Generic placeholder image">
+                            <img class="rounded-circle"
+                                 src="{{ asset('assets/img/eleves/kayiane_lacoste-boghossian.png') }}">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">Kayiané Lacoste-Boghossian</h4>
-                            <p class="text-dark">&nbsp;<a href="http://evasaintpaul.wixsite.com/evasaintpaul">Ecole Eva Saint-Paul à Paris</a></p>
+                            <p class="text-dark">&nbsp;<a href="http://evasaintpaul.wixsite.com/evasaintpaul">Ecole Eva
+                                    Saint-Paul à Paris</a></p>
                         </div>
                     </div>
                 </div>
@@ -108,39 +114,23 @@ tristan_pelseneer
                 <div class="col-lg-4 mx-auto">
                     <div class="media mb-1 txt-red">
                         <a class="media-left waves-light">
-                            <img class="rounded-circle" src="assets/img/privatelessons/antonin_ambard.png"
-                                 alt="Generic placeholder image">
+                            <img class="rounded-circle" src="{{ asset('assets/img/eleves/antonin_ambard.png') }}">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">Antonin Ambard</h4>
-                            <p class="text-dark">&nbsp;<a href="http://www.theatredujour.com/">Ecole Pierre Debauche à Agen</a></p>
+                            <p class="text-dark">&nbsp;<a href="http://www.theatredujour.com/">Ecole Pierre Debauche à
+                                    Agen</a></p>
                         </div>
                     </div>
                 </div>
-
-
             </div>
-            <!--
-            Gaïa Berthommé : Laboratoire de théâtre physique à Montreuil,
-            Audrey Caille : Conservatoire de Rennes,
-            Maud Lassignardie : Ecole Claude Mathieu à Paris,
-            Tristan de Pelseneer Conservatoire d’Avignon,
-            Kayiané Lacoste Boghossian : Ecole Eva Saint-Paul à Paris,
-            -->
-
-        </div>
-
-        </div>
         </div>
     </section>
 
-        <section class="bg-red">
-        <div>
+    <section>
+        <div class="container ">
+            <hr style="border-top: 5px solid rgba(94, 22, 22, 1);max-width:50%">
         </div>
-        <div>
-        </div>
-
     </section>
-
 {% endblock %}
 

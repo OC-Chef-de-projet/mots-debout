@@ -62,18 +62,62 @@ a:hover {
     }
 }
 
+.image-cover {
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 /* -- */
 #cours-particuliers  {
-    background-image: url('../img/cp_fs.png');
+    background-image: url('../img/bannieres/banniere.png');
     background-position: center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+
+
+#spectacles  {
+    background-image: url('../img/bannieres/banniere.png');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#expositions  {
+    background-image: url('../img/bannieres/banniere.png');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#formations  {
+    background-image: url('../img/bannieres/banniere.png');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#residences  {
+    background-image: url('../img/bannieres/banniere.png');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 
 #ateliers {
-    background-image: url('../img/training/training.jpg');
+    background-image: url('../img/bannieres/banniere.png');
     background-position: center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -81,8 +125,8 @@ a:hover {
     background-size: cover;
 }
 
-#classroom {
-    background-image: url('../img/classroom/classroom_03.jpg');
+#cours_collectifs {
+    background-image: url('../img/bannieres/banniere.png');
     background-position: center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -90,8 +134,17 @@ a:hover {
     background-size: cover;
 }
 
-#privatelessons {
-    background-image: url('../img/privatelessons/privatelessons_01.png');
+#cours_particuliers {
+    background-image: url('../img/bannieres/banniere.png');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#nous_contacter {
+    background-image: url('../img/bannieres/nous_contacter.png');
     background-position: center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -101,7 +154,6 @@ a:hover {
 
 .mavbar-menu {
     background-color: rgba(0,0,0,0.2) !important;
-
 }
 
 .navbar-shrink  {

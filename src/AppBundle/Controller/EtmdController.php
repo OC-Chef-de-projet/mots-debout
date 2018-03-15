@@ -29,4 +29,60 @@ class EtmdController extends Controller
     {
         return $this->render('etmd/cours_particuliers.html.twig');
     }
+
+    public function formationsAction()
+    {
+        return $this->render('etmd/formations.html.twig');
+    }
+
+    public function residencesAction()
+    {
+        return $this->render('etmd/residences.html.twig');
+    }
+
+    public function expositionsAction()
+    {
+        return $this->render('etmd/expositions.html.twig');
+    }
+
+    public function spectaclesAction()
+    {
+        return $this->render('etmd/spectacles.html.twig');
+    }
+
+    public function stagesAction()
+    {
+        return $this->render('etmd/stages.html.twig');
+    }
+
+    public function ateliers_rechercheAction()
+    {
+        return $this->render('etmd/ateliers_recherche.html.twig');
+    }
+
+    public function ecoleAction()
+    {
+        return $this->render('etmd/ecole.html.twig');
+    }
+
+    public function nos_amisAction()
+    {
+        return $this->render('etmd/nos_amis.html.twig');
+    }
+
+    public function livre_orAction()
+    {
+        return $this->render('etmd/livre_or.html.twig');
+    }
+
+    public function mentions_legalesAction()
+    {
+        return $this->render('etmd/mentions_legales.html.twig');
+    }
+
+
+    public function nous_contacterAction()
+    {
+        return $this->render('etmd/nous_contacter.html.twig');
+    }
 }
