@@ -1,25 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block title %}Spectacles{% endblock %}
 
-    <section class="background-red page-section" id="spectacles" xmlns:max-width="http://www.w3.org/1999/xhtml">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto text-center ">
-                    <h1 class="section-heading text-white">Spectacles</h1>
-                    <h2 class="text-white mb-4">En public</h2>
-
+{% block header %}
+    <header class="collapse spectacles">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <div id="header-main-title">
+                            <h1>Spectacles</h1>
+                            <h2 class="subTitle">En public
+                                <br>&nbsp;
+                                <br>&nbsp;
+                                <br>&nbsp;
+                                </h2>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </header>
+{% endblock %}
 
+{% block body %}
 <section class="background-red">
     <div class="container ">
-        <h2 class="text-white mb-4">
+        <h3 class="text-red-faded">
             La représentation publique est une rencontre indispensable où
             l’humilité côtoie l’audace.
-        </h2>
+        </h3>
     </div>
 </section>
    
@@ -31,7 +41,7 @@
             <div class="row">
                 <div class="col-lg-6 mx-auto text-center text-red">
                     <div class="card" style="width: 18rem;">
-                        <h5 class="card-title">Comme s’il en pleuvait</h5>
+                        <h3>Comme s’il en pleuvait</h3>
                         <img class="card-img-top" style="max-width:100%" src="{{ asset('assets/img/spectacles/prochainement.png') }}"
                              alt="Card image cap">
                         <div class="card-body">
@@ -57,7 +67,7 @@
 
                 <div class="col-lg-6 mx-auto text-center text-red">
                     <div class="card" style="width: 18rem;">
-                        <h5 class="card-title">Les pas perdus</h5>
+                        <h3>Les pas perdus</h3>
                         <img class="card-img-top" style="max-width:100%" src="{{ asset('assets/img/spectacles/prochainement.png') }}"
                              alt="Card image cap">
                         <div class="card-body">

@@ -1,17 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block title %}Stages{% endblock %}
 
-    <section class="background-red page-section" id="expositions">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto text-center ">
-                    <h1 class="section-heading text-white">Stages</h1>
+{% block header %}
+    <header class="collapse stages">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <div id="header-main-title">
+                            <h1>Stages</h1>
+                            <h2 class="subTitle">&nbsp;<br>&nbsp;</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </header>
+{% endblock %}
 
+{% block body %}
     <section class="background-red">
         <div class="container ">
             <h3 class="text-red-faded">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -42,16 +50,16 @@
             <!-- Content -->
             <div class="carousel-inner">
                 <div class="item carousel-item active">
-                    <div class="_img-box-full"><img src="{{ asset('assets/img/stages/stages_01.jpg') }}" alt=""></div>
+                    <div class="_img-box-full"><img src="{{ asset('assets/img/stages/stages_01.png') }}" alt=""></div>
                 </div>
                 <div class="item carousel-item">
-                    <div class="_img-box-full"><img src="{{ asset('assets/img/stages/stages_02.jpg') }}" alt=""></div>
+                    <div class="_img-box-full"><img src="{{ asset('assets/img/stages/stages_02.png') }}" alt=""></div>
                 </div>
                 <div class="item carousel-item">
-                    <div class="_img-box-full"><img src="{{ asset('assets/img/stages/stages_03.jpg') }}" alt=""></div>
+                    <div class="_img-box-full"><img src="{{ asset('assets/img/stages/stages_03.png') }}" alt=""></div>
                 </div>
                 <div class="item carousel-item">
-                    <div class="_img-box-full"><img src="{{ asset('assets/img/stages/stages_04.jpg') }}" alt=""></div>
+                    <div class="_img-box-full"><img src="{{ asset('assets/img/stages/stages_04.png') }}" alt=""></div>
                 </div>
             </div>
 

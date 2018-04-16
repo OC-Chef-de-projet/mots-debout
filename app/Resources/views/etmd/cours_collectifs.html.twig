@@ -1,35 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block title %}Cours collectifs{% endblock %}
 
-    <section class="background-red page-section" id="cours_collectifs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto text-center">
-                    <h1 class="section-heading text-white">Cours collectifs</h1>
-                    <h2 class="text-white mb-4">
-                        De septembre à juin <br>
-                        Conduits par Catherine Rouzeau
-                    </h2>
+{% block header %}
+    <header class="collapse cours-collectifs">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <div id="header-main-title">
+                            <h1>Cours collectifs</h1>
+                            <h2 class="subTitle"> De septembre à juin <br>
+                                Conduits par Catherine Rouzeau</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </header>
+{% endblock %}
 
 
+
+{% block body %}
     <section class="background-red">
         <div class="container">
-            <h3 class="section-heading text-red-faded" style="font-weight: 700">Débutants/Entrainement Niveau 1-2</h3>
+            <h3 class="section-heading text-white" style="font-weight: 700">Débutants/Entrainement Niveau 1-2</h3>
             <p class="text-red-faded">
                 Apprentissage des bases techniques : respiration, voix, diction, corps. Pratique de l’interprétation et
                 du jeu sur des scénes du répertoire classique et contemporain. 2 représentations en public fin juin
                 début juillet.
             </p>
-            <p class="text-red-faded">
+            <p class="text-white">
                 <b>Accueil toute l’année</b>
             </p>
 
-            <h3 class="section-heading text-red-faded" style="font-weight: 700">Perfectionnement Niveau 3</h3>
+            <h3 class="section-heading text-white" style="font-weight: 700">Perfectionnement Niveau 3</h3>
             <p class="text-red-faded">Ouvert aux élèves ayant suivi 2 ans de formation dans l’école et qui ont acquis
                 les techniques de base. Le groupe est immuable et établi en juin. Une œuvre du répertoire est montée. De
                 5 à 7 représentations en public fin juin début juillet.
@@ -66,37 +72,37 @@
                 <div class="carousel-inner">
                     <div class="item carousel-item active">
                         <div class="_img-box-full"><img
-                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_01.jpg') }}" alt="">
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_01.png') }}" alt="">
                         </div>
                     </div>
                     <div class="item carousel-item">
                         <div class="_img-box-full"><img
-                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_02.jpg') }}" alt="">
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_02.png') }}" alt="">
                         </div>
                     </div>
                     <div class="item carousel-item">
                         <div class="_img-box-full"><img
-                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_03.jpg') }}" alt="">
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_03.png') }}" alt="">
                         </div>
                     </div>
                     <div class="item carousel-item">
                         <div class="_img-box-full"><img
-                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_04.jpg') }}" alt="">
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_04.png') }}" alt="">
                         </div>
                     </div>
                     <div class="item carousel-item">
                         <div class="_img-box-full"><img
-                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_05.jpg') }}" alt="">
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_05.png') }}" alt="">
                         </div>
                     </div>
                     <div class="item carousel-item">
                         <div class="_img-box-full"><img
-                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_06.jpg') }}" alt="">
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_06.png') }}" alt="">
                         </div>
                     </div>
                     <div class="item carousel-item">
                         <div class="_img-box-full"><img
-                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_07.jpg') }}" alt="">
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_07.png') }}" alt="">
                         </div>
                     </div>
 
