@@ -1,0 +1,163 @@
+<header class="collapse ateliers">
+    {% include 'navbar.html.twig' %}
+</header>
+
+
+<!--
+  <section class="banner background-red page-section" id="ateliers">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-10 mx-auto text-center ">
+                  <h1 class="section-heading text-white">Ateliers découvertes des disciplines de l'art vivant</h1>
+                  <h2 class="text-white mb-4">
+                      Conduits par des artistes professionnels
+                  </h2>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+  <section class="background-red">
+      <div class="container">
+          <h3 class="text-red-faded">
+              Les ateliers mensuels d’octobre à mai ouvrent aux multi disciplines : <br>
+              Clown, Mime, Théâtre d’Ombres, Corps, Marionnette, Chant, Masque, Musique, Souffle, Conte…
+          </h3>
+      </div>
+  </section>
+
+  <section class="text-white">
+      <div class="container">
+
+          <h2 class="text-red" style="font-weight: 700">Prochains Ateliers</h2>
+
+          <div class="col-lg-6 button-box">
+              <a href="#" class="button">Renseignements et inscription</a>
+          </div>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+              <ol class="carousel-indicators">
+                  {% for i in 0..trainings|length - 1 %}
+                      <li data-target="#myCarousel" data-slide-to="{{ i }}"
+                          {% if loop.first %}class="active"{% endif %}></li>
+                  {% endfor %}
+              </ol>
+
+              <div class="carousel-inner">
+                  {% for training in trainings %}
+                      <div class="item carousel-item {% if loop.first %}active{% endif %}">
+                          <div class="img-box"><img src="{{ asset('assets/img/ateliers/' ~ training.imageLink) }}"
+                                                    alt=""></div>
+                          <h2 class="text-red" style="font-weight: 700">{{ training.title }}</h2>
+                          <h3 class="text-red">{{ training.startAt | localizeddate('full', 'none') }} à 19H30</h3>
+                          <p class="text-red" class="testimonial">{{ training.content }}</p>
+                      </div>
+
+                  {% endfor %}
+
+              </div>
+
+              <a class="carousel-control left carousel-control-prev background-red" href="#myCarousel" data-slide="prev">
+                  <i class="fa fa-angle-left"></i>
+              </a>
+              <a class="carousel-control right carousel-control-next background-red" href="#myCarousel" data-slide="next">
+                  <i class="fa fa-angle-right"></i>
+              </a>
+          </div>
+      </div>
+  </section>
+
+
+  <section class="background-red">
+      <div class="container">
+          <h2 class="text-red-faded" style="font-weight: 700">L’Art en doute</h2>
+          <h3 class="text-red-faded">Le théâtre est un espace multiple qui ne se laisse pas saisir d’un seul
+              regard
+              et encore moins par des certitudes.
+          </h3>
+          <h3 class="text-red-faded">Les Ateliers sont le lieu où l’humilité s’exerce au travers des prismes
+              d'artistes divers, différents et complémentaires.
+          </h3>
+      </div>
+  </section>
+
+  <section class="text-white" style="min-height:550px">
+      <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+
+          <ol class="carousel-indicators">
+              <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel2" data-slide-to="1"></li>
+              <li data-target="#myCarousel2" data-slide-to="2"></li>
+              <li data-target="#myCarousel2" data-slide-to="3"></li>
+              <li data-target="#myCarousel2" data-slide-to="4"></li>
+              <li data-target="#myCarousel2" data-slide-to="5"></li>
+              <li data-target="#myCarousel2" data-slide-to="6"></li>
+              <li data-target="#myCarousel2" data-slide-to="7"></li>
+              <li data-target="#myCarousel2" data-slide-to="8"></li>
+              <li data-target="#myCarousel2" data-slide-to="9"></li>
+              <li data-target="#myCarousel2" data-slide-to="10"></li>
+          </ol>
+
+          <div class="carousel-inner">
+              <div class="item carousel-item active">
+                  <div class="_img-box-full"><img src="{{ asset('assets/img/ateliers/ateliers_01.jpg') }}" alt="">
+                  </div>
+              </div>
+              <div class="item carousel-item">
+                  <div class="_img-box-full"><img src="{{ asset('assets/img/ateliers/ateliers_02.jpg') }}" alt="">
+                  </div>
+              </div>
+              <div class="item carousel-item">
+                  <div class="_img-box-full"><img src="{{ asset('assets/img/ateliers/ateliers_03.jpg') }}" alt="">
+                  </div>
+              </div>
+              <div class="item carousel-item">
+                  <div class="_img-box-full"><img src="{{ asset('assets/img/ateliers/ateliers_04.jpg') }}" alt="">
+                  </div>
+              </div>
+              <div class="item carousel-item">
+                  <div class="_img-box-full"><img src="{{ asset('assets/img/ateliers/ateliers_05.jpg') }}" alt="">
+                  </div>
+              </div>
+              <div class="item carousel-item">
+                  <div class="_img-box-full"><img src="{{ asset('assets/img/ateliers/ateliers_06.jpg') }}" alt="">
+                  </div>
+              </div>
+              <div class="item carousel-item">
+                  <div class="_img-box-full"><img src="{{ asset('assets/img/ateliers/ateliers_07.jpg') }}" alt="">
+                  </div>
+              </div>
+              <div class="item carousel-item">
+                  <div class="_img-box-full"><img src="{{ asset('assets/img/ateliers/ateliers_08.jpg') }}" alt="">
+                  </div>
+              </div>
+              <div class="item carousel-item">
+                  <div class="_img-box-full"><img src="{{ asset('assets/img/ateliers/ateliers_09.jpg') }}" alt="">
+                  </div>
+              </div>
+              <div class="item carousel-item">
+                  <div class="_img-box-full"><img src="{{ asset('assets/img/ateliers/ateliers_10.jpg') }}" alt="">
+                  </div>
+
+              </div>
+              <div class="item carousel-item">
+                  <div class="_img-box-full"><img src="{{ asset('assets/img/ateliers/ateliers_10.jpg') }}" alt="">
+                  </div>
+
+              </div>
+
+          </div>
+
+          <a class="carousel-control left carousel-control-prev" href="#myCarousel2" data-slide="prev">
+              <i class="fa fa-angle-left"></i>
+          </a>
+          <a class="carousel-control right carousel-control-next" href="#myCarousel2" data-slide="next">
+              <i class="fa fa-angle-right"></i>
+          </a>
+      </div>
+      <div class="container ">
+          <hr style="border-top: 5px solid rgba(94, 22, 22, 1);max-width:50%">
+      </div>
+  </section>
+  -->

@@ -2,45 +2,50 @@
 
 {% block body %}
 
-    <section class="bg-primary page-section" id="spectacles" xmlns:max-width="http://www.w3.org/1999/xhtml">
+    <section class="background-red page-section" id="spectacles" xmlns:max-width="http://www.w3.org/1999/xhtml">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto text-center ">
                     <h1 class="section-heading text-white">Spectacles</h1>
                     <h2 class="text-white mb-4">En public</h2>
-                    <h2 class="text-white mb-4">
-                        La représentation publique est une rencontre indispensable où
-                l’humilité côtoie l’audace.
-                    </h2>
+
                 </div>
             </div>
         </div>
     </section>
 
+<section class="background-red">
+    <div class="container ">
+        <h2 class="text-white mb-4">
+            La représentation publique est une rencontre indispensable où
+            l’humilité côtoie l’audace.
+        </h2>
+    </div>
+</section>
    
 
-    <section class="bg-primary">
+    <section class="text-white">
         <div class="container ">
-            <h2 class="mb-4 text-white">A l'affiche</h2>
+            <h2 class="text-red" style="font-weight: 700;">A l'affiche</h2>
+            <p></p>
             <div class="row">
-                <div class="col-lg-6 mx-auto text-center ">
+                <div class="col-lg-6 mx-auto text-center text-red">
                     <div class="card" style="width: 18rem;">
-                        <h5 class="card-title text-white">Comme s’il en pleuvait</h5>
+                        <h5 class="card-title">Comme s’il en pleuvait</h5>
                         <img class="card-img-top" style="max-width:100%" src="{{ asset('assets/img/spectacles/prochainement.png') }}"
                              alt="Card image cap">
                         <div class="card-body">
-
-                            <p class="card-text text-white">d’après Sébastien Thiery</p>
-                            <p class="text-white">
+                            <p>d’après Sébastien Thiery</p>
+                            <p>
                                 <b>Dimanche  1er juillet 17H00</b><br>Salle municipale Tasdon - La Rochelle
                             </p>
-                            <p class="text-white">
+                            <p>
                                 <b>Mercredi 4 juillet 20H30</b><br>Espace B. Giraudeau Mireuil - La Rochelle
                             </p>
-                            <p class="text-white">
+                            <p>
                                 <b>Dimanche  1er juillet 17H00</b><br>Salle municipale Tasdon - La Rochelle
                             </p>
-                            <p class="text-white">
+                            <p>
                                 <b>Mercredi 4 juillet 20H30</b><br>Espace B. Giraudeau Mireuil - La Rochelle
                             </p>
                             <div class="button-box">
@@ -50,18 +55,18 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 mx-auto text-center ">
+                <div class="col-lg-6 mx-auto text-center text-red">
                     <div class="card" style="width: 18rem;">
-                        <h5 class="card-title text-white">Les pas perdus</h5>
+                        <h5 class="card-title">Les pas perdus</h5>
                         <img class="card-img-top" style="max-width:100%" src="{{ asset('assets/img/spectacles/prochainement.png') }}"
                              alt="Card image cap">
                         <div class="card-body">
 
-                            <p class="card-text text-white">de Denise Bonal</p>
-                            <p class="text-white">
+                            <p class="card-text">de Denise Bonal</p>
+                            <p>
                                 <b>Dimanche  1er juillet 17H00</b><br>Salle municipale Tasdon - La Rochelle
                             </p>
-                            <p class="text-white">
+                            <p>
                                 <b>Mercredi 4 juillet 20H30</b><br>Espace B. Giraudeau Mireuil - La Rochelle
                             </p>
                             <div class="button-box">
@@ -75,13 +80,13 @@
         <hr style="border-top: 5px solid rgba(94, 22, 22, 1);max-width:50%">
     </section>
 
- <section class="text-white">
+ <section class="background-red">
         <div class="container ">
-            <h3 class="txt-red mb-4">Les auteurs du répertoire offrent des partitions qui obligent au progrès.
+            <h3 class="text-red-faded">Les auteurs du répertoire offrent des partitions qui obligent au progrès.
                 Leur difficulté même est l’enjeu d’un cheminement constant.
             </h3>
            
-            <h3 class="txt-red  mb-4">La gestion de ces contradictions intimes au sein du travail collectif de
+            <h3 class="text-red-faded">La gestion de ces contradictions intimes au sein du travail collectif de
                 troupe, partagée avec les spectateurs est le cœur même du jeu.
             </h3>
         </div>
@@ -91,66 +96,78 @@
 
 
     <section class="text-white">
-        <div class="container ">
-            <h2 class="mb-4 txt-red">Oeuvres montées - Travail des élèves Niveau 3</h2>
+        <div class="container text-red">
+            <h2 style="font-weight: 700;">Oeuvres montées - Travail des élèves Niveau 3</h2>
+            <p></p>
             <div class="row ">
-                <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px">
-                    <div class="media mb-1 txt-red">
+                <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px;">
+                    <div class="media mb-1">
                         <a class="media-left waves-light" style="margin-right:20px">
                             <img style="height:200px;" src="{{ asset('assets/img/spectacles/2017 - Les Planches.png') }}">
                         </a>
-                        <div class="media-body text-white">
-                            <h4 class="media-heading txt-red">2017 - Les planches</h4>
-                            <p class="txt-red">D'après Jean-Paul Alègre</p>
+                        <div class="media-body">
+                            <h4 class="media-heading">2017 - Les planches</h4>
+                            <p>D'après Jean-Paul Alègre</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px">
-                    <div class="media mb-1 txt-red">
+                    <div class="media mb-1">
                         <a class="media-left waves-light" style="margin-right:20px">
                             <img style="height:200px;" src="{{ asset('assets/img/spectacles/2016 - chacun_sa_verite.png') }}">
                         </a>
-                        <div class="media-body text-white">
-                            <h4 class="media-heading txt-red">2016 - Chacun sa vérité</h4>
-                            <p class="txt-red">De Luigi Pirandello</p>
+                        <div class="media-body">
+                            <h4 class="media-heading">2016 - Chacun sa vérité</h4>
+                            <p>De Luigi Pirandello</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px">
-                    <div class="media mb-1 txt-red">
+                    <div class="media mb-1">
                         <a class="media-left waves-light" style="margin-right:20px">
                             <img style="height:200px;" src="{{ asset('assets/img/spectacles/2015 - Le repas des fauves.png') }}">
                         </a>
-                        <div class="media-body text-white">
-                            <h4 class="media-heading txt-red">2015 - Le repas des fauves</h4>
-                            <p class="txt-red">De Julien Sibre</p>
+                        <div class="media-body">
+                            <h4 class="media-heading">2015 - Le repas des fauves</h4>
+                            <p>De Julien Sibre</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px">
-                    <div class="media mb-1 txt-red">
-                        <div class="media-body text-white">
+                    <div class="media mb-1">
+                        <a class="media-left waves-light" style="margin-right:20px">
+                            <img style="height:200px;" src="{{ asset('assets/img/spectacles/impromptu_de_Versailles.png') }}">
+                        </a>
+                        <div class="media-body">
                             <h4 class="media-heading txt-red">2014 - L'impromptu de Versailles</h4>
-                            <p class="txt-red">De Molière</p>
+                            <p>De Molière</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px">
-                    <div class="media mb-1 txt-red">
-                        <div class="media-body text-white">
-                            <h4 class="media-heading txt-red">2013 - Musée haut, musée bas </h4>
-                            <p class="txt-red">De Jean-Michel Ribes</p>
+                    <div class="media mb-1">
+                        <a class="media-left waves-light" style="margin-right:20px">
+                            <img style="height:200px;" src="{{ asset('assets/img/spectacles/musee_haut_musee_bas.png') }}">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">2013 - Musée haut, musée bas </h4>
+                            <p>De Jean-Michel Ribes</p>
                         </div>
                     </div>
                 </div>
 
+
                 <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px">
-                    <div class="media mb-1 txt-red">
-                        <div class="media-body text-white">
-                            <h4 class="media-heading txt-red">2012 - Une fille bien gardée  </h4>
-                            <p class="txt-red">D'Eugène Labiche</p>
+                    <div class="media mb-1">
+                        <a class="media-left waves-light" style="margin-right:20px">
+                            <img style="height:200px;" src="{{ asset('assets/img/spectacles/une_fille_bien_gardee.png') }}">
+                        </a>
+
+                        <div class="media-body">
+                            <h4 class="media-heading">2012 - Une fille bien gardée  </h4>
+                            <p>D'Eugène Labiche</p>
                         </div>
                     </div>
                 </div>

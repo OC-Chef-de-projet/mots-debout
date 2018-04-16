@@ -49,7 +49,7 @@ module.exports = function (grunt) {
 
             css_custom: {
                 files: ['resources/css/*.css'],
-                tasks: ['concat:etmd', 'cssmin:etmd']
+                tasks: ['concat:custom', 'cssmin:etmd']
             },
             js_script: {
                 files: ['resources/js/*.js'],

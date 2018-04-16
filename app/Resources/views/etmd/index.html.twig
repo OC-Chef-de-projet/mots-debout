@@ -5,34 +5,32 @@
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <h1 class="text-uppercase">
-                    <strong>&Eacute;cole Théâtre Mots Debout</strong>
-                </h1>
+                <h1 class="text-uppercase">&Eacute;cole Théâtre Mots Debout</h1>
                 <div style="height:150px"></div>
-                <h2 class="text-white-gold"><strong>Cours d'Art dramatique</strong></h2>
-                <a href="#about"><span class="fa fa-chevron-down fa-3x"></span></a>
+                <h2 class="text-white-gold subTitle"><strong>Cours d'Art dramatique</strong></h2>
+                <a href="#about" class="chevron subTitle"><span class="fa fa-chevron-down fa-3x"></span></a>
             </div>
 
         </div>
     </div>
 </header>
-<section class="bg-primary" id="about">
-    <div class="container">
+<section class="background-red" id="about">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-heading text-white">&Eacute;cole Théâtre Mots Debout</h2>
-                <hr class="light my-4">
-                <p class="text-faded mb-4">
+                <h2 class="section-heading text-red-faded" style="font-weight: 700">&Eacute;cole Théâtre Mots Debout</h2>
+
+                <h4 class="text-red-faded">
                     L'&Eacute;cole s'adresse à tous : débutants, amateurs, professionnels désireux de progresser dans la
                     discipline. "Je travaille avec le désir qui est le moteur".
-                </p>
-                <p class="text-faded mb-4">
+                </h4>
+                <h4 class="text-red-faded">
                     Ici de la bienveillance mais sans complaisance, l'exigence est de mise, l'ouverture infinie de la
                     découverte : "Quand une étape est franchie, on aborde un autre palier.".
-                </p>
-                <p class="text-faded mb-4">
+                </h4>
+                <h4 class="text-red-faded">
                     Et toujours la recherche permanente de l'authenticité du jeu : "Au théâtre on ne peut pas tricher".
-                </p>
+                </h4>
 
             </div>
         </div>
@@ -40,7 +38,6 @@
 </section>
 
 {% include 'etmd/tuiles.html.twig' %}
-{% include 'news/carousel.html.twig' %}
 
 {% endblock %}
 

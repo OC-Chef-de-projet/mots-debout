@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <section class="bg-primary page-section" id="cours_collectifs">
+    <section class="background-red page-section" id="cours_collectifs">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto text-center">
@@ -17,18 +17,22 @@
     </section>
 
 
-    <section class="bg-primary">
+    <section class="background-red">
         <div class="container">
-            <h3 class="section-heading text-white">Débutants/Entrainement  Niveau 1-2</h3>
-            <p class="text-faded mb-4">
-            Apprentissage des bases techniques : respiration, voix, diction, corps. Pratique de l’interprétation et du jeu sur des scénes du répertoire classique et contemporain. 2 représentations en public fin juin début juillet.
+            <h3 class="section-heading text-red-faded" style="font-weight: 700">Débutants/Entrainement Niveau 1-2</h3>
+            <p class="text-red-faded">
+                Apprentissage des bases techniques : respiration, voix, diction, corps. Pratique de l’interprétation et
+                du jeu sur des scénes du répertoire classique et contemporain. 2 représentations en public fin juin
+                début juillet.
             </p>
-            <p class="text-faded mb-4">
-            	<b>Accueil toute l’année</b>
+            <p class="text-red-faded">
+                <b>Accueil toute l’année</b>
             </p>
 
-            <h3 class="section-heading text-white">Perfectionnement  Niveau 3</h3>
-            <p class="text-faded mb-4">Ouvert aux élèves ayant suivi 2 ans de formation dans l’école et qui ont acquis les techniques de base. Le groupe est immuable et établi en juin. Une œuvre du répertoire est montée. De 5 à 7 représentations en public fin juin début juillet.
+            <h3 class="section-heading text-red-faded" style="font-weight: 700">Perfectionnement Niveau 3</h3>
+            <p class="text-red-faded">Ouvert aux élèves ayant suivi 2 ans de formation dans l’école et qui ont acquis
+                les techniques de base. Le groupe est immuable et établi en juin. Une œuvre du répertoire est montée. De
+                5 à 7 représentations en public fin juin début juillet.
             </p>
             <hr>
             <div class="row">
@@ -36,7 +40,7 @@
                     <a href="#" class="button">Renseignements et inscription</a>
                 </div>
                 <div class="col-lg-6 text-right button-box">
-                    <a href="#" class="button">Date des représentations</a>
+                    <a href="{{ url('spectacles') }}" class="button">Date des représentations</a>
                 </div>
             </div>
         </div>
@@ -44,51 +48,69 @@
 
     <!-- -->
     <section class="text-white" style="min-height:550px">
-        <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+        <div class="container">
+            <div id="myCarousel2" class="carousel slide" data-ride="carousel">
 
-            <!-- Carousel indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel2" data-slide-to="1"></li>
-                <li data-target="#myCarousel2" data-slide-to="2"></li>
-                <li data-target="#myCarousel2" data-slide-to="3"></li>
-                <li data-target="#myCarousel2" data-slide-to="4"></li>
-                <li data-target="#myCarousel2" data-slide-to="5"></li>
-                <li data-target="#myCarousel2" data-slide-to="6"></li>
-            </ol>
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel2" data-slide-to="1"></li>
+                    <li data-target="#myCarousel2" data-slide-to="2"></li>
+                    <li data-target="#myCarousel2" data-slide-to="3"></li>
+                    <li data-target="#myCarousel2" data-slide-to="4"></li>
+                    <li data-target="#myCarousel2" data-slide-to="5"></li>
+                    <li data-target="#myCarousel2" data-slide-to="6"></li>
+                </ol>
 
-            <!-- Content -->
-            <div class="carousel-inner">
+                <!-- Content -->
+                <div class="carousel-inner">
                     <div class="item carousel-item active">
-                        <div class="_img-box-full"><img src="{{ asset('assets/img/cours_collectifs/cours_collectifs_01.jpg') }}" alt=""></div>
+                        <div class="_img-box-full"><img
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_01.jpg') }}" alt="">
+                        </div>
                     </div>
-                <div class="item carousel-item">
-                        <div class="_img-box-full"><img src="{{ asset('assets/img/cours_collectifs/cours_collectifs_02.jpg') }}" alt=""></div>
-                </div>
-                <div class="item carousel-item">
-                        <div class="_img-box-full"><img src="{{ asset('assets/img/cours_collectifs/cours_collectifs_03.jpg') }}" alt=""></div>
-                </div>
-                <div class="item carousel-item">
-                        <div class="_img-box-full"><img src="{{ asset('assets/img/cours_collectifs/cours_collectifs_04.jpg') }}" alt=""></div>
-                </div>
-                <div class="item carousel-item">
-                        <div class="_img-box-full"><img src="{{ asset('assets/img/cours_collectifs/cours_collectifs_05.jpg') }}" alt=""></div>
-                </div>
-                <div class="item carousel-item">
-                        <div class="_img-box-full"><img src="{{ asset('assets/img/cours_collectifs/cours_collectifs_06.jpg') }}" alt=""></div>
-                </div>
-                <div class="item carousel-item">
-                        <div class="_img-box-full"><img src="{{ asset('assets/img/cours_collectifs/cours_collectifs_07.jpg') }}" alt=""></div>
-                </div>
-            </div>
+                    <div class="item carousel-item">
+                        <div class="_img-box-full"><img
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_02.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="item carousel-item">
+                        <div class="_img-box-full"><img
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_03.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="item carousel-item">
+                        <div class="_img-box-full"><img
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_04.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="item carousel-item">
+                        <div class="_img-box-full"><img
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_05.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="item carousel-item">
+                        <div class="_img-box-full"><img
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_06.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="item carousel-item">
+                        <div class="_img-box-full"><img
+                                    src="{{ asset('assets/img/cours_collectifs/cours_collectifs_07.jpg') }}" alt="">
+                        </div>
+                    </div>
 
-            <!-- Carousel controls -->
-            <a class="carousel-control left carousel-control-prev" href="#myCarousel2" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="carousel-control right carousel-control-next" href="#myCarousel2" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-            </a>
+                </div>
+                <!-- Carousel controls -->
+                <a class="carousel-control left carousel-control-prev background-red" href="#myCarousel2"
+                   data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="carousel-control right carousel-control-next background-red" href="#myCarousel2"
+                   data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
         </div>
     </section>
 
