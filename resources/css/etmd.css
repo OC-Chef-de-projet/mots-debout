@@ -494,7 +494,14 @@ h1 {
     padding:20px;
 }
 
-.link-active {
-    background-color: rgba(94, 22, 22, 1);
-    border-bottom: 3px solid white;
+
+
+.form-control {
+    border: 1px solid hsla(0, 62%, 23%, 0.7);
+}
+
+.form-control:focus {
+    border-color: hsla(0, 62%, 23%, 0.7);
+    box-shadow: 0 1px 1px hsla(0, 62%, 23%, 0.2) inset, 0 0 8px hsla(0, 62%, 23%, 0.7);
+    outline: 0 none;
 }

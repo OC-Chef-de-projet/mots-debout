@@ -174,6 +174,18 @@ body {
 }
 
 
+#mainNav .link-active {
+    background-color: rgba(94, 22, 22, 1);
+    border-bottom: 3px solid white;
+    color: white !important;
+}
+
+#mainNav.navbar-shrink .link-active {
+    background-color: rgba(94, 22, 22, 1);
+    color: white !important;
+    border-bottom: 3px solid white;
+}
+
 #mainNav.navbar-shrink .nav-link-dropdown {
 
     font-weight: 700;
