@@ -89,6 +89,7 @@ module.exports = function (grunt) {
                         'resources/vendor/bootstrap/js/bootstrap.bundle.min.js',
                         'resources/vendor/magnific-popup/jquery.magnific-popup.min.js',
                         'resources/vendor/scrollreveal/scrollreveal.min.js'
+
                     ],
 
 
