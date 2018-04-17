@@ -165,7 +165,9 @@ body {
 
 #mainNav.navbar-shrink {
     background-color: white;
+
 }
+
 #mainNav.navbar-shrink .dropdown-menu {
     background-color: rgba(94, 22, 22, 0.4);
     border: none ;
@@ -173,6 +175,9 @@ body {
     border-radius: 0;
 }
 
+.navbar-nav .nav-link {
+    padding-left: 10px;
+}
 
 #mainNav .link-active {
     background-color: rgba(94, 22, 22, 1);
