@@ -184,3 +184,12 @@
     </section>
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            $('#link-spectacles').addClass('link-active');
+        });
+    </script>
+{% endblock %}
+

@@ -128,3 +128,11 @@
     </section>
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            $('#link-cours').addClass('link-active');
+        });
+    </script>
+{% endblock %}

@@ -29,3 +29,11 @@
 
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            $('#link-formations').addClass('link-active');
+        });
+    </script>
+{% endblock %}

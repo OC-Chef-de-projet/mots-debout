@@ -77,3 +77,11 @@
 
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            $('#link-stages').addClass('link-active');
+        });
+    </script>
+{% endblock %}

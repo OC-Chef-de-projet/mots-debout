@@ -72,3 +72,12 @@
 
 {% endblock %}
 
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            $('#link-expositions').addClass('link-active');
+        });
+    </script>
+{% endblock %}

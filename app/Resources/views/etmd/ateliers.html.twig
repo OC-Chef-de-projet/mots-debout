@@ -6,8 +6,8 @@
     <header class="collapse ateliers">
         <section>
             <div class="container">
-                            <h1>Ateliers découvertes des disciplines de l'art vivant</h1>
-                            <h2 class="subTitle">Conduits par des artistes professionnels</h2>
+                <h1>Ateliers découvertes des disciplines de l'art vivant</h1>
+                <h2 class="subTitle">Conduits par des artistes professionnels</h2>
             </div>
         </section>
     </header>
@@ -54,10 +54,12 @@
 
                 </div>
 
-                <a class="carousel-control left carousel-control-prev background-red" href="#myCarousel" data-slide="prev">
+                <a class="carousel-control left carousel-control-prev background-red" href="#myCarousel"
+                   data-slide="prev">
                     <i class="fa fa-angle-left"></i>
                 </a>
-                <a class="carousel-control right carousel-control-next background-red" href="#myCarousel" data-slide="next">
+                <a class="carousel-control right carousel-control-next background-red" href="#myCarousel"
+                   data-slide="next">
                     <i class="fa fa-angle-right"></i>
                 </a>
             </div>
@@ -160,11 +162,13 @@
 
 {% block javascripts %}
     {{ parent() }}
-<script>
-    $(function () {
-        $('.collapse').collapse()
-    });
+    <script>
+        $(function () {
+            $('.collapse').collapse();
+            $('#link-ateliers').addClass('link-active');
+        });
     </script>
 {% endblock %}
+
 
 

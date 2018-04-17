@@ -86,3 +86,11 @@
 
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            $('#link-residences').addClass('link-active');
+        });
+    </script>
+{% endblock %}

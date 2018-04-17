@@ -108,13 +108,20 @@
                 </a>
             </div>
         </div>
-    </section>
-
-    <section>
         <div class="container ">
-            <hr style="border-top: 5px solid rgba(94, 22, 22, 1);max-width:100%">
+            <hr style="border-top: 5px solid rgba(94, 22, 22, 1);max-width:50%">
         </div>
     </section>
 
+
+
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            $('#link-cours').addClass('link-active');
+        });
+    </script>
+{% endblock %}

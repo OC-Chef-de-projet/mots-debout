@@ -494,3 +494,7 @@ h1 {
     padding:20px;
 }
 
+.link-active {
+    background-color: rgba(94, 22, 22, 1);
+    border-bottom: 3px solid white;
+}
