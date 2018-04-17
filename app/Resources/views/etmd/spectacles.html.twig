@@ -5,36 +5,24 @@
 {% block header %}
     <header class="collapse spectacles">
         <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col s12 center-align">
-                        <div id="header-main-title">
-                            <h1>Spectacles</h1>
-                            <h2 class="subTitle">En public
-                                <br>&nbsp;
-                                <br>&nbsp;
-                                <br>&nbsp;
-                                </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1>Spectacles</h1>
+            <h3 class="subTitle">En public</h3>
         </section>
     </header>
 {% endblock %}
 
 {% block body %}
-<section class="background-red">
-    <div class="container ">
-        <h3 class="text-red-faded">
-            La représentation publique est une rencontre indispensable où
-            l’humilité côtoie l’audace.
-        </h3>
-    </div>
-</section>
-   
+    <section class="background-red">
+        <div class="container ">
+            <h3 class="text-red-faded">
+                La représentation publique est une rencontre indispensable où
+                l’humilité côtoie l’audace.
+            </h3>
+        </div>
+    </section>
 
-    <section class="text-white">
+
+    <section class="text-white" id="spectacles">
         <div class="container ">
             <h2 class="text-red" style="font-weight: 700;">A l'affiche</h2>
             <p></p>
@@ -42,24 +30,25 @@
                 <div class="col-lg-6 mx-auto text-center text-red">
                     <div class="card" style="width: 18rem;">
                         <h3>Comme s’il en pleuvait</h3>
-                        <img class="card-img-top" style="max-width:100%" src="{{ asset('assets/img/spectacles/prochainement.png') }}"
+                        <img class="card-img-top" style="max-width:100%"
+                             src="{{ asset('assets/img/spectacles/prochainement.png') }}"
                              alt="Card image cap">
                         <div class="card-body">
                             <p>d’après Sébastien Thiery</p>
                             <p>
-                                <b>Dimanche  1er juillet 17H00</b><br>Salle municipale Tasdon - La Rochelle
+                                <b>Dimanche 1er juillet 17H00</b><br>Salle municipale Tasdon - La Rochelle
                             </p>
                             <p>
                                 <b>Mercredi 4 juillet 20H30</b><br>Espace B. Giraudeau Mireuil - La Rochelle
                             </p>
                             <p>
-                                <b>Dimanche  1er juillet 17H00</b><br>Salle municipale Tasdon - La Rochelle
+                                <b>Dimanche 1er juillet 17H00</b><br>Salle municipale Tasdon - La Rochelle
                             </p>
                             <p>
                                 <b>Mercredi 4 juillet 20H30</b><br>Espace B. Giraudeau Mireuil - La Rochelle
                             </p>
                             <div class="button-box">
-                                <a href="#" class="button">Renseignements et réservations</a>
+                                <a href="{{ url('nous_contacter') }}?objet=spectacles" class="button">Renseignements</a>
                             </div>
                         </div>
                     </div>
@@ -68,19 +57,20 @@
                 <div class="col-lg-6 mx-auto text-center text-red">
                     <div class="card" style="width: 18rem;">
                         <h3>Les pas perdus</h3>
-                        <img class="card-img-top" style="max-width:100%" src="{{ asset('assets/img/spectacles/prochainement.png') }}"
+                        <img class="card-img-top" style="max-width:100%"
+                             src="{{ asset('assets/img/spectacles/2018_les_pas_perdus.png') }}"
                              alt="Card image cap">
                         <div class="card-body">
 
                             <p class="card-text">de Denise Bonal</p>
                             <p>
-                                <b>Dimanche  1er juillet 17H00</b><br>Salle municipale Tasdon - La Rochelle
+                                <b>Dimanche 1er juillet 17H00</b><br>Salle municipale Tasdon - La Rochelle
                             </p>
                             <p>
                                 <b>Mercredi 4 juillet 20H30</b><br>Espace B. Giraudeau Mireuil - La Rochelle
                             </p>
                             <div class="button-box">
-                                <a href="#" class="button">Renseignements et réservations</a>
+                                <a href="{{ url('nous_contacter') }}?objet=spectacles" class="button">Renseignements</a>
                             </div>
                         </div>
                     </div>
@@ -90,12 +80,12 @@
         <hr style="border-top: 5px solid rgba(94, 22, 22, 1);max-width:50%">
     </section>
 
- <section class="background-red">
+    <section class="background-red">
         <div class="container ">
             <h3 class="text-red-faded">Les auteurs du répertoire offrent des partitions qui obligent au progrès.
                 Leur difficulté même est l’enjeu d’un cheminement constant.
             </h3>
-           
+
             <h3 class="text-red-faded">La gestion de ces contradictions intimes au sein du travail collectif de
                 troupe, partagée avec les spectateurs est le cœur même du jeu.
             </h3>
@@ -113,7 +103,8 @@
                 <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px;">
                     <div class="media mb-1">
                         <a class="media-left waves-light" style="margin-right:20px">
-                            <img style="height:200px;" src="{{ asset('assets/img/spectacles/2017 - Les Planches.png') }}">
+                            <img style="height:200px;"
+                                 src="{{ asset('assets/img/spectacles/2017 - Les Planches.png') }}">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">2017 - Les planches</h4>
@@ -124,7 +115,8 @@
                 <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px">
                     <div class="media mb-1">
                         <a class="media-left waves-light" style="margin-right:20px">
-                            <img style="height:200px;" src="{{ asset('assets/img/spectacles/2016 - chacun_sa_verite.png') }}">
+                            <img style="height:200px;"
+                                 src="{{ asset('assets/img/spectacles/2016 - chacun_sa_verite.png') }}">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">2016 - Chacun sa vérité</h4>
@@ -135,7 +127,8 @@
                 <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px">
                     <div class="media mb-1">
                         <a class="media-left waves-light" style="margin-right:20px">
-                            <img style="height:200px;" src="{{ asset('assets/img/spectacles/2015 - Le repas des fauves.png') }}">
+                            <img style="height:200px;"
+                                 src="{{ asset('assets/img/spectacles/2015 - Le repas des fauves.png') }}">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">2015 - Le repas des fauves</h4>
@@ -147,7 +140,8 @@
                 <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px">
                     <div class="media mb-1">
                         <a class="media-left waves-light" style="margin-right:20px">
-                            <img style="height:200px;" src="{{ asset('assets/img/spectacles/impromptu_de_Versailles.png') }}">
+                            <img style="height:200px;"
+                                 src="{{ asset('assets/img/spectacles/impromptu_de_Versailles.png') }}">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading txt-red">2014 - L'impromptu de Versailles</h4>
@@ -159,7 +153,8 @@
                 <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px">
                     <div class="media mb-1">
                         <a class="media-left waves-light" style="margin-right:20px">
-                            <img style="height:200px;" src="{{ asset('assets/img/spectacles/musee_haut_musee_bas.png') }}">
+                            <img style="height:200px;"
+                                 src="{{ asset('assets/img/spectacles/musee_haut_musee_bas.png') }}">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">2013 - Musée haut, musée bas </h4>
@@ -172,7 +167,8 @@
                 <div class="col-lg-6 mx-auto" style="height:200px;margin-bottom:20px">
                     <div class="media mb-1">
                         <a class="media-left waves-light" style="margin-right:20px">
-                            <img style="height:200px;" src="{{ asset('assets/img/spectacles/une_fille_bien_gardee.png') }}">
+                            <img style="height:200px;"
+                                 src="{{ asset('assets/img/spectacles/une_fille_bien_gardee.png') }}">
                         </a>
 
                         <div class="media-body">

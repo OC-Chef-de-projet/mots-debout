@@ -1,28 +1,32 @@
 {% extends 'base.html.twig' %}
 
+
+{% block title %}Nos amis{% endblock %}
+
+{% block header %}
+    <header class="collapse background-red">
+        <section>
+            <h1>Nos amis</h1>
+        </section>
+    </header>
+{% endblock %}
+
+
+
 {% block body %}
-
-    <section class="bg-primary page-section" id="expositions">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto text-center ">
-                    <h1 class="section-heading text-white">Nos amis</h1>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="background-red" id="about">
+    <section class="text-white" id="about">
         <div class="container-fluid">
             <div class="row ">
 
                 <div class="col-lg-2 mx-auto card" style="width: 18rem;margin-top:10px">
-                    <img class="card-img-top" src="{{ asset('assets/img/amis/Compagnie_Almeria.png') }}"
-                         alt="Card image cap">
+                    <a class="text-red" href="https://ciealmeria17.wixsite.com/alm17">
+                        <img class="card-img-top" src="{{ asset('assets/img/amis/Compagnie_Almeria.png') }}"
+                             alt="Card image cap">
+                    </a>
                 </div>
 
                 <div class="col-lg-2 mx-auto card" style="width: 18rem;margin-top:10px">
-                    <a class="text-red" href="https://www.cieplanchefamille.com/§">
+                    <a class="text-red" href="https://www.cieplanchefamille.com/">
                         <img class="card-img-top" src="{{ asset('assets/img/amis/compagnie_planche_famille.png') }}"
                              alt="Card image cap">
                     </a>
@@ -75,8 +79,10 @@
 
 
         </div>
+        <div class="container ">
+            <hr style="border-top: 5px solid rgba(94, 22, 22, 1);max-width:50%">
+        </div>
     </section>
-
 
 {% endblock %}
 

@@ -54,10 +54,6 @@ module.exports = function (grunt) {
             js_script: {
                 files: ['resources/js/*.js'],
                 tasks: ['uglify:script']
-            },
-            img_png: {
-                files: ['resources/images/**/*.png'],
-                tasks: ['imagemin:png']
             }
         },
 
@@ -90,18 +86,20 @@ module.exports = function (grunt) {
                     // Javascript
                     'web/assets/js/core.min.js': [
                         'resources/vendor/jquery/jquery.min.js',
-                        'resources/vendor/bootstrap/js/bootstrap.bundle.min.js'
+                        'resources/vendor/bootstrap/js/bootstrap.bundle.min.js',
+                        'resources/vendor/magnific-popup/jquery.magnific-popup.min.js',
+                        'resources/vendor/scrollreveal/scrollreveal.min.js'
                     ],
 
 
                     // CSS
                     'web/assets/css/core.min.css': [
                         'resources/vendor/bootstrap/css/bootstrap.min.css',
-                        'resources/vendor/font-awesome/css/font-awesome.min.css'
+                        'resources/vendor/font-awesome/css/font-awesome.min.css',
+                        'resources/vendor/magnific-popup/magnific-popup.css'
                     ]
                 }
             },
-
             custom: {
                 files: {
                     'web/assets/css/etmd.min.css': [
