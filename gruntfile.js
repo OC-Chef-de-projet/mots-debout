@@ -105,7 +105,12 @@ module.exports = function (grunt) {
                 files: {
                     'web/assets/css/etmd.min.css': [
                         'resources/css/creative.css',
+                        'resources/css/nav.css',
+                        'resources/css/portfolio.css',
+                        'resources/css/carousel.css',
+                        'resources/css/effect.css',
                         'resources/css/etmd.css'
+
                     ]
                 }
             }
