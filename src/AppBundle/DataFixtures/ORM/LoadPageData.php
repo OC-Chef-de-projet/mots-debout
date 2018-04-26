@@ -31,7 +31,7 @@ class LoadPageData extends Fixture implements FixtureInterface, ContainerAwareIn
 
         $page = new Page();
         $page->setTitle('Cours collectifs');
-        $page->setContent('Le théâtre n\'est pas chargé de représenter la psychologie, mais les passions, c\'est tout autre chose. (Ariane-Mnouchkine)');
+        $page->setContent('De septembre à juin');
         $page->setCover('fond-cat.jpg');
         $page->setSection(Page::WORKSHOP);
         $page->setCreatedAt(new \DateTime());
@@ -39,8 +39,10 @@ class LoadPageData extends Fixture implements FixtureInterface, ContainerAwareIn
         $manager->persist($page);
 
         $page = new Page();
-        $page->setTitle('Cours particuliers');
-        $page->setContent('Le théâtre est pour chacun le reflet de sa propre fragilité. (Dominique Desanti)');
+        $page->setTitle('Bases, perfectionnement et concours');
+        $page->setContent('Apprendre ou consolider les techniques de base, se perfectionner, cheminer une recherche<br>
+Préparer les concours des écoles nationales et des conservatoires. Choix des scènes du répertoire, travail des situations, des personnages, du style et du jeu.<br>
+Les cours particuliers offrent un calendrier à la carte');
         $page->setCover('fond-cat.jpg');
         $page->setSection(Page::TUTORING);
         $page->setCreatedAt(new \DateTime());

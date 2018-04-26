@@ -41,21 +41,18 @@ Vous êtes décidé aujourd\'hui à perfectionner vos prises de parole en toutes
 
         // Titre Cours collectifs
         $section = new Pagesection();
-        $section->setImagelink('pasperdus.jpg');
+        $section->setImagelink('');
         $section->setCreatedAt(new \DateTime());
-        $section->setContent('Le travail de l\'année est sur la pièce "Les pas perdus" de Denise Bonal
-Destins, solitudes, séparations, arrachements, amours palpitantes, impossibles, laissés pour compte.');
-        $section->setTitle('Niveau 1 & 2');
+        $section->setContent('Apprentissage de la technique indispensable au jeu: respiration, voix, diction, corps. Approche de l''interprétation et du jeu qui impliquent l''attitude intérieure pour y accéder. Le répertoire est choisi pour permettre d''accueillir de nouveaux venus toute l’année.');
         $section->setSortorder(1);
         $section->setPage($this->getReference('workshop'));
         $manager->persist($section);
 
         $section = new Pagesection();
-        $section->setImagelink('comme_s_il_en_pleuvait.jpg');
+        $section->setImagelink('');
         $section->setCreatedAt(new \DateTime());
-        $section->setContent('Lectures accomplies, réflexions faites, vote collectif exprimé:
-le travail de l\'année est sur la pièce "Comme s\'il en pleuvait" de Sébastien Thiéry. Farce cruelle où l\'argent bouscule et révèle nos natures humaines. Une adaptation, j\'y travaille, pour une situation entre colocataires et non au sein d\'un couple.');
-        $section->setTitle('Niveau 3');
+        $section->setContent('Ouvert aux élèves ayant suivi 2 ans de formation dans l''école et qui ont solidement acquis les techniques de base. Le groupe est établi en juin, et immuable pour la saison. L''œuvre montée est en fonction de la distribution : âges, genres, nombre.');
+        $section->setTitle('PERFECTIONNEMENT Niveau 3');
         $section->setSortorder(1);
         $section->setPage($this->getReference('workshop'));
         $manager->persist($section);
@@ -64,8 +61,8 @@ le travail de l\'année est sur la pièce "Comme s\'il en pleuvait" de Sébastie
         $section = new Pagesection();
         $section->setImagelink('coursp.jpg');
         $section->setCreatedAt(new \DateTime());
-        $section->setContent('Si vous êtes chanteurs, artistes lyriques, comédiens professionnels ou même amateurs et si vous voulez perfectionner votre interprétation, vous préparer à des castings ou à des auditions, notre professeur est là pour répondre à vos attentes et concocter avec vous un programme sur mesure.');
-        $section->setTitle('Coaching théâtral');
+        $section->setContent('Gaïa Berthommé : Laboratoire de théâtre physique à Montreuil, Audrey Caille : Conservatoire de Rennes, Maud Lassignardie : Ecole Claude Mathieu à Paris, Tristan de Pelseneer Conservatoire d’Avignon, Kayiané Lacoste Boghossian : Ecole Eva Saint-Paul à Paris, ');
+        $section->setTitle('Réussite des élèves');
         $section->setSortorder(1);
         $section->setPage($this->getReference('tutoring'));
         $manager->persist($section);
