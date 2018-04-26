@@ -39,6 +39,7 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    exception_controller:  AppBundle:Exception:showException
     paths:
         "%kernel.root_dir%/Resources/views/admin": Admin
         "%kernel.root_dir%/Resources/views/admin/user": AdminUser
