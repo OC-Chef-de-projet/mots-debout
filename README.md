@@ -12,3 +12,17 @@
 
 ![Style CI](https://styleci.io/repos/97587338/shield?branch=master)
 
+
+## Outils
+[![Symfony](https://poser.pugx.org/symfony/symfony/v/stable)](https://packagist.org/packages/symfony/symfony)
+
+[![Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+
+[![PHP Unit](https://poser.pugx.org/phpunit/phpunit/version)](https://packagist.org/packages/phpunit/phpunit)
+
+[![Composer](https://poser.pugx.org/composer/composer/v/stable)](https://packagist.org/packages/composer/composer)
+
+[![Tiny MCDE](https://poser.pugx.org/tinymce/tinymce/v/stable)](https://packagist.org/packages/tinymce/tinymce)
+
+
+
